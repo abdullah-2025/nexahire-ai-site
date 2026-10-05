@@ -1,0 +1,45 @@
+[
+  {
+    "width": 1440,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "failures": [],
+    "externalRequests": []
+  },
+  {
+    "width": 768,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "failures": [],
+    "externalRequests": []
+  },
+  {
+    "width": 390,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "failures": [],
+    "externalRequests": []
+  },
+  {
+    "width": 375,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "failures": [],
+    "externalRequests": []
+  },
+  {
+    "width": 320,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "failures": [],
+    "externalRequests": []
+  },
+  {
+    "serverRenderedContent": true
+  }
+]

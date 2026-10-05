@@ -1,0 +1,230 @@
+{
+  "desktop": {
+    "geometry": {
+      "features": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "how-it-works": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "readiness": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "journey": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "testimonials": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "pricing": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "faq": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "screenshots": {
+      "hero": {
+        "differentPixelsPercent": 0.732
+      },
+      "features": {
+        "differentPixelsPercent": 0.002
+      },
+      "how-it-works": {
+        "differentPixelsPercent": 0
+      },
+      "readiness": {
+        "differentPixelsPercent": 0
+      },
+      "journey": {
+        "differentPixelsPercent": 0
+      },
+      "testimonials": {
+        "differentPixelsPercent": 0
+      },
+      "pricing": {
+        "differentPixelsPercent": 0
+      },
+      "faq": {
+        "differentPixelsPercent": 0
+      }
+    },
+    "heightDelta": 0,
+    "errors": [],
+    "warnings": [],
+    "failedRequests": []
+  },
+  "mobile": {
+    "geometry": {
+      "features": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "how-it-works": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "readiness": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "journey": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "testimonials": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "pricing": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "faq": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "screenshots": {
+      "hero": {
+        "differentPixelsPercent": 0.023
+      },
+      "features": {
+        "differentPixelsPercent": 0.001
+      },
+      "how-it-works": {
+        "differentPixelsPercent": 0
+      },
+      "readiness": {
+        "differentPixelsPercent": 0
+      },
+      "journey": {
+        "differentPixelsPercent": 0
+      },
+      "testimonials": {
+        "differentPixelsPercent": 0
+      },
+      "pricing": {
+        "differentPixelsPercent": 0
+      },
+      "faq": {
+        "differentPixelsPercent": 0
+      }
+    },
+    "heightDelta": 0,
+    "errors": [],
+    "warnings": [],
+    "failedRequests": []
+  },
+  "tablet": {
+    "geometry": {
+      "features": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "how-it-works": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "readiness": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "journey": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "testimonials": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "pricing": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      "faq": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "screenshots": {
+      "hero": {
+        "differentPixelsPercent": 0.153
+      },
+      "features": {
+        "differentPixelsPercent": 0.001
+      },
+      "how-it-works": {
+        "differentPixelsPercent": 0
+      },
+      "readiness": {
+        "differentPixelsPercent": 0
+      },
+      "journey": {
+        "differentPixelsPercent": 0
+      },
+      "testimonials": {
+        "differentPixelsPercent": 0
+      },
+      "pricing": {
+        "differentPixelsPercent": 0
+      },
+      "faq": {
+        "differentPixelsPercent": 0
+      }
+    },
+    "heightDelta": 0,
+    "errors": [],
+    "warnings": [],
+    "failedRequests": []
+  }
+}
