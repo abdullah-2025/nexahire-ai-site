@@ -62,7 +62,7 @@ export default function CareerJourney() {
             className="jr-step reveal"
             style={
               {
-                '--c': '#fbbf24',
+                '--c': 'var(--amber)',
                 '--g': 'linear-gradient(135deg,#f59e0b,#b45309)',
               } as CSSProperties
             }
@@ -113,7 +113,7 @@ export default function CareerJourney() {
             className="jr-step reveal"
             style={
               {
-                '--c': '#38bdf8',
+                '--c': 'var(--sky)',
                 '--g': 'linear-gradient(135deg,#0284c7,#0369a1)',
               } as CSSProperties
             }
@@ -164,7 +164,7 @@ export default function CareerJourney() {
             className="jr-step reveal"
             style={
               {
-                '--c': '#c084fc',
+                '--c': '#7e3fbc',
                 '--g': 'linear-gradient(135deg,#9333ea,#6b21a8)',
               } as CSSProperties
             }
@@ -215,7 +215,7 @@ export default function CareerJourney() {
             className="jr-step reveal"
             style={
               {
-                '--c': '#34d399',
+                '--c': 'var(--emerald)',
                 '--g': 'linear-gradient(135deg,#10b981,#047857)',
               } as CSSProperties
             }
@@ -263,12 +263,12 @@ export default function CareerJourney() {
           <div className="jr-cta" id="jr-cta">
             <div className="relative">
               <div className="jr-icon">
-                <SiteIcon className="h-8 w-8 text-amber-300" name="sparkles" />
+                <SiteIcon className="h-8 w-8 text-amber-700" name="sparkles" />
               </div>
-              <h3 className="text-[clamp(26px,4vw,42px)] font-bold leading-tight tracking-tight text-white">
+              <h3 className="text-[clamp(26px,4vw,42px)] font-bold leading-tight tracking-tight text-[color:var(--ink)]">
                 Ready to Start Your Journey?
               </h3>
-              <p className="mx-auto mb-8 mt-4 max-w-xl text-[16px] leading-relaxed text-indigo-100/90">
+              <p className="mx-auto mb-8 mt-4 max-w-xl text-[16px] leading-relaxed text-slate-600">
                 Join thousands of Pakistani youth already discovering
                 opportunities. It&apos;s completely free and takes less than a
                 minute to get started.

@@ -17,7 +17,7 @@ export default function Readiness() {
           ></div>
           <div className="rd-card">
             <div className="mb-8 flex items-center justify-between">
-              <h3 className="text-[18px] font-semibold tracking-tight text-white">
+              <h3 className="text-[18px] font-semibold tracking-tight text-[color:var(--ink)]">
                 Your Career Readiness
               </h3>
               <span className="live">
@@ -32,7 +32,7 @@ export default function Readiness() {
                     cy="60"
                     r="50"
                     fill="none"
-                    stroke="rgba(255,255,255,.08)"
+                    stroke="#e3e7f2"
                     strokeWidth="10"
                   ></circle>
                   <circle
@@ -60,7 +60,7 @@ export default function Readiness() {
                   <div>
                     <span
                       id="rd-num"
-                      className="text-[46px] font-semibold leading-none tracking-tight tabular-nums text-white"
+                      className="text-[46px] font-semibold leading-none tracking-tight tabular-nums text-[color:var(--ink)]"
                     >
                       0
                     </span>
@@ -76,7 +76,7 @@ export default function Readiness() {
                     <span className="text-[color:var(--muted)]">
                       CV Quality
                     </span>
-                    <b className="rd-val tabular-nums text-white" data-t="85">
+                    <b className="rd-val tabular-nums text-[color:var(--ink)]" data-t="85">
                       0%
                     </b>
                   </div>
@@ -92,7 +92,7 @@ export default function Readiness() {
                     <span className="text-[color:var(--muted)]">
                       Skills Match
                     </span>
-                    <b className="rd-val tabular-nums text-white" data-t="72">
+                    <b className="rd-val tabular-nums text-[color:var(--ink)]" data-t="72">
                       0%
                     </b>
                   </div>
@@ -108,7 +108,7 @@ export default function Readiness() {
                     <span className="text-[color:var(--muted)]">
                       Interview Prep
                     </span>
-                    <b className="rd-val tabular-nums text-white" data-t="64">
+                    <b className="rd-val tabular-nums text-[color:var(--ink)]" data-t="64">
                       0%
                     </b>
                   </div>
@@ -124,7 +124,7 @@ export default function Readiness() {
                     <span className="text-[color:var(--muted)]">
                       Roadmap Progress
                     </span>
-                    <b className="rd-val tabular-nums text-white" data-t="81">
+                    <b className="rd-val tabular-nums text-[color:var(--ink)]" data-t="81">
                       0%
                     </b>
                   </div>
@@ -158,7 +158,7 @@ export default function Readiness() {
           </p>
           <ul className="mt-7 space-y-3.5">
             <li
-              className="reveal flex items-start gap-3 text-[15px] text-slate-200"
+              className="reveal flex items-start gap-3 text-[15px] text-slate-700"
               style={{ '--d': '.05s' } as CSSProperties}
             >
               <span className="check">
@@ -167,7 +167,7 @@ export default function Readiness() {
               Weighted scoring formula with transparent breakdown
             </li>
             <li
-              className="reveal flex items-start gap-3 text-[15px] text-slate-200"
+              className="reveal flex items-start gap-3 text-[15px] text-slate-700"
               style={{ '--d': '.15s' } as CSSProperties}
             >
               <span className="check">
@@ -176,7 +176,7 @@ export default function Readiness() {
               Historical tracking to see your progress over time
             </li>
             <li
-              className="reveal flex items-start gap-3 text-[15px] text-slate-200"
+              className="reveal flex items-start gap-3 text-[15px] text-slate-700"
               style={{ '--d': '.25s' } as CSSProperties}
             >
               <span className="check">

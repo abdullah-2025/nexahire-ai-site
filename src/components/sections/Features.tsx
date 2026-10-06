@@ -257,7 +257,7 @@ export default function Features() {
           className={`fx-panel fx-panel-r${swapping ? ' swap' : ''}`}
           id="fx-pr"
         />
-        <div className="absolute bottom-0 left-[9%] right-[9%] top-0 z-[2] overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 shadow-2xl shadow-black/70 border border-white/10">
+        <div className="absolute bottom-0 left-[9%] right-[9%] top-0 z-[2] overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-50 via-white to-sky-50 shadow-2xl shadow-indigo-200/30 border border-[color:var(--line)]">
           {images.map((image, index) => (
             <Image
               key={index}
@@ -275,7 +275,7 @@ export default function Features() {
               fetchPriority={index === 0 ? 'high' : 'auto'}
             />
           ))}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/10 to-transparent" />
         </div>
         <div className="fx-frame" />
         <div
@@ -295,7 +295,7 @@ export default function Features() {
             {feature.tags.map(([icon, label], index) => (
               <div
                 key={label}
-                className="chip glass-chip inline-flex w-fit items-center gap-1.5 rounded-md px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-slate-200"
+                className="chip glass-chip inline-flex w-fit items-center gap-1.5 rounded-md px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-slate-700"
                 style={{ '--i': index } as CSSProperties}
               >
                 <SiteIcon
@@ -311,7 +311,7 @@ export default function Features() {
             style={{ '--i': 4 } as CSSProperties}
           >
             <div className="fx-float glass-chip rounded-xl px-3.5 py-2.5">
-              <div id="fx-ct" className="text-[11.5px] font-bold text-white">
+              <div id="fx-ct" className="text-[11.5px] font-bold text-[color:var(--ink)]">
                 {feature.caption}
               </div>
               <div
@@ -320,7 +320,7 @@ export default function Features() {
               >
                 {feature.subtitle}
               </div>
-              <div className="mt-2 h-1 w-28 overflow-hidden rounded-full bg-white/10">
+              <div className="mt-2 h-1 w-28 overflow-hidden rounded-full bg-indigo-100">
                 <div className="fx-bar h-full w-full rounded-full bg-gradient-to-r from-indigo-500 to-emerald-400" />
               </div>
             </div>

@@ -14,7 +14,7 @@ import Footer from '@/components/sections/Footer'
 
 export default function Home() {
   return (
-    <>
+    <div className="landing-page">
       <Hero />
       <SiteSections>
         <Features />
@@ -29,6 +29,6 @@ export default function Home() {
         <CallToAction />
         <Footer />
       </SiteSections>
-    </>
+    </div>
   )
 }

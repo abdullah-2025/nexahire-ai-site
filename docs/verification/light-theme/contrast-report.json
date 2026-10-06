@@ -1,0 +1,17 @@
+[
+  {
+    "width": 1440,
+    "rule": "color-contrast",
+    "violations": []
+  },
+  {
+    "width": 768,
+    "rule": "color-contrast",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "rule": "color-contrast",
+    "violations": []
+  }
+]

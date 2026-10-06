@@ -51,28 +51,28 @@ export default function HowItWorks() {
           <div className="pipeline-nodes">
             <div
               className="pipeline-node"
-              style={{ '--c': '#818cf8' } as CSSProperties}
+              style={{ '--c': 'var(--violet)' } as CSSProperties}
             >
               <span className="node-dot"></span>
               <span className="node-title">01 Profile</span>
             </div>
             <div
               className="pipeline-node"
-              style={{ '--c': '#c084fc' } as CSSProperties}
+              style={{ '--c': '#7e3fbc' } as CSSProperties}
             >
               <span className="node-dot"></span>
               <span className="node-title">02 CV Score</span>
             </div>
             <div
               className="pipeline-node"
-              style={{ '--c': '#38bdf8' } as CSSProperties}
+              style={{ '--c': 'var(--sky)' } as CSSProperties}
             >
               <span className="node-dot"></span>
               <span className="node-title">03 Preparation</span>
             </div>
             <div
               className="pipeline-node"
-              style={{ '--c': '#34d399' } as CSSProperties}
+              style={{ '--c': 'var(--emerald)' } as CSSProperties}
             >
               <span className="node-dot"></span>
               <span className="node-title">04 Placement</span>
@@ -88,7 +88,7 @@ export default function HowItWorks() {
               className="step-card spot"
               style={
                 {
-                  '--c': '#818cf8',
+                  '--c': 'var(--violet)',
                   '--tint': 'rgba(129,140,248,.12)',
                   '--spot': 'rgba(129,140,248,.22)',
                 } as CSSProperties
@@ -98,7 +98,7 @@ export default function HowItWorks() {
                 className="step-head"
                 style={
                   {
-                    background: 'linear-gradient(145deg,#121026,#1b1744)',
+                    background: 'linear-gradient(145deg,#f5f4ff,#eeecff)',
                   } as CSSProperties
                 }
               >
@@ -148,7 +148,7 @@ export default function HowItWorks() {
               className="step-card spot"
               style={
                 {
-                  '--c': '#c084fc',
+                  '--c': '#7e3fbc',
                   '--tint': 'rgba(192,132,252,.12)',
                   '--spot': 'rgba(192,132,252,.22)',
                 } as CSSProperties
@@ -158,7 +158,7 @@ export default function HowItWorks() {
                 className="step-head"
                 style={
                   {
-                    background: 'linear-gradient(145deg,#200f33,#35144b)',
+                    background: 'linear-gradient(145deg,#faf5ff,#f1e9ff)',
                   } as CSSProperties
                 }
               >
@@ -208,7 +208,7 @@ export default function HowItWorks() {
               className="step-card spot"
               style={
                 {
-                  '--c': '#38bdf8',
+                  '--c': 'var(--sky)',
                   '--tint': 'rgba(56,189,248,.12)',
                   '--spot': 'rgba(56,189,248,.22)',
                 } as CSSProperties
@@ -218,7 +218,7 @@ export default function HowItWorks() {
                 className="step-head"
                 style={
                   {
-                    background: 'linear-gradient(145deg,#0a1e33,#13344f)',
+                    background: 'linear-gradient(145deg,#f0f9ff,#e4f2fc)',
                   } as CSSProperties
                 }
               >
@@ -268,7 +268,7 @@ export default function HowItWorks() {
               className="step-card spot"
               style={
                 {
-                  '--c': '#34d399',
+                  '--c': 'var(--emerald)',
                   '--tint': 'rgba(52,211,153,.12)',
                   '--spot': 'rgba(52,211,153,.22)',
                 } as CSSProperties
@@ -278,8 +278,8 @@ export default function HowItWorks() {
                 className="step-head"
                 style={
                   {
-                    background: 'linear-gradient(145deg,#07221c,#0f3a30)',
-                    color: '#fff',
+                    background: 'linear-gradient(145deg,#f0fdf7,#e3f5ed)',
+                    color: 'var(--ink)',
                   } as CSSProperties
                 }
               >

@@ -38,14 +38,14 @@ export default function Hero() {
   return (
     <section id="top" className="hero">
       <CursorRingField
-        background="#0a0a12"
-        colors={['#6366f1', '#818cf8', '#3b82f6', '#0a0a12']}
+        background="#fafbff"
+        colors={['#c7c9ff', '#ddd9ff', '#cceaff', '#fafbff']}
         dotSize={300}
         speed={30}
         density={160}
         cameraDistance={170}
         ring={{ push: 55, width: 10, radius: 14, turbulence: 90 }}
-        style={{ position: 'absolute', inset: 0, zIndex: 0 }}
+        style={{ position: 'absolute', inset: 0, zIndex: 0, opacity: 0.45 }}
       />
 
       {/* Gradient overlays for depth */}

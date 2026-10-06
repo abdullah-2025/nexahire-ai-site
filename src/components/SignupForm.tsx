@@ -38,7 +38,7 @@ export default function SignupForm() {
         </span>
         <span
           className="arr"
-          style={{ background: 'var(--violet)', color: '#fff' }}
+          style={{ background: 'var(--button)', color: '#fff' }}
         >
           <SiteIcon name="arrow-right" className="h-4 w-4" />
         </span>

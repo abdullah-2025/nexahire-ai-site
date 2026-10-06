@@ -143,7 +143,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/8 pt-7 text-[12.5px] text-[color:var(--muted)] sm:flex-row">
+        <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-[color:var(--line)] pt-7 text-[12.5px] text-[color:var(--muted)] sm:flex-row">
           <p>© 2026 NexaHire AI. Built at SZABIST Islamabad.</p>
           <p>Muhammad Abdullah Khan • Ali Hassan Ishaq • Abdul Moiz</p>
         </div>

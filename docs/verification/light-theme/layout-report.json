@@ -1,0 +1,477 @@
+[
+  {
+    "width": 1440,
+    "differences": [
+      {
+        "id": "top",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--left-1",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--right-1",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--left-2",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--right-2",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "features",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "py-20 lg:py-28",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "how-it-works",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "readiness",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "journey",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "testimonials",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "pricing",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "faq",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "py-10 lg:py-20",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "foot",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  {
+    "width": 768,
+    "differences": [
+      {
+        "id": "top",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--left-1",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--right-1",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--left-2",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--right-2",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "features",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "py-20 lg:py-28",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "how-it-works",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "readiness",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "journey",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "testimonials",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "pricing",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "faq",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "py-10 lg:py-20",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "foot",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "differences": [
+      {
+        "id": "top",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--left-1",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--right-1",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--left-2",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--right-2",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "features",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "py-20 lg:py-28",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "how-it-works",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "readiness",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "journey",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "testimonials",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "pricing",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "faq",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "py-10 lg:py-20",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "foot",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  {
+    "width": 375,
+    "differences": [
+      {
+        "id": "top",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--left-1",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--right-1",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--left-2",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--right-2",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "features",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "py-20 lg:py-28",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "how-it-works",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "readiness",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "journey",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "testimonials",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "pricing",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "faq",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "py-10 lg:py-20",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "foot",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "differences": [
+      {
+        "id": "top",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--left-1",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--right-1",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--left-2",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "floating-card floater--right-2",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "features",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "py-20 lg:py-28",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "how-it-works",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "readiness",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "journey",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "testimonials",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "pricing",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "faq",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "py-10 lg:py-20",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "id": "foot",
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    ]
+  }
+]

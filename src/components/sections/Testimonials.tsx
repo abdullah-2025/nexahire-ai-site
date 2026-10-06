@@ -27,8 +27,8 @@ export default function Testimonials() {
               style={
                 {
                   background:
-                    'linear-gradient(145deg,#12102e,#1a1744 60%,#292468)',
-                  color: '#fff',
+                    'linear-gradient(145deg,#ffffff,#f4f3ff 60%,#edeaff)',
+                  color: 'var(--ink)',
                   border: '1px solid rgba(129,140,248,0.2)',
                   '--spot': 'rgba(165,180,252,.2)',
                 } as CSSProperties
@@ -41,13 +41,13 @@ export default function Testimonials() {
                     className="t-chip"
                     style={
                       {
-                        background: 'rgba(255,255,255,.10)',
-                        color: '#e0e7ff',
+                        background: '#eeecff',
+                        color: 'var(--violet)',
                       } as CSSProperties
                     }
                   >
                     <SiteIcon
-                      className="h-3.5 w-3.5 text-indigo-300"
+                      className="h-3.5 w-3.5 text-indigo-700"
                       name="briefcase"
                     />
                     Internship in 3 weeks
@@ -71,10 +71,10 @@ export default function Testimonials() {
                   loading="lazy"
                 />
                 <div>
-                  <div className="text-[14.5px] font-semibold text-white">
+                  <div className="text-[14.5px] font-semibold text-[color:var(--ink)]">
                     Ayesha Khalid
                   </div>
-                  <div className="text-[12px] text-indigo-200">
+                  <div className="text-[12px] text-indigo-700">
                     FAST-NUCES &apos;26 • Software Engineering
                   </div>
                 </div>
@@ -90,8 +90,8 @@ export default function Testimonials() {
               style={
                 {
                   background:
-                    'linear-gradient(145deg,#061a29,#0c2d3d 60%,#09443b)',
-                  color: '#fff',
+                    'linear-gradient(145deg,#f5fbff,#edf8fb 60%,#e7f7ef)',
+                  color: 'var(--ink)',
                   border: '1px solid rgba(56,189,248,0.25)',
                   '--spot': 'rgba(56,189,248,.2)',
                 } as CSSProperties
@@ -102,7 +102,7 @@ export default function Testimonials() {
                 style={
                   {
                     background: 'rgba(56,189,248,.15)',
-                    color: '#7dd3fc',
+                    color: 'var(--sky)',
                     width: 'fit-content',
                   } as CSSProperties
                 }
@@ -135,7 +135,7 @@ export default function Testimonials() {
                     className="count2"
                     style={
                       {
-                        background: 'linear-gradient(135deg,#38bdf8,#34d399)',
+                        background: 'linear-gradient(135deg,#087eae,#087f5b)',
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
                       } as CSSProperties
@@ -143,7 +143,7 @@ export default function Testimonials() {
                   />
                   %
                 </div>
-                <p className="mt-4 max-w-[28ch] text-[15px] leading-snug text-slate-300">
+                <p className="mt-4 max-w-[28ch] text-[15px] leading-snug text-slate-600">
                   By the third practice session — and the real interview felt
                   easy after that.
                 </p>
@@ -158,9 +158,9 @@ export default function Testimonials() {
               className="t-card spot"
               style={
                 {
-                  background: 'rgba(255,255,255,.03)',
-                  border: '1px solid rgba(255,255,255,.08)',
-                  color: '#fff',
+                  background: 'var(--surface)',
+                  border: '1px solid var(--line)',
+                  color: 'var(--ink)',
                   '--spot': 'rgba(129,140,248,.18)',
                 } as CSSProperties
               }
@@ -185,7 +185,7 @@ export default function Testimonials() {
                   loading="lazy"
                 />
                 <div>
-                  <div className="text-[14.5px] font-semibold text-white">
+                  <div className="text-[14.5px] font-semibold text-[color:var(--ink)]">
                     Hassan Raza
                   </div>
                   <div className="text-[12px] text-[color:var(--muted)]">
@@ -204,8 +204,8 @@ export default function Testimonials() {
               style={
                 {
                   background:
-                    'linear-gradient(145deg,#1b1233,#26164d 60%,#3e1b73)',
-                  color: '#fff',
+                    'linear-gradient(145deg,#ffffff,#faf5ff 60%,#f1eafa)',
+                  color: 'var(--ink)',
                   border: '1px solid rgba(168,85,247,0.25)',
                   '--spot': 'rgba(168,85,247,.2)',
                 } as CSSProperties
@@ -237,10 +237,10 @@ export default function Testimonials() {
                   loading="lazy"
                 />
                 <div>
-                  <div className="text-[14.5px] font-semibold text-white">
+                  <div className="text-[14.5px] font-semibold text-[color:var(--ink)]">
                     Fatima Ahmed
                   </div>
-                  <div className="text-[12px] text-purple-200">
+                  <div className="text-[12px] text-purple-700">
                     NUST &apos;26 • Computer Engineering
                   </div>
                 </div>
