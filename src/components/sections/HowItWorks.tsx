@@ -10,32 +10,29 @@ export default function HowItWorks() {
       style={
         {
           background:
-            'radial-gradient(ellipse at 50% 20%, rgba(99,102,241,0.08) 0%, transparent 70%)',
+            'radial-gradient(ellipse at 50% 20%, rgba(var(--accent-rgb),0.08) 0%, transparent 70%)',
         } as CSSProperties
       }
     >
       <div
-        className="pointer-events-none absolute -top-32 left-1/4 h-80 w-80 rounded-full bg-indigo-500/10 blur-[100px]"
+        className="pointer-events-none absolute -top-32 left-1/4 h-80 w-80 rounded-full bg-accent/10 blur-[100px]"
         aria-hidden="true"
       ></div>
       <div
-        className="pointer-events-none absolute -bottom-32 right-1/4 h-80 w-80 rounded-full bg-emerald-500/10 blur-[100px]"
+        className="pointer-events-none absolute -bottom-32 right-1/4 h-80 w-80 rounded-full bg-accent/10 blur-[100px]"
         aria-hidden="true"
       ></div>
       <div className="container-x relative z-10">
         <div className="mx-auto mb-14 max-w-3xl text-center lg:mb-16">
           <div className="badge reveal">
-            <SiteIcon
-              className="w-3.5 h-3.5 text-[color:var(--violet)]"
-              name="route"
-            />{' '}
-            Your Journey
+            <SiteIcon className="w-3.5 h-3.5 text-accent" name="route" /> Your
+            Journey
           </div>
           <ScrubHeading className="h-section mt-5">
             From profile to <span className="serif">placement</span> in four{' '}
             steps
           </ScrubHeading>
-          <p className="reveal mt-5 text-[16px] leading-relaxed text-[color:var(--muted)]">
+          <p className="reveal mt-5 text-[16px] leading-relaxed text-[color:var(--muted-foreground)]">
             Every step feeds into the next. That&apos;s what makes NexaHire AI
             different from a pile of disconnected tools.
           </p>
@@ -51,28 +48,28 @@ export default function HowItWorks() {
           <div className="pipeline-nodes">
             <div
               className="pipeline-node"
-              style={{ '--c': '#818cf8' } as CSSProperties}
+              style={{ '--c': 'var(--primary)' } as CSSProperties}
             >
               <span className="node-dot"></span>
               <span className="node-title">01 Profile</span>
             </div>
             <div
               className="pipeline-node"
-              style={{ '--c': '#c084fc' } as CSSProperties}
+              style={{ '--c': 'var(--primary)' } as CSSProperties}
             >
               <span className="node-dot"></span>
               <span className="node-title">02 CV Score</span>
             </div>
             <div
               className="pipeline-node"
-              style={{ '--c': '#38bdf8' } as CSSProperties}
+              style={{ '--c': 'var(--accent)' } as CSSProperties}
             >
               <span className="node-dot"></span>
               <span className="node-title">03 Preparation</span>
             </div>
             <div
               className="pipeline-node"
-              style={{ '--c': '#34d399' } as CSSProperties}
+              style={{ '--c': 'var(--accent)' } as CSSProperties}
             >
               <span className="node-dot"></span>
               <span className="node-title">04 Placement</span>
@@ -82,15 +79,15 @@ export default function HowItWorks() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           <article
             className="reveal"
-            style={{ '--glow': 'rgba(99,102,241,.45)' } as CSSProperties}
+            style={{ '--glow': 'rgba(var(--accent-rgb),.45)' } as CSSProperties}
           >
             <div
               className="step-card spot"
               style={
                 {
-                  '--c': '#818cf8',
-                  '--tint': 'rgba(129,140,248,.12)',
-                  '--spot': 'rgba(129,140,248,.22)',
+                  '--c': 'var(--primary)',
+                  '--tint': 'rgba(var(--accent-rgb),.12)',
+                  '--spot': 'rgba(var(--accent-rgb),.22)',
                 } as CSSProperties
               }
             >
@@ -98,7 +95,7 @@ export default function HowItWorks() {
                 className="step-head"
                 style={
                   {
-                    background: 'linear-gradient(145deg,#121026,#1b1744)',
+                    background: 'var(--surface-tint)',
                   } as CSSProperties
                 }
               >
@@ -140,7 +137,7 @@ export default function HowItWorks() {
             style={
               {
                 '--d': '.1s',
-                '--glow': 'rgba(168,85,247,.45)',
+                '--glow': 'rgba(var(--accent-rgb),.45)',
               } as CSSProperties
             }
           >
@@ -148,9 +145,9 @@ export default function HowItWorks() {
               className="step-card spot"
               style={
                 {
-                  '--c': '#c084fc',
-                  '--tint': 'rgba(192,132,252,.12)',
-                  '--spot': 'rgba(192,132,252,.22)',
+                  '--c': 'var(--primary)',
+                  '--tint': 'rgba(var(--accent-rgb),.12)',
+                  '--spot': 'rgba(var(--accent-rgb),.22)',
                 } as CSSProperties
               }
             >
@@ -158,7 +155,7 @@ export default function HowItWorks() {
                 className="step-head"
                 style={
                   {
-                    background: 'linear-gradient(145deg,#200f33,#35144b)',
+                    background: 'var(--surface-tint)',
                   } as CSSProperties
                 }
               >
@@ -200,7 +197,7 @@ export default function HowItWorks() {
             style={
               {
                 '--d': '.2s',
-                '--glow': 'rgba(56,189,248,.45)',
+                '--glow': 'rgba(var(--accent-rgb),.45)',
               } as CSSProperties
             }
           >
@@ -208,9 +205,9 @@ export default function HowItWorks() {
               className="step-card spot"
               style={
                 {
-                  '--c': '#38bdf8',
-                  '--tint': 'rgba(56,189,248,.12)',
-                  '--spot': 'rgba(56,189,248,.22)',
+                  '--c': 'var(--accent)',
+                  '--tint': 'rgba(var(--accent-rgb),.12)',
+                  '--spot': 'rgba(var(--accent-rgb),.22)',
                 } as CSSProperties
               }
             >
@@ -218,7 +215,7 @@ export default function HowItWorks() {
                 className="step-head"
                 style={
                   {
-                    background: 'linear-gradient(145deg,#0a1e33,#13344f)',
+                    background: 'var(--surface-tint)',
                   } as CSSProperties
                 }
               >
@@ -260,7 +257,7 @@ export default function HowItWorks() {
             style={
               {
                 '--d': '.3s',
-                '--glow': 'rgba(52,211,153,.45)',
+                '--glow': 'rgba(var(--accent-rgb),.45)',
               } as CSSProperties
             }
           >
@@ -268,9 +265,9 @@ export default function HowItWorks() {
               className="step-card spot"
               style={
                 {
-                  '--c': '#34d399',
-                  '--tint': 'rgba(52,211,153,.12)',
-                  '--spot': 'rgba(52,211,153,.22)',
+                  '--c': 'var(--accent)',
+                  '--tint': 'rgba(var(--accent-rgb),.12)',
+                  '--spot': 'rgba(var(--accent-rgb),.22)',
                 } as CSSProperties
               }
             >
@@ -278,8 +275,8 @@ export default function HowItWorks() {
                 className="step-head"
                 style={
                   {
-                    background: 'linear-gradient(145deg,#07221c,#0f3a30)',
-                    color: '#fff',
+                    background: 'var(--surface-tint)',
+                    color: 'var(--foreground)',
                   } as CSSProperties
                 }
               >

@@ -36,10 +36,7 @@ export default function SignupForm() {
         <span id="cta-label" aria-live="polite">
           {submitted ? "You're on the list ✓" : 'Create Free Account'}
         </span>
-        <span
-          className="arr"
-          style={{ background: 'var(--violet)', color: '#fff' }}
-        >
+        <span className="arr">
           <SiteIcon name="arrow-right" className="h-4 w-4" />
         </span>
       </button>

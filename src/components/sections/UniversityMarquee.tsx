@@ -16,8 +16,11 @@ const universities = [
 
 export default function UniversityMarquee() {
   return (
-    <div className="mt-16">
-      <p className="reveal mb-6 text-center text-[12px] font-semibold uppercase tracking-[.18em] text-[color:var(--muted)]">
+    <section
+      className="pt-4"
+      aria-label="Universities represented by NexaHire students"
+    >
+      <p className="reveal mb-6 text-center text-[12px] font-semibold uppercase tracking-[.18em] text-[color:var(--muted-foreground)]">
         Designed for students from Pakistan&apos;s leading universities
       </p>
       <div className="marquee">
@@ -41,6 +44,6 @@ export default function UniversityMarquee() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }

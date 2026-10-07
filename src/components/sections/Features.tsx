@@ -180,8 +180,8 @@ export default function Features() {
       className="container-x mt-16 grid items-center gap-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-16"
     >
       <div className="reveal">
-        <div className="mb-3 inline-flex items-center gap-2 px-2 text-[11px] font-semibold uppercase tracking-[.15em] text-[color:var(--muted)]">
-          <span className="h-2 w-2 rounded-[3px] bg-[color:var(--violet)]" />
+        <div className="mb-3 inline-flex items-center gap-2 px-2 text-[11px] font-semibold uppercase tracking-[.15em] text-[color:var(--muted-foreground)]">
+          <span className="h-2 w-2 rounded-[3px] bg-[color:var(--primary)]" />
           Platform
         </div>
         <ScrubHeading className="h-section mb-6 px-2">
@@ -232,7 +232,7 @@ export default function Features() {
                 </span>
               </span>
               <span className="fx-desc">
-                <p className="pl-[42px] pr-6 pt-2 text-[13.5px] leading-relaxed text-[color:var(--muted)]">
+                <p className="pl-[42px] pr-6 pt-2 text-[13.5px] leading-relaxed text-[color:var(--muted-foreground)]">
                   {item.description}
                 </p>
               </span>
@@ -248,7 +248,7 @@ export default function Features() {
         className="reveal relative mx-auto aspect-[1.08/1] w-full max-w-[560px]"
         style={{ '--d': '.15s' } as CSSProperties}
       >
-        <div className="absolute -inset-6 -z-10 rounded-[36px] bg-gradient-to-br from-indigo-600/25 via-violet-600/20 to-sky-500/20 blur-3xl" />
+        <div className="absolute -inset-6 -z-10 rounded-[36px] bg-surface-tint blur-3xl" />
         <div
           className={`fx-panel fx-panel-l${swapping ? ' swap' : ''}`}
           id="fx-pl"
@@ -257,7 +257,7 @@ export default function Features() {
           className={`fx-panel fx-panel-r${swapping ? ' swap' : ''}`}
           id="fx-pr"
         />
-        <div className="absolute bottom-0 left-[9%] right-[9%] top-0 z-[2] overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 shadow-2xl shadow-black/70 border border-white/10">
+        <div className="absolute bottom-0 left-[9%] right-[9%] top-0 z-[2] overflow-hidden rounded-2xl bg-surface-tint shadow-teal border border-border">
           {images.map((image, index) => (
             <Image
               key={index}
@@ -275,7 +275,7 @@ export default function Features() {
               fetchPriority={index === 0 ? 'high' : 'auto'}
             />
           ))}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/10 to-transparent" />
         </div>
         <div className="fx-frame" />
         <div
@@ -283,7 +283,7 @@ export default function Features() {
           className={`pointer-events-none absolute inset-0 z-[4]${chipsVisible ? ' show' : ''}`}
         >
           <div
-            className="chip glass-chip absolute right-[12%] top-[10%] grid h-9 w-9 place-items-center rounded-xl text-[color:var(--violet)]"
+            className="chip glass-chip absolute right-[12%] top-[10%] grid h-9 w-9 place-items-center rounded-xl text-[color:var(--primary)]"
             style={{ '--i': 3 } as CSSProperties}
           >
             <SiteIcon id="fx-ico" name={feature.chipIcon} className="h-4 w-4" />
@@ -295,12 +295,12 @@ export default function Features() {
             {feature.tags.map(([icon, label], index) => (
               <div
                 key={label}
-                className="chip glass-chip inline-flex w-fit items-center gap-1.5 rounded-md px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-slate-200"
+                className="chip glass-chip inline-flex w-fit items-center gap-1.5 rounded-md px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-muted-foreground"
                 style={{ '--i': index } as CSSProperties}
               >
                 <SiteIcon
                   name={icon}
-                  className="h-3 w-3 text-[color:var(--violet)]"
+                  className="h-3 w-3 text-[color:var(--primary)]"
                 />
                 {label}
               </div>
@@ -311,17 +311,20 @@ export default function Features() {
             style={{ '--i': 4 } as CSSProperties}
           >
             <div className="fx-float glass-chip rounded-xl px-3.5 py-2.5">
-              <div id="fx-ct" className="text-[11.5px] font-bold text-white">
+              <div
+                id="fx-ct"
+                className="text-[11.5px] font-bold text-foreground"
+              >
                 {feature.caption}
               </div>
               <div
                 id="fx-cs"
-                className="mt-0.5 text-[10px] text-[color:var(--muted)]"
+                className="mt-0.5 text-[10px] text-[color:var(--muted-foreground)]"
               >
                 {feature.subtitle}
               </div>
-              <div className="mt-2 h-1 w-28 overflow-hidden rounded-full bg-white/10">
-                <div className="fx-bar h-full w-full rounded-full bg-gradient-to-r from-indigo-500 to-emerald-400" />
+              <div className="mt-2 h-1 w-28 overflow-hidden rounded-full bg-surface-tint">
+                <div className="fx-bar h-full w-full rounded-full bg-primary" />
               </div>
             </div>
           </div>

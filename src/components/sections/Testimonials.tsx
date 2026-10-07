@@ -11,7 +11,7 @@ export default function Testimonials() {
         <div className="mx-auto mb-14 max-w-3xl text-center lg:mb-20">
           <div className="badge reveal">
             <SiteIcon
-              className="w-3.5 h-3.5 text-[color:var(--violet)]"
+              className="w-3.5 h-3.5 text-accent"
               name="message-circle"
             />{' '}
             Student Stories
@@ -22,32 +22,13 @@ export default function Testimonials() {
         </div>
         <div className="grid gap-5 lg:grid-cols-12">
           <article className="reveal lg:col-span-7">
-            <div
-              className="t-card spot"
-              style={
-                {
-                  background:
-                    'linear-gradient(145deg,#12102e,#1a1744 60%,#292468)',
-                  color: '#fff',
-                  border: '1px solid rgba(129,140,248,0.2)',
-                  '--spot': 'rgba(165,180,252,.2)',
-                } as CSSProperties
-              }
-            >
+            <div className="t-card spot">
               <div>
                 <div className="mb-5 flex items-center justify-between">
                   <span className="stars">★★★★★</span>
-                  <span
-                    className="t-chip"
-                    style={
-                      {
-                        background: 'rgba(255,255,255,.10)',
-                        color: '#e0e7ff',
-                      } as CSSProperties
-                    }
-                  >
+                  <span className="t-chip">
                     <SiteIcon
-                      className="h-3.5 w-3.5 text-indigo-300"
+                      className="h-3.5 w-3.5 text-accent"
                       name="briefcase"
                     />
                     Internship in 3 weeks
@@ -71,10 +52,10 @@ export default function Testimonials() {
                   loading="lazy"
                 />
                 <div>
-                  <div className="text-[14.5px] font-semibold text-white">
+                  <div className="text-[14.5px] font-semibold text-foreground">
                     Ayesha Khalid
                   </div>
-                  <div className="text-[12px] text-indigo-200">
+                  <div className="text-[12px] text-muted-foreground">
                     FAST-NUCES &apos;26 • Software Engineering
                   </div>
                 </div>
@@ -85,28 +66,8 @@ export default function Testimonials() {
             className="reveal lg:col-span-5"
             style={{ '--d': '.1s' } as CSSProperties}
           >
-            <div
-              className="t-card spot"
-              style={
-                {
-                  background:
-                    'linear-gradient(145deg,#061a29,#0c2d3d 60%,#09443b)',
-                  color: '#fff',
-                  border: '1px solid rgba(56,189,248,0.25)',
-                  '--spot': 'rgba(56,189,248,.2)',
-                } as CSSProperties
-              }
-            >
-              <div
-                className="t-chip"
-                style={
-                  {
-                    background: 'rgba(56,189,248,.15)',
-                    color: '#7dd3fc',
-                    width: 'fit-content',
-                  } as CSSProperties
-                }
-              >
+            <div className="t-card spot">
+              <div className="t-chip">
                 <SiteIcon className="h-3.5 w-3.5" name="trending-up" />
                 Mock interview score
               </div>
@@ -115,14 +76,14 @@ export default function Testimonials() {
                   className="serif"
                   style={
                     {
-                      fontSize: 'clamp(64px,9vw,112px)',
+                      fontSize: 'clamp(48px,6vw,80px)',
                       lineHeight: '.95',
                       letterSpacing: '-.03em',
                     } as CSSProperties
                   }
                 >
                   <span
-                    className="opacity-60"
+                    className="text-muted-foreground"
                     style={{ fontSize: '.55em' } as CSSProperties}
                   >
                     62% →
@@ -135,15 +96,13 @@ export default function Testimonials() {
                     className="count2"
                     style={
                       {
-                        background: 'linear-gradient(135deg,#38bdf8,#34d399)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
+                        color: 'var(--primary)',
                       } as CSSProperties
                     }
                   />
                   %
                 </div>
-                <p className="mt-4 max-w-[28ch] text-[15px] leading-snug text-slate-300">
+                <p className="mt-4 max-w-[28ch] text-[15px] leading-snug text-muted-foreground">
                   By the third practice session — and the real interview felt
                   easy after that.
                 </p>
@@ -154,17 +113,7 @@ export default function Testimonials() {
             className="reveal lg:col-span-5"
             style={{ '--d': '.05s' } as CSSProperties}
           >
-            <div
-              className="t-card spot"
-              style={
-                {
-                  background: 'rgba(255,255,255,.03)',
-                  border: '1px solid rgba(255,255,255,.08)',
-                  color: '#fff',
-                  '--spot': 'rgba(129,140,248,.18)',
-                } as CSSProperties
-              }
-            >
+            <div className="t-card spot">
               <div>
                 <div className="mb-4">
                   <span className="stars">★★★★★</span>
@@ -185,10 +134,10 @@ export default function Testimonials() {
                   loading="lazy"
                 />
                 <div>
-                  <div className="text-[14.5px] font-semibold text-white">
+                  <div className="text-[14.5px] font-semibold text-foreground">
                     Hassan Raza
                   </div>
-                  <div className="text-[12px] text-[color:var(--muted)]">
+                  <div className="text-[12px] text-[color:var(--muted-foreground)]">
                     SZABIST &apos;26 • AI &amp; Data Science
                   </div>
                 </div>
@@ -199,18 +148,7 @@ export default function Testimonials() {
             className="reveal lg:col-span-7"
             style={{ '--d': '.15s' } as CSSProperties}
           >
-            <div
-              className="t-card spot"
-              style={
-                {
-                  background:
-                    'linear-gradient(145deg,#1b1233,#26164d 60%,#3e1b73)',
-                  color: '#fff',
-                  border: '1px solid rgba(168,85,247,0.25)',
-                  '--spot': 'rgba(168,85,247,.2)',
-                } as CSSProperties
-              }
-            >
+            <div className="t-card spot">
               <div>
                 <div className="mb-4">
                   <span className="stars">★★★★★</span>
@@ -237,10 +175,10 @@ export default function Testimonials() {
                   loading="lazy"
                 />
                 <div>
-                  <div className="text-[14.5px] font-semibold text-white">
+                  <div className="text-[14.5px] font-semibold text-foreground">
                     Fatima Ahmed
                   </div>
-                  <div className="text-[12px] text-purple-200">
+                  <div className="text-[12px] text-muted-foreground">
                     NUST &apos;26 • Computer Engineering
                   </div>
                 </div>

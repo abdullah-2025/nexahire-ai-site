@@ -20,7 +20,11 @@ const DPR_CAP = 1.5
 const MAX_POINTS = 65536
 const TAU = Math.PI * 2
 const MAX_COLORS = 5
-const DEFAULT_COLORS = ['#7189ff', '#3074f9', '#0b0b18']
+const DEFAULT_COLORS = [
+  'var(--color-teal-100)',
+  'var(--color-teal-300)',
+  'var(--color-teal-100)',
+]
 
 const RING_EDGE = 4
 
@@ -505,6 +509,12 @@ function valueNoise1(x: number, seed: number) {
 function hexToRgb(hex: string): [number, number, number] {
   if (typeof hex !== 'string') return [1, 1, 1]
   let s = hex.trim()
+  // Resolve the shared CSS palette for WebGL's numeric color uniforms.
+  if (s.startsWith('var(') && typeof document !== 'undefined') {
+    s = getComputedStyle(document.documentElement)
+      .getPropertyValue(s.slice(4, -1))
+      .trim()
+  }
   const m = s.match(/^rgba?\(([^)]+)\)$/i)
   if (m) {
     const p = m[1].split(',').map((v) => parseFloat(v))
@@ -559,7 +569,7 @@ function OriginkitBaseCursorRingField(props: CursorRingFieldProps) {
   } = props
 
   const group: ColorsGroup = colors && !Array.isArray(colors) ? colors : {}
-  const background = backgroundProp ?? group.background ?? '#04050a'
+  const background = backgroundProp ?? group.background ?? 'var(--background)'
 
   const clean = (list?: string[]) => (list ?? []).filter((c) => !!c)
   const rawPoints =
@@ -996,7 +1006,7 @@ function OriginkitBaseCursorRingField(props: CursorRingFieldProps) {
 }
 
 const __originkitPresetProps = {
-  background: '#E1D8D7',
+  background: 'var(--background)',
   dotSize: 275,
   speed: 37,
   cameraDistance: 170,
