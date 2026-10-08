@@ -5,7 +5,6 @@ import UniversityMarquee from '@/components/sections/UniversityMarquee'
 import Stats from '@/components/sections/Stats'
 import HowItWorks from '@/components/sections/HowItWorks'
 import Readiness from '@/components/sections/Readiness'
-import CareerJourney from '@/components/sections/CareerJourney'
 import Testimonials from '@/components/sections/Testimonials'
 import Pricing from '@/components/sections/Pricing'
 import Faq from '@/components/sections/Faq'
@@ -17,12 +16,11 @@ export default function Home() {
     <>
       <Hero />
       <SiteSections>
-        <Features />
         <UniversityMarquee />
         <Stats />
+        <Features />
         <HowItWorks />
         <Readiness />
-        <CareerJourney />
         <Testimonials />
         <Pricing />
         <Faq />

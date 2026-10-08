@@ -8,16 +8,16 @@ export default function Readiness() {
       <div className="container-x grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div className="reveal relative" id="rd-wrap">
           <div
-            className="rd-orb h-64 w-64 bg-violet-600/25 -left-10 -top-10"
+            className="rd-orb h-64 w-64 bg-accent/25 -left-10 -top-10"
             data-speed="-40"
           ></div>
           <div
-            className="rd-orb h-60 w-60 bg-sky-500/20 -right-8 -bottom-10"
+            className="rd-orb h-60 w-60 bg-accent/20 -right-8 -bottom-10"
             data-speed="50"
           ></div>
           <div className="rd-card">
             <div className="mb-8 flex items-center justify-between">
-              <h3 className="text-[18px] font-semibold tracking-tight text-white">
+              <h3 className="text-[18px] font-semibold tracking-tight text-foreground">
                 Your Career Readiness
               </h3>
               <span className="live">
@@ -32,7 +32,7 @@ export default function Readiness() {
                     cy="60"
                     r="50"
                     fill="none"
-                    stroke="rgba(255,255,255,.08)"
+                    stroke="var(--secondary)"
                     strokeWidth="10"
                   ></circle>
                   <circle
@@ -50,9 +50,9 @@ export default function Readiness() {
                   ></circle>
                   <defs>
                     <linearGradient id="rdGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0" stopColor="#6366f1"></stop>
-                      <stop offset=".55" stopColor="#818cf8"></stop>
-                      <stop offset="1" stopColor="#38bdf8"></stop>
+                      <stop offset="0" stopColor="var(--primary)"></stop>
+                      <stop offset=".55" stopColor="var(--primary)"></stop>
+                      <stop offset="1" stopColor="var(--accent)"></stop>
                     </linearGradient>
                   </defs>
                 </svg>
@@ -60,11 +60,11 @@ export default function Readiness() {
                   <div>
                     <span
                       id="rd-num"
-                      className="text-[46px] font-semibold leading-none tracking-tight tabular-nums text-white"
+                      className="text-[46px] font-semibold leading-none tracking-tight tabular-nums text-foreground"
                     >
                       0
                     </span>
-                    <div className="mt-1 text-[12px] text-[color:var(--muted)]">
+                    <div className="mt-1 text-[12px] text-[color:var(--muted-foreground)]">
                       /100
                     </div>
                   </div>
@@ -73,64 +73,76 @@ export default function Readiness() {
               <div className="w-full flex-1 space-y-4">
                 <div>
                   <div className="mb-1.5 flex justify-between text-[12.5px]">
-                    <span className="text-[color:var(--muted)]">
+                    <span className="text-[color:var(--muted-foreground)]">
                       CV Quality
                     </span>
-                    <b className="rd-val tabular-nums text-white" data-t="85">
+                    <b
+                      className="rd-val tabular-nums text-foreground"
+                      data-t="85"
+                    >
                       0%
                     </b>
                   </div>
                   <div className="rd-bar">
                     <div
-                      style={{ background: '#6366f1' } as CSSProperties}
+                      style={{ background: 'var(--primary)' } as CSSProperties}
                       data-t="85"
                     ></div>
                   </div>
                 </div>
                 <div>
                   <div className="mb-1.5 flex justify-between text-[12.5px]">
-                    <span className="text-[color:var(--muted)]">
+                    <span className="text-[color:var(--muted-foreground)]">
                       Skills Match
                     </span>
-                    <b className="rd-val tabular-nums text-white" data-t="72">
+                    <b
+                      className="rd-val tabular-nums text-foreground"
+                      data-t="72"
+                    >
                       0%
                     </b>
                   </div>
                   <div className="rd-bar">
                     <div
-                      style={{ background: '#fbbf24' } as CSSProperties}
+                      style={{ background: 'var(--accent)' } as CSSProperties}
                       data-t="72"
                     ></div>
                   </div>
                 </div>
                 <div>
                   <div className="mb-1.5 flex justify-between text-[12.5px]">
-                    <span className="text-[color:var(--muted)]">
+                    <span className="text-[color:var(--muted-foreground)]">
                       Interview Prep
                     </span>
-                    <b className="rd-val tabular-nums text-white" data-t="64">
+                    <b
+                      className="rd-val tabular-nums text-foreground"
+                      data-t="64"
+                    >
                       0%
                     </b>
                   </div>
                   <div className="rd-bar">
                     <div
-                      style={{ background: '#a855f7' } as CSSProperties}
+                      style={{ background: 'var(--primary)' } as CSSProperties}
                       data-t="64"
                     ></div>
                   </div>
                 </div>
                 <div>
                   <div className="mb-1.5 flex justify-between text-[12.5px]">
-                    <span className="text-[color:var(--muted)]">
+                    <span className="text-[color:var(--muted-foreground)]">
                       Roadmap Progress
                     </span>
-                    <b className="rd-val tabular-nums text-white" data-t="81">
+                    <b
+                      className="rd-val tabular-nums text-foreground"
+                      data-t="81"
+                    >
                       0%
                     </b>
                   </div>
                   <div className="rd-bar">
                     <div
-                      style={{ background: '#34d399' } as CSSProperties}
+                      style={{ background: 'var(--accent)' } as CSSProperties}
                       data-t="81"
                     ></div>
                   </div>
@@ -142,7 +154,7 @@ export default function Readiness() {
         <div>
           <div className="badge reveal">
             <SiteIcon
-              className="w-3.5 h-3.5 text-[color:var(--violet)]"
+              className="w-3.5 h-3.5 text-[color:var(--primary)]"
               name="gauge"
             />{' '}
             One Score. Total Clarity.
@@ -150,7 +162,7 @@ export default function Readiness() {
           <ScrubHeading className="h-section mt-5">
             Know exactly where you <span className="serif">stand</span>
           </ScrubHeading>
-          <p className="reveal mt-5 text-[16px] leading-relaxed text-[color:var(--muted)]">
+          <p className="reveal mt-5 text-[16px] leading-relaxed text-[color:var(--muted-foreground)]">
             Your Readiness Score combines outputs from CV analysis, career
             roadmaps, mock interviews, and opportunity matches into one
             weighted, transparent number. It updates in real-time as you
@@ -158,7 +170,7 @@ export default function Readiness() {
           </p>
           <ul className="mt-7 space-y-3.5">
             <li
-              className="reveal flex items-start gap-3 text-[15px] text-slate-200"
+              className="reveal flex items-start gap-3 text-[15px] text-muted-foreground"
               style={{ '--d': '.05s' } as CSSProperties}
             >
               <span className="check">
@@ -167,7 +179,7 @@ export default function Readiness() {
               Weighted scoring formula with transparent breakdown
             </li>
             <li
-              className="reveal flex items-start gap-3 text-[15px] text-slate-200"
+              className="reveal flex items-start gap-3 text-[15px] text-muted-foreground"
               style={{ '--d': '.15s' } as CSSProperties}
             >
               <span className="check">
@@ -176,7 +188,7 @@ export default function Readiness() {
               Historical tracking to see your progress over time
             </li>
             <li
-              className="reveal flex items-start gap-3 text-[15px] text-slate-200"
+              className="reveal flex items-start gap-3 text-[15px] text-muted-foreground"
               style={{ '--d': '.25s' } as CSSProperties}
             >
               <span className="check">

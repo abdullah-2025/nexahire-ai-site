@@ -1,8 +1,8 @@
 export const faqs = [
   {
-    question: 'Who is NexaHire AI built for?',
+    question: 'Who is NexaHire built for?',
     answer:
-      'NexaHire AI is built for university students and fresh graduates in Pakistan who want one connected place for their CV, skills, roadmap, interview practice and job search.',
+      'NexaHire is built for university students and fresh graduates in Pakistan who want one connected place for their CV, skills, roadmap, interview practice and job search.',
   },
   {
     question: 'Is it really free to start?',

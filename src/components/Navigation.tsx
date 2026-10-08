@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Icon } from './HeroIcon'
+import BrandLogo from './BrandLogo'
 import { icons } from '@/data/hero-icons'
 import { authLinks } from '@/data/auth-links'
 
@@ -19,11 +20,8 @@ export default function Navigation() {
   return (
     <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
       <div className="nav__inner">
-        <a href="#" className="nav__logo">
-          <span className="nav__logo-mark">N</span>
-          <span className="nav__logo-text">
-            NexaHire <span className="nav__logo-ai">AI</span>
-          </span>
+        <a href="#" className="nav__logo" aria-label="NexaHire home">
+          <BrandLogo />
         </a>
 
         {/* Center Pill Capsule for Links */}

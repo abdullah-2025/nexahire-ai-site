@@ -1,0 +1,40 @@
+/* Approved palette — docs/design.md. All presentation colors derive from here. */
+:root {
+  color-scheme: light;
+  --color-teal-100: #d0dfe1;
+  --color-teal-300: #76a7ad;
+  --color-teal-500: #3b737a;
+  --color-teal-800: #144147;
+  --color-teal-950: #042e33;
+  --white: #ffffff;
+  --white-rgb: 255, 255, 255;
+  --bg-rgb: var(--white-rgb);
+  --surface-rgb: var(--white-rgb);
+  --accent-rgb: 118, 167, 173;
+  --accent-channels: 118 167 173;
+  --secondary-channels: 208 223 225;
+  --foreground-channels: 4 46 51;
+  --shadow-rgb: 4, 46, 51;
+
+  --background: var(--white);
+  --foreground: var(--color-teal-950);
+  --primary: var(--color-teal-500);
+  --primary-hover: var(--color-teal-800);
+  --primary-foreground: var(--white);
+  --secondary: var(--color-teal-100);
+  --secondary-foreground: var(--color-teal-800);
+  --accent: var(--color-teal-300);
+  --accent-foreground: var(--color-teal-950);
+  --surface-tint: color-mix(in srgb, var(--secondary) 22%, var(--white));
+  --muted: var(--surface-tint);
+  --muted-foreground: var(--color-teal-500);
+  --border: var(--color-teal-100);
+  --card: var(--white);
+  --card-foreground: var(--color-teal-950);
+  --footer-background: var(--color-teal-950);
+  --footer-foreground: var(--white);
+  --shadow-soft: 0 8px 28px -12px rgba(var(--shadow-rgb), 0.12);
+  --shadow-card: 0 18px 44px -24px rgba(var(--shadow-rgb), 0.18);
+  --line: var(--border);
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}

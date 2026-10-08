@@ -36,23 +36,20 @@ export default function CareerJourney() {
       style={
         {
           background:
-            'radial-gradient(ellipse at 50% 50%, rgba(99,102,241,0.06) 0%, transparent 70%)',
+            'radial-gradient(ellipse at 50% 50%, rgba(var(--accent-rgb),0.06) 0%, transparent 70%)',
         } as CSSProperties
       }
     >
       <div className="container-x">
         <div className="mx-auto mb-14 max-w-3xl text-center lg:mb-20">
           <div className="badge reveal">
-            <SiteIcon
-              className="w-3.5 h-3.5 text-[color:var(--violet)]"
-              name="play-circle"
-            />{' '}
+            <SiteIcon className="w-3.5 h-3.5 text-accent" name="play-circle" />{' '}
             How It Works
           </div>
           <ScrubHeading className="h-section mt-5">
             Your Journey to <span className="serif">Opportunity</span>
           </ScrubHeading>
-          <p className="reveal mt-5 text-[16px] leading-relaxed text-[color:var(--muted)]">
+          <p className="reveal mt-5 text-[16px] leading-relaxed text-[color:var(--muted-foreground)]">
             Four simple steps to find and apply for the perfect opportunity.
             Start your journey today — it&apos;s completely free.
           </p>
@@ -62,8 +59,8 @@ export default function CareerJourney() {
             className="jr-step reveal"
             style={
               {
-                '--c': '#fbbf24',
-                '--g': 'linear-gradient(135deg,#f59e0b,#b45309)',
+                '--c': 'var(--accent)',
+                '--g': 'var(--secondary)',
               } as CSSProperties
             }
           >
@@ -106,15 +103,15 @@ export default function CareerJourney() {
             </div>
             <div
               className="jr-line"
-              style={{ '--n': '#38bdf8' } as CSSProperties}
+              style={{ '--n': 'var(--accent)' } as CSSProperties}
             ></div>
           </div>
           <div
             className="jr-step reveal"
             style={
               {
-                '--c': '#38bdf8',
-                '--g': 'linear-gradient(135deg,#0284c7,#0369a1)',
+                '--c': 'var(--accent)',
+                '--g': 'var(--secondary)',
               } as CSSProperties
             }
           >
@@ -157,15 +154,15 @@ export default function CareerJourney() {
             </div>
             <div
               className="jr-line"
-              style={{ '--n': '#c084fc' } as CSSProperties}
+              style={{ '--n': 'var(--primary)' } as CSSProperties}
             ></div>
           </div>
           <div
             className="jr-step reveal"
             style={
               {
-                '--c': '#c084fc',
-                '--g': 'linear-gradient(135deg,#9333ea,#6b21a8)',
+                '--c': 'var(--primary)',
+                '--g': 'var(--secondary)',
               } as CSSProperties
             }
           >
@@ -208,15 +205,15 @@ export default function CareerJourney() {
             </div>
             <div
               className="jr-line"
-              style={{ '--n': '#34d399' } as CSSProperties}
+              style={{ '--n': 'var(--accent)' } as CSSProperties}
             ></div>
           </div>
           <div
             className="jr-step reveal"
             style={
               {
-                '--c': '#34d399',
-                '--g': 'linear-gradient(135deg,#10b981,#047857)',
+                '--c': 'var(--accent)',
+                '--g': 'var(--secondary)',
               } as CSSProperties
             }
           >
@@ -263,12 +260,12 @@ export default function CareerJourney() {
           <div className="jr-cta" id="jr-cta">
             <div className="relative">
               <div className="jr-icon">
-                <SiteIcon className="h-8 w-8 text-amber-300" name="sparkles" />
+                <SiteIcon className="h-8 w-8 text-accent" name="sparkles" />
               </div>
               <h3 className="text-[clamp(26px,4vw,42px)] font-bold leading-tight tracking-tight text-white">
                 Ready to Start Your Journey?
               </h3>
-              <p className="mx-auto mb-8 mt-4 max-w-xl text-[16px] leading-relaxed text-indigo-100/90">
+              <p className="mx-auto mb-8 mt-4 max-w-xl text-[16px] leading-relaxed text-secondary">
                 Join thousands of Pakistani youth already discovering
                 opportunities. It&apos;s completely free and takes less than a
                 minute to get started.
