@@ -33,7 +33,7 @@ export default function HowItWorks() {
             steps
           </ScrubHeading>
           <p className="reveal mt-5 text-[16px] leading-relaxed text-[color:var(--muted-foreground)]">
-            Every step feeds into the next. That&apos;s what makes NexaHire AI
+            Every step feeds into the next. That&apos;s what makes NexaHire
             different from a pile of disconnected tools.
           </p>
         </div>

@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════
-   NexaHire AI — Design System
+   NexaHire — Design System
    ══════════════════════════════════════════════════════════ */
 
 *,
@@ -115,15 +115,6 @@ a {
   display: inline-flex;
   align-items: baseline;
   gap: 4px;
-}
-
-.nav__logo-ai {
-  font-family: var(--font-sans);
-  font-style: normal;
-  font-weight: 400;
-  font-size: 19px;
-  color: var(--muted-foreground);
-  letter-spacing: -0.01em;
 }
 
 /* Center Links Capsule */

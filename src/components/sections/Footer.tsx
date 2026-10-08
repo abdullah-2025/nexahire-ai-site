@@ -1,5 +1,3 @@
-import type { CSSProperties } from 'react'
-
 export default function Footer() {
   return (
     <footer className="foot">
@@ -7,18 +5,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4 lg:grid-cols-5">
           <div className="col-span-2 md:col-span-4 lg:col-span-2">
             <a href="#top" className="logo">
-              <span className="logo-mark">N</span>NexaHire{' '}
-              <span
-                className="serif"
-                style={
-                  {
-                    fontSize: '18px',
-                    color: 'var(--muted-foreground)',
-                  } as CSSProperties
-                }
-              >
-                AI
-              </span>
+              <span className="logo-mark">N</span>NexaHire
             </a>
             <p className="mb-6 mt-4 max-w-xs text-[14px] leading-relaxed text-[color:var(--muted-foreground)]">
               AI-powered career readiness platform built for Pakistan&apos;s
@@ -147,7 +134,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-[color:var(--color-teal-800)] pt-7 text-[12.5px] text-[color:var(--muted-foreground)] sm:flex-row">
-          <p>© 2026 NexaHire AI. Built at SZABIST Islamabad.</p>
+          <p>© 2026 NexaHire. Built at SZABIST Islamabad.</p>
           <p>Muhammad Abdullah Khan • Ali Hassan Ishaq • Abdul Moiz</p>
         </div>
         <div className="giant" aria-hidden="true">

@@ -21,9 +21,7 @@ export default function Navigation() {
       <div className="nav__inner">
         <a href="#" className="nav__logo">
           <span className="nav__logo-mark">N</span>
-          <span className="nav__logo-text">
-            NexaHire <span className="nav__logo-ai">AI</span>
-          </span>
+          <span className="nav__logo-text">NexaHire</span>
         </a>
 
         {/* Center Pill Capsule for Links */}

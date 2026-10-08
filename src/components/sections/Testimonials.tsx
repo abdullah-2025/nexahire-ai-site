@@ -37,7 +37,7 @@ export default function Testimonials() {
                 <div className="qmark">“</div>
                 <p className="t-quote-lg mt-2">
                   I used to send the same generic CV to every listing. NexaHire
-                  AI&apos;s AI analysis showed me exactly which skills were
+                  &apos;s AI analysis showed me exactly which skills were
                   missing for my target role. Landed an internship at a fintech
                   startup within 3 weeks.
                 </p>

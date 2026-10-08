@@ -31,7 +31,7 @@ for (const width of [1440, 768, 390, 375, 320]) {
   )
   assert.equal(
     await page.title(),
-    'NexaHire AI — AI-Powered Career Readiness Platform',
+    'NexaHire — AI-Powered Career Readiness Platform',
   )
   assert.equal(
     await page.locator('.hero__proof-text strong').textContent(),

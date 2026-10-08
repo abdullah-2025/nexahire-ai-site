@@ -1,6 +1,6 @@
-# NexaHire AI Site
+# NexaHire Site
 
-The NexaHire AI landing page, built with Next.js App Router, React, and TypeScript. The original design, responsive layouts, fonts, imagery, and animations are preserved.
+The NexaHire landing page, built with Next.js App Router, React, and TypeScript. The original design, responsive layouts, fonts, imagery, and animations are preserved.
 
 ## Run locally
 
