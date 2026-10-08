@@ -91,14 +91,7 @@ export default function HowItWorks() {
                 } as CSSProperties
               }
             >
-              <div
-                className="step-head"
-                style={
-                  {
-                    background: 'var(--surface-tint)',
-                  } as CSSProperties
-                }
-              >
+              <div className="step-head">
                 <div className="step-aura" aria-hidden="true"></div>
                 <span className="step-num-watermark" aria-hidden="true">
                   01
@@ -151,14 +144,7 @@ export default function HowItWorks() {
                 } as CSSProperties
               }
             >
-              <div
-                className="step-head"
-                style={
-                  {
-                    background: 'var(--surface-tint)',
-                  } as CSSProperties
-                }
-              >
+              <div className="step-head">
                 <div className="step-aura" aria-hidden="true"></div>
                 <span className="step-num-watermark" aria-hidden="true">
                   02
@@ -211,14 +197,7 @@ export default function HowItWorks() {
                 } as CSSProperties
               }
             >
-              <div
-                className="step-head"
-                style={
-                  {
-                    background: 'var(--surface-tint)',
-                  } as CSSProperties
-                }
-              >
+              <div className="step-head">
                 <div className="step-aura" aria-hidden="true"></div>
                 <span className="step-num-watermark" aria-hidden="true">
                   03
@@ -271,15 +250,7 @@ export default function HowItWorks() {
                 } as CSSProperties
               }
             >
-              <div
-                className="step-head"
-                style={
-                  {
-                    background: 'var(--surface-tint)',
-                    color: 'var(--foreground)',
-                  } as CSSProperties
-                }
-              >
+              <div className="step-head">
                 <div className="step-aura" aria-hidden="true"></div>
                 <span className="step-num-watermark" aria-hidden="true">
                   04
