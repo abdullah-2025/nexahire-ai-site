@@ -155,15 +155,15 @@ export default function Hero() {
       <CursorRingField
         background="var(--background)"
         colors={[
-          'var(--color-teal-100)',
-          'var(--color-teal-300)',
-          'var(--color-teal-100)',
+          'var(--color-teal-950)',
+          'var(--color-teal-950)',
+          'var(--color-teal-950)',
         ]}
         dotSize={300}
         speed={30}
         density={160}
         cameraDistance={170}
-        ring={{ push: 55, width: 10, radius: 14, turbulence: 90 }}
+        ring={{ push: 55, width: 10, radius: 9, turbulence: 90 }}
         style={{ position: 'absolute', inset: 0, zIndex: 0 }}
       />
 
