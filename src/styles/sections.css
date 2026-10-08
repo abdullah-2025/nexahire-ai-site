@@ -1322,21 +1322,16 @@
 .site-sections .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 16px;
+}
+.site-sections .brand-logo--footer {
   color: var(--footer-foreground);
 }
-.site-sections .logo-mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 10px;
-  display: grid;
-  place-items: center;
-  color: var(--white);
-  font-weight: 700;
-  font-size: 14px;
-  background: var(--primary);
+.site-sections .brand-logo--footer .brand-logo__mark {
+  background: var(--footer-foreground);
+  color: var(--footer-background);
+}
+.site-sections .brand-logo--footer .brand-logo__name {
+  font-size: 16px;
 }
 
 /* ── Back to Top ── */

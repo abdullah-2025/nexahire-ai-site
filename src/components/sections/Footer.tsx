@@ -1,11 +1,13 @@
+import BrandLogo from '../BrandLogo'
+
 export default function Footer() {
   return (
     <footer className="foot">
       <div className="container-x">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4 lg:grid-cols-5">
           <div className="col-span-2 md:col-span-4 lg:col-span-2">
-            <a href="#top" className="logo">
-              <span className="logo-mark">N</span>NexaHire
+            <a href="#top" className="logo" aria-label="NexaHire home">
+              <BrandLogo variant="footer" />
             </a>
             <p className="mb-6 mt-4 max-w-xs text-[14px] leading-relaxed text-[color:var(--muted-foreground)]">
               AI-powered career readiness platform built for Pakistan&apos;s

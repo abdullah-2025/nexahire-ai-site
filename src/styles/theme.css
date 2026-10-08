@@ -83,38 +83,58 @@ a {
 .nav__logo {
   display: flex;
   align-items: center;
-  gap: 11px;
   flex-shrink: 0;
   padding-left: 2px;
   text-decoration: none;
 }
 
-.nav__logo-mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  font-size: 16px;
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--foreground);
+}
+
+.brand-logo__mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 39px;
+  flex-shrink: 0;
+  padding-right: 4px;
+  border-radius: 10px;
+  background: var(--foreground);
   color: var(--white);
-  background: var(--primary);
-  box-shadow: 0 4px 16px -2px rgba(var(--accent-rgb), 0.16);
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -3px;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nav__logo:hover .nav__logo-mark {
+.brand-logo__mark > span {
+  color: var(--accent);
+}
+
+.brand-logo__mark i {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.nav__logo:hover .brand-logo__mark {
   transform: scale(1.06);
 }
 
-.nav__logo-text {
+.brand-logo__name {
   font-weight: 700;
   font-size: 18px;
   letter-spacing: -0.025em;
-  color: var(--foreground);
-  display: inline-flex;
-  align-items: baseline;
-  gap: 4px;
 }
 
 /* Center Links Capsule */
