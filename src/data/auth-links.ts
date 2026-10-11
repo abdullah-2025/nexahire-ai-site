@@ -1,6 +1,6 @@
-const platformUrl = 'https://ai-powered-job-and-interview-platfo.vercel.app'
+const platformUrl = 'https://app.nexahire.site'
 
 export const authLinks = {
-  signup: `${platformUrl}/signup`,
+  signup: `${platformUrl}/login`,
   login: `${platformUrl}/login`,
 }

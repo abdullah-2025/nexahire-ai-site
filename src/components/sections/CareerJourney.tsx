@@ -1,3 +1,4 @@
+import { authLinks } from '@/data/auth-links'
 import ScrubHeading from '../ScrubHeading'
 import type { CSSProperties } from 'react'
 import SiteIcon from '../SiteIcon'
@@ -271,11 +272,11 @@ export default function CareerJourney() {
                 minute to get started.
               </p>
               <div className="flex flex-col justify-center gap-3 sm:flex-row">
-                <a href="#" className="btn-w">
+                <a href={authLinks.login} className="btn-w">
                   Browse Opportunities{' '}
                   <SiteIcon className="h-4 w-4" name="arrow-right" />
                 </a>
-                <a href="#" className="btn-g">
+                <a href={authLinks.login} className="btn-g">
                   Build Your CV Free
                 </a>
               </div>

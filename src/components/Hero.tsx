@@ -20,7 +20,7 @@ function ProductPreview() {
         <span />
         <span />
         <span />
-        <div className="hero-preview__address">app.nexahire.ai/dashboard</div>
+        <div className="hero-preview__address">app.nexahire.site/dashboard</div>
         <div className="hero-preview__live">
           <i /> Live
         </div>
