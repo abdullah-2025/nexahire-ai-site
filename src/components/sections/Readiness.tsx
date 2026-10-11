@@ -1,3 +1,4 @@
+import { authLinks } from '@/data/auth-links'
 import ScrubHeading from '../ScrubHeading'
 import type { CSSProperties } from 'react'
 import SiteIcon from '../SiteIcon'
@@ -198,7 +199,7 @@ export default function Readiness() {
             </li>
           </ul>
           <a
-            href="#"
+            href={authLinks.login}
             className="btn reveal mt-9"
             style={{ '--d': '.3s' } as CSSProperties}
           >

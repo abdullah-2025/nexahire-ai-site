@@ -1,15 +1,13 @@
 'use client'
 
-import { useState, type FormEvent } from 'react'
+import type { FormEvent } from 'react'
+import { authLinks } from '@/data/auth-links'
 import SiteIcon from './SiteIcon'
 
 export default function SignupForm() {
-  const [submitted, setSubmitted] = useState(false)
-
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    setSubmitted(true)
-    event.currentTarget.reset()
+    window.location.assign(authLinks.login)
   }
 
   return (
@@ -34,7 +32,7 @@ export default function SignupForm() {
       />
       <button className="btn w-full justify-between" type="submit">
         <span id="cta-label" aria-live="polite">
-          {submitted ? "You're on the list ✓" : 'Create Free Account'}
+          Create Free Account
         </span>
         <span className="arr">
           <SiteIcon name="arrow-right" className="h-4 w-4" />

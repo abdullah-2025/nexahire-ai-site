@@ -113,7 +113,7 @@ export default function Pricing() {
                   Priority recruiter visibility
                 </li>
               </ul>
-              <a href="#" className="btn justify-between">
+              <a href={authLinks.login} className="btn justify-between">
                 Upgrade to Pro{' '}
                 <span className="arr">
                   <SiteIcon className="h-4 w-4" name="arrow-up-right" />

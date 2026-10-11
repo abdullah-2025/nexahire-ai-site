@@ -1,3 +1,4 @@
+import { authLinks } from '@/data/auth-links'
 import type { CSSProperties } from 'react'
 import SiteIcon from '../SiteIcon'
 import SignupForm from '../SignupForm'
@@ -17,7 +18,7 @@ export default function CallToAction() {
               readiness score starts building the moment you sign up.
             </p>
             <a
-              href="#"
+              href={authLinks.login}
               className="cta-link mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-[14px] font-semibold transition"
             >
               <SiteIcon
