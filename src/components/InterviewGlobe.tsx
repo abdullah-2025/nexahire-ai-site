@@ -119,8 +119,8 @@ export default function InterviewGlobe() {
       context.arc(centerX, centerY, radius, 0, TAU)
       context.clip()
 
-      context.strokeStyle = 'rgba(118, 167, 173, 0.13)'
-      context.lineWidth = 0.7
+      context.strokeStyle = 'rgba(118, 167, 173, 0.42)'
+      context.lineWidth = 0.9
 
       for (let latitude = -60; latitude <= 60; latitude += 30) {
         const y = Math.sin(latitude * DEG) * radius
@@ -170,9 +170,9 @@ export default function InterviewGlobe() {
       projected.sort((a, b) => a.depth - b.depth)
 
       for (const point of projected) {
-        const alpha = 0.16 + Math.max(0, point.depth) * 0.8
-        const size = (0.8 + Math.max(0, point.depth) * 1.35) * point.weight
-        context.fillStyle = `rgba(118, 167, 173, ${alpha})`
+        const alpha = 0.62 + Math.max(0, point.depth) * 0.38
+        const size = (1.35 + Math.max(0, point.depth) * 1.55) * point.weight
+        context.fillStyle = `rgba(208, 223, 225, ${alpha})`
         context.beginPath()
         context.arc(point.x, point.y, size, 0, TAU)
         context.fill()

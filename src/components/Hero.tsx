@@ -1,4 +1,3 @@
-import AnimatedNumber from './AnimatedNumber'
 import InterviewGlobe from './InterviewGlobe'
 import Navigation from './Navigation'
 import { Icon } from './HeroIcon'
@@ -100,11 +99,7 @@ export default function Hero() {
               <span>ZA</span>
             </div>
             <p>
-              Trusted by{' '}
-              <strong>
-                <AnimatedNumber target={2400} suffix="+" />
-              </strong>{' '}
-              graduates
+              Trusted by <strong>2,400+</strong> graduates
             </p>
           </div>
         </div>
