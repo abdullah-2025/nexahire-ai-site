@@ -1,8 +1,5 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
-import BrandLogo from '@/components/BrandLogo'
 import Footer from '@/components/sections/Footer'
-import { authLinks } from '@/data/auth-links'
 
 export const metadata: Metadata = {
   title: 'Terms of Service — NexaHire',
@@ -33,76 +30,8 @@ export default function TermsOfServicePage() {
         />
       </div>
 
-      {/* Floating Pill Header */}
-      <header className="sticky top-4 z-50 mx-auto w-full max-w-6xl px-4 sm:px-6">
-        <div className="flex items-center justify-between gap-4 rounded-full border border-[#76a7ad]/25 bg-[#042e33]/85 px-4 py-2.5 shadow-xl shadow-black/25 backdrop-blur-xl sm:px-6">
-          <Link
-            href="/"
-            className="flex items-center gap-2 transition-transform hover:scale-[1.02]"
-            aria-label="NexaHire Home"
-          >
-            <BrandLogo variant="footer" />
-          </Link>
-
-          <nav className="hidden items-center gap-6 text-[13.5px] font-medium md:flex">
-            <Link
-              href="/"
-              className="text-[#d0dfe1]/75 transition-colors hover:text-white"
-            >
-              Home
-            </Link>
-            <Link
-              href="/#features"
-              className="text-[#d0dfe1]/75 transition-colors hover:text-white"
-            >
-              Features
-            </Link>
-            <Link
-              href="/#how-it-works"
-              className="text-[#d0dfe1]/75 transition-colors hover:text-white"
-            >
-              How It Works
-            </Link>
-            <Link
-              href="/#pricing"
-              className="text-[#d0dfe1]/75 transition-colors hover:text-white"
-            >
-              Pricing
-            </Link>
-            <Link
-              href="/#faq"
-              className="text-[#d0dfe1]/75 transition-colors hover:text-white"
-            >
-              FAQ
-            </Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <a
-              href={authLinks.signup}
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#3b737a] px-4 py-1.5 text-xs font-semibold text-white transition-all hover:bg-[#144147] hover:shadow-md"
-            >
-              <span>Get Started</span>
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M7 17L17 7M7 7h10v10" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </header>
-
       {/* Main Legal Content Container */}
-      <main className="relative z-10 mx-auto w-full max-w-4xl flex-1 px-4 py-12 sm:px-6 lg:py-16">
+      <main className="relative z-10 mx-auto w-full max-w-4xl flex-1 px-4 pt-16 pb-12 sm:px-6 lg:pt-20 lg:pb-16">
         {/* Page Hero Header */}
         <div className="mb-10 text-center sm:mb-14">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#76a7ad]/30 bg-[#144147]/60 px-3.5 py-1.5 text-xs font-semibold tracking-wider uppercase text-[#76a7ad] backdrop-blur-sm">
