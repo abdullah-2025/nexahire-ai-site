@@ -58,45 +58,29 @@ export default function ContactPage() {
               Features
             </Link>
             <Link
-              href="/privacy"
+              href="/#how-it-works"
               className="text-[#d0dfe1]/75 transition-colors hover:text-white"
             >
-              Privacy Policy
+              How It Works
             </Link>
             <Link
-              href="/terms"
+              href="/#pricing"
               className="text-[#d0dfe1]/75 transition-colors hover:text-white"
             >
-              Terms of Service
+              Pricing
             </Link>
-            <span className="rounded-full bg-[#144147] px-3 py-1 font-semibold text-[#76a7ad] border border-[#76a7ad]/30">
-              Contact Us
-            </span>
+            <Link
+              href="/#faq"
+              className="text-[#d0dfe1]/75 transition-colors hover:text-white"
+            >
+              FAQ
+            </Link>
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1.5 text-xs font-medium text-[#d0dfe1] transition-colors hover:text-white sm:text-sm"
-            >
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M19 12H5M12 19l-7-7 7-7" />
-              </svg>
-              <span>Back to Home</span>
-            </Link>
             <a
               href={authLinks.signup}
-              className="hidden items-center gap-1.5 rounded-full bg-[#3b737a] px-4 py-1.5 text-xs font-semibold text-white transition-all hover:bg-[#144147] hover:shadow-md sm:inline-flex"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#3b737a] px-4 py-1.5 text-xs font-semibold text-white transition-all hover:bg-[#144147] hover:shadow-md"
             >
               <span>Get Started</span>
               <svg
@@ -178,7 +162,7 @@ export default function ContactPage() {
             {/* Email Box */}
             <div className="mt-8 w-full max-w-md">
               <a
-                href="mailto:support@nexahire.ai"
+                href="mailto:support@nexahire.site"
                 className="group flex items-center justify-between gap-4 rounded-2xl border border-[#76a7ad]/35 bg-[#042e33]/90 px-6 py-4 shadow-lg transition-all duration-300 hover:border-[#76a7ad] hover:bg-[#144147]/80 hover:shadow-xl hover:shadow-[#3b737a]/15"
               >
                 <div className="flex items-center gap-3.5 text-left">
@@ -203,7 +187,7 @@ export default function ContactPage() {
                       Official Email
                     </span>
                     <span className="text-base sm:text-lg font-bold text-white group-hover:text-[#76a7ad] transition-colors">
-                      support@nexahire.ai
+                      support@nexahire.site
                     </span>
                   </div>
                 </div>
@@ -333,7 +317,7 @@ export default function ContactPage() {
             &amp; Software Engineering
           </p>
           <p className="mt-2 text-[#76a7ad]">
-            All inquiries: <a href="mailto:support@nexahire.ai" className="underline hover:text-white transition-colors">support@nexahire.ai</a>
+            All inquiries: <a href="mailto:support@nexahire.site" className="underline hover:text-white transition-colors">support@nexahire.site</a>
           </p>
         </div>
       </main>

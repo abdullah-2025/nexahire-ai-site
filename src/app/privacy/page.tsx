@@ -57,46 +57,30 @@ export default function PrivacyPolicyPage() {
             >
               Features
             </Link>
-            <span className="rounded-full bg-[#144147] px-3 py-1 font-semibold text-[#76a7ad] border border-[#76a7ad]/30">
-              Privacy Policy
-            </span>
             <Link
-              href="/terms"
+              href="/#how-it-works"
               className="text-[#d0dfe1]/75 transition-colors hover:text-white"
             >
-              Terms of Service
+              How It Works
             </Link>
             <Link
-              href="/contact"
+              href="/#pricing"
               className="text-[#d0dfe1]/75 transition-colors hover:text-white"
             >
-              Contact
+              Pricing
+            </Link>
+            <Link
+              href="/#faq"
+              className="text-[#d0dfe1]/75 transition-colors hover:text-white"
+            >
+              FAQ
             </Link>
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1.5 text-xs font-medium text-[#d0dfe1] transition-colors hover:text-white sm:text-sm"
-            >
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M19 12H5M12 19l-7-7 7-7" />
-              </svg>
-              <span>Back to Home</span>
-            </Link>
             <a
               href={authLinks.signup}
-              className="hidden items-center gap-1.5 rounded-full bg-[#3b737a] px-4 py-1.5 text-xs font-semibold text-white transition-all hover:bg-[#144147] hover:shadow-md sm:inline-flex"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#3b737a] px-4 py-1.5 text-xs font-semibold text-white transition-all hover:bg-[#144147] hover:shadow-md"
             >
               <span>Get Started</span>
               <svg
@@ -144,11 +128,6 @@ export default function PrivacyPolicyPage() {
             How NexaHire collects, protects, and handles your personal, academic,
             and AI interview data.
           </p>
-          <div className="mt-4 flex items-center justify-center gap-4 text-xs font-medium text-[#76a7ad]">
-            <span>Effective: October 2026</span>
-            <span>•</span>
-            <span>Last Updated: October 17, 2026</span>
-          </div>
         </div>
 
         {/* Commitment Highlight Box */}
@@ -432,7 +411,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           {/* Section 7 */}
-          <section className="border-b border-[#76a7ad]/15 py-8">
+          <section className="pt-8">
             <h2 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
               7. Cookies &amp; Local Storage
             </h2>
@@ -443,48 +422,6 @@ export default function PrivacyPolicyPage() {
               cookies, although some interactive features may experience reduced
               functionality.
             </p>
-          </section>
-
-          {/* Section 8 */}
-          <section className="pt-8">
-            <h2 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
-              8. Contact Us
-            </h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-[#d0dfe1]/85">
-              If you have any questions, concerns, or requests regarding this
-              Privacy Policy or your personal information, please reach out to our
-              privacy team:
-            </p>
-
-            <div className="mt-6 rounded-2xl border border-[#76a7ad]/30 bg-[#061f24]/80 p-6 sm:p-8">
-              <div className="grid gap-6 sm:grid-cols-2">
-                <div>
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-[#76a7ad]">
-                    Privacy &amp; Support Inquiries
-                  </h3>
-                  <a
-                    href="mailto:support@nexahire.ai"
-                    className="mt-2 inline-block text-sm font-medium text-white transition-colors hover:text-[#76a7ad]"
-                  >
-                    support@nexahire.ai
-                  </a>
-                  <p className="mt-1 text-xs text-[#d0dfe1]/75">
-                    Response time: within 48 business hours
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-[#76a7ad]">
-                    Academic Affiliation
-                  </h3>
-                  <p className="mt-2 text-sm font-medium text-white">
-                    SZABIST Islamabad Campus
-                  </p>
-                  <p className="mt-1 text-xs text-[#d0dfe1]/75">
-                    Department of Computer Science &amp; Software Engineering
-                  </p>
-                </div>
-              </div>
-            </div>
           </section>
         </article>
       </main>

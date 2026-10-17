@@ -75,17 +75,32 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5">
               <li>
-                <Link className="fl" href="/privacy">
+                <Link
+                  className="fl"
+                  href="/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link className="fl" href="/terms">
+                <Link
+                  className="fl"
+                  href="/terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link className="fl" href="/contact">
+                <Link
+                  className="fl"
+                  href="/contact"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Contact Us
                 </Link>
               </li>
