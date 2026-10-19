@@ -1,6 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
+import { usePathname } from 'next/navigation'
 import { Icon } from './HeroIcon'
 import BrandLogo from './BrandLogo'
 import { icons } from '@/data/hero-icons'
@@ -9,6 +11,19 @@ import { authLinks } from '@/data/auth-links'
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [portalReady, setPortalReady] = useState(false)
+  const pathname = usePathname()
+  const pathnameRef = useRef(pathname)
+  pathnameRef.current = pathname
+
+  useEffect(() => {
+    setPortalReady(true)
+  }, [])
+
+  useLayoutEffect(() => {
+    document.body.classList.toggle('menu-open', menuOpen)
+    return () => document.body.classList.remove('menu-open')
+  }, [menuOpen])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -17,37 +32,83 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Complete Page Scroll Lock while mobile/tablet menu is open
-  useEffect(() => {
-    if (menuOpen) {
-      document.documentElement.style.overflow = 'hidden'
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.documentElement.style.overflow = 'unset'
-      document.body.style.overflow = 'unset'
+  // Freeze the body in place so opening the drawer preserves the current scroll position.
+  useLayoutEffect(() => {
+    if (!menuOpen) return
+
+    const root = document.documentElement
+    const body = document.body
+    const scrollX = window.scrollX
+    const scrollY = window.scrollY
+    const scrollbarWidth = window.innerWidth - root.clientWidth
+    const lockedPathname = pathnameRef.current
+    const previousStyles = {
+      rootOverflow: root.style.overflow,
+      rootTouchAction: root.style.touchAction,
+      rootOverscrollBehavior: root.style.overscrollBehavior,
+      bodyPosition: body.style.position,
+      bodyTop: body.style.top,
+      bodyLeft: body.style.left,
+      bodyWidth: body.style.width,
+      bodyPaddingRight: body.style.paddingRight,
+      bodyOverflow: body.style.overflow,
+      bodyTouchAction: body.style.touchAction,
+      bodyOverscrollBehavior: body.style.overscrollBehavior,
     }
 
-    // Cleanup when component unmounts
+    root.style.overflow = 'hidden'
+    root.style.touchAction = 'none'
+    root.style.overscrollBehavior = 'none'
+    body.style.position = 'fixed'
+    body.style.top = `-${scrollY}px`
+    body.style.left = `-${scrollX}px`
+    body.style.width = '100%'
+    if (scrollbarWidth > 0) {
+      body.style.paddingRight = `calc(${window.getComputedStyle(body).paddingRight} + ${scrollbarWidth}px)`
+    }
+    body.style.overflow = 'hidden'
+    body.style.touchAction = 'none'
+    body.style.overscrollBehavior = 'none'
+
     return () => {
-      document.documentElement.style.overflow = 'unset'
-      document.body.style.overflow = 'unset'
+      root.style.overflow = previousStyles.rootOverflow
+      root.style.touchAction = previousStyles.rootTouchAction
+      root.style.overscrollBehavior = previousStyles.rootOverscrollBehavior
+      body.style.position = previousStyles.bodyPosition
+      body.style.top = previousStyles.bodyTop
+      body.style.left = previousStyles.bodyLeft
+      body.style.width = previousStyles.bodyWidth
+      body.style.paddingRight = previousStyles.bodyPaddingRight
+      body.style.overflow = previousStyles.bodyOverflow
+      body.style.touchAction = previousStyles.bodyTouchAction
+      body.style.overscrollBehavior = previousStyles.bodyOverscrollBehavior
+
+      if (pathnameRef.current === lockedPathname) {
+        window.scrollTo(scrollX, scrollY)
+      }
     }
   }, [menuOpen])
 
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false)
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [menuOpen])
+
+  useLayoutEffect(() => {
+    setMenuOpen(false)
+  }, [pathname])
+
   return (
     <>
-      {/* Background Blur Overlay for Mobile/Tablet Navigation Drawer */}
-      {menuOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-black/30 backdrop-blur-md touch-none select-none"
-          onClick={() => setMenuOpen(false)}
-          onTouchMove={(e) => e.preventDefault()}
-          onWheel={(e) => e.preventDefault()}
-          aria-hidden="true"
-        />
-      )}
-
-      <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
+      <nav
+        className={`nav ${scrolled ? 'nav--scrolled' : ''} ${menuOpen ? 'nav--menu-open' : ''}`}
+      >
         <div className="nav__inner">
           <a href="#" className="nav__logo" aria-label="NexaHire home">
             <BrandLogo />
@@ -86,55 +147,68 @@ export default function Navigation() {
             <Icon d={menuOpen ? icons.x : icons.menu} size={20} />
           </button>
         </div>
-
-        {/* Mobile menu dropdown */}
-        {menuOpen && (
-          <div className="nav__mobile-wrapper">
-            <div
-              id="mobile-navigation"
-              className="nav__mobile nav__mobile--open"
-            >
-              <a href="#features" onClick={() => setMenuOpen(false)}>
-                Features
-              </a>
-              <a href="#how-it-works" onClick={() => setMenuOpen(false)}>
-                How It Works
-              </a>
-              <a href="#readiness" onClick={() => setMenuOpen(false)}>
-                Readiness Score
-              </a>
-              <a href="#testimonials" onClick={() => setMenuOpen(false)}>
-                Stories
-              </a>
-              <a href="#pricing" onClick={() => setMenuOpen(false)}>
-                Pricing
-              </a>
-              <a href="#faq" onClick={() => setMenuOpen(false)}>
-                FAQ
-              </a>
-              <div className="nav__mobile-actions">
-                <a
-                  href={authLinks.login}
-                  className="nav__signin"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Sign In
-                </a>
-                <a
-                  href={authLinks.signup}
-                  className="nav__cta nav__cta--full"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <span className="nav__cta-text">Get Started Free</span>
-                  <span className="nav__cta-arrow">
-                    <Icon d={icons.arrowUpRight} size={13} />
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        )}
       </nav>
+
+      {portalReady && typeof document !== 'undefined' &&
+        createPortal(
+          <>
+            <button
+              type="button"
+              className={`nav__backdrop ${menuOpen ? 'nav__backdrop--open' : ''}`}
+              aria-label="Close navigation menu"
+              aria-hidden={!menuOpen}
+              tabIndex={menuOpen ? 0 : -1}
+              onClick={() => setMenuOpen(false)}
+            />
+            {menuOpen && (
+              <div className="nav__mobile-wrapper nav__mobile-portal-wrapper">
+                <div
+                  id="mobile-navigation"
+                  className="nav__mobile nav__mobile--open"
+                >
+                  <a href="#features" onClick={() => setMenuOpen(false)}>
+                    Features
+                  </a>
+                  <a href="#how-it-works" onClick={() => setMenuOpen(false)}>
+                    How It Works
+                  </a>
+                  <a href="#readiness" onClick={() => setMenuOpen(false)}>
+                    Readiness Score
+                  </a>
+                  <a href="#testimonials" onClick={() => setMenuOpen(false)}>
+                    Stories
+                  </a>
+                  <a href="#pricing" onClick={() => setMenuOpen(false)}>
+                    Pricing
+                  </a>
+                  <a href="#faq" onClick={() => setMenuOpen(false)}>
+                    FAQ
+                  </a>
+                  <div className="nav__mobile-actions">
+                    <a
+                      href={authLinks.login}
+                      className="nav__signin"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      Sign In
+                    </a>
+                    <a
+                      href={authLinks.signup}
+                      className="nav__cta nav__cta--full"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      <span className="nav__cta-text">Get Started Free</span>
+                      <span className="nav__cta-arrow">
+                        <Icon d={icons.arrowUpRight} size={13} />
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            )}
+          </>,
+          document.body,
+        )}
     </>
   )
 }
