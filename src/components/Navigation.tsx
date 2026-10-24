@@ -1,66 +1,87 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
+import { useEffect, useRef, useState } from 'react'
 import { Icon } from './HeroIcon'
 import BrandLogo from './BrandLogo'
 import { icons } from '@/data/hero-icons'
 import { authLinks } from '@/data/auth-links'
+import useBodyScrollLock from '@/hooks/useBodyScrollLock'
 
 export default function Navigation() {
-  const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+
+  return <NavigationContent key={pathname} pathname={pathname} />
+}
+
+function NavigationContent({ pathname }: { pathname: string }) {
   const [menuOpen, setMenuOpen] = useState(false)
+  const buttonRef = useRef<HTMLButtonElement>(null)
+  const menuRef = useRef<HTMLDivElement>(null)
+  const wasOpen = useRef(false)
+  const sectionHref = (section: string) =>
+    pathname === '/' ? `#${section}` : `/#${section}`
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  // Complete Page Scroll Lock while mobile/tablet menu is open
   useEffect(() => {
     if (menuOpen) {
-      document.documentElement.style.overflow = 'hidden'
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.documentElement.style.overflow = 'unset'
-      document.body.style.overflow = 'unset'
+      menuRef.current?.querySelector<HTMLElement>('a, button')?.focus()
+    } else if (wasOpen.current) {
+      buttonRef.current?.focus()
     }
-
-    // Cleanup when component unmounts
-    return () => {
-      document.documentElement.style.overflow = 'unset'
-      document.body.style.overflow = 'unset'
-    }
+    wasOpen.current = menuOpen
   }, [menuOpen])
+
+  useEffect(() => {
+    const desktopViewport = window.matchMedia('(min-width: 1024px)')
+    const closeOnDesktop = () => {
+      if (desktopViewport.matches) setMenuOpen(false)
+    }
+    desktopViewport.addEventListener('change', closeOnDesktop)
+    return () => {
+      desktopViewport.removeEventListener('change', closeOnDesktop)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!menuOpen) return
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false)
+    }
+    document.addEventListener('keydown', closeOnEscape)
+    return () => document.removeEventListener('keydown', closeOnEscape)
+  }, [menuOpen])
+
+  useBodyScrollLock(menuOpen)
+
+  const closeMenu = () => setMenuOpen(false)
 
   return (
     <>
-      {/* Background Blur Overlay for Mobile/Tablet Navigation Drawer */}
-      {menuOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-black/30 backdrop-blur-md touch-none select-none"
-          onClick={() => setMenuOpen(false)}
-          onTouchMove={(e) => e.preventDefault()}
-          onWheel={(e) => e.preventDefault()}
-          aria-hidden="true"
-        />
-      )}
+      <div
+        className={`nav__overlay${menuOpen ? ' nav__overlay--open' : ''}`}
+        onClick={closeMenu}
+        aria-hidden="true"
+      />
 
-      <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
+      <nav className="nav">
         <div className="nav__inner">
-          <a href="#" className="nav__logo" aria-label="NexaHire home">
+          <a
+            href={sectionHref('top')}
+            className="nav__logo"
+            aria-label="NexaHire home"
+            onClick={closeMenu}
+          >
             <BrandLogo />
           </a>
 
           {/* Center Pill Capsule for Links */}
           <div className="nav__links-capsule">
-            <a href="#features">Features</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#readiness">Readiness Score</a>
-            <a href="#testimonials">Stories</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#faq">FAQ</a>
+            <a href={sectionHref('features')}>Features</a>
+            <a href={sectionHref('how-it-works')}>How It Works</a>
+            <a href={sectionHref('readiness')}>Readiness Score</a>
+            <a href={sectionHref('testimonials')}>Stories</a>
+            <a href={sectionHref('pricing')}>Pricing</a>
+            <a href={sectionHref('faq')}>FAQ</a>
           </div>
 
           {/* Right Actions */}
@@ -77,64 +98,63 @@ export default function Navigation() {
           </div>
 
           <button
+            ref={buttonRef}
             className="nav__burger"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            onClick={() => setMenuOpen((previous) => !previous)}
+            aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
           >
             <Icon d={menuOpen ? icons.x : icons.menu} size={20} />
           </button>
         </div>
-
-        {/* Mobile menu dropdown */}
-        {menuOpen && (
-          <div className="nav__mobile-wrapper">
-            <div
-              id="mobile-navigation"
-              className="nav__mobile nav__mobile--open"
-            >
-              <a href="#features" onClick={() => setMenuOpen(false)}>
-                Features
-              </a>
-              <a href="#how-it-works" onClick={() => setMenuOpen(false)}>
-                How It Works
-              </a>
-              <a href="#readiness" onClick={() => setMenuOpen(false)}>
-                Readiness Score
-              </a>
-              <a href="#testimonials" onClick={() => setMenuOpen(false)}>
-                Stories
-              </a>
-              <a href="#pricing" onClick={() => setMenuOpen(false)}>
-                Pricing
-              </a>
-              <a href="#faq" onClick={() => setMenuOpen(false)}>
-                FAQ
-              </a>
-              <div className="nav__mobile-actions">
-                <a
-                  href={authLinks.login}
-                  className="nav__signin"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Sign In
-                </a>
-                <a
-                  href={authLinks.signup}
-                  className="nav__cta nav__cta--full"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <span className="nav__cta-text">Get Started Free</span>
-                  <span className="nav__cta-arrow">
-                    <Icon d={icons.arrowUpRight} size={13} />
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
-        )}
       </nav>
+
+      <div
+        ref={menuRef}
+        id="mobile-navigation"
+        className={`nav__mobile${menuOpen ? ' nav__mobile--open' : ''}`}
+        aria-hidden={!menuOpen}
+        inert={!menuOpen}
+      >
+        <a href={sectionHref('features')} onClick={closeMenu}>
+          Features
+        </a>
+        <a href={sectionHref('how-it-works')} onClick={closeMenu}>
+          How It Works
+        </a>
+        <a href={sectionHref('readiness')} onClick={closeMenu}>
+          Readiness Score
+        </a>
+        <a href={sectionHref('testimonials')} onClick={closeMenu}>
+          Stories
+        </a>
+        <a href={sectionHref('pricing')} onClick={closeMenu}>
+          Pricing
+        </a>
+        <a href={sectionHref('faq')} onClick={closeMenu}>
+          FAQ
+        </a>
+        <div className="nav__mobile-actions">
+          <a
+            href={authLinks.login}
+            className="nav__signin"
+            onClick={closeMenu}
+          >
+            Sign In
+          </a>
+          <a
+            href={authLinks.signup}
+            className="nav__cta nav__cta--full"
+            onClick={closeMenu}
+          >
+            <span className="nav__cta-text">Get Started Free</span>
+            <span className="nav__cta-arrow">
+              <Icon d={icons.arrowUpRight} size={13} />
+            </span>
+          </a>
+        </div>
+      </div>
     </>
   )
 }

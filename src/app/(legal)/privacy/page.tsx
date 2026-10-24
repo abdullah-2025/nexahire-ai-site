@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen bg-[#061f24] text-[#d0dfe1] selection:bg-[#3b737a]/40 selection:text-white relative overflow-hidden flex flex-col font-sans">
+    <div className="legal-page min-h-dvh bg-[#061f24] text-[#d0dfe1] selection:bg-[#3b737a]/40 selection:text-white relative overflow-hidden flex flex-col font-sans">
       {/* Background Glows & Architectural Grid */}
       <div
         className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
       </div>
 
       {/* Main Legal Content Container */}
-      <main className="relative z-10 mx-auto w-full max-w-4xl flex-1 px-4 pt-16 pb-12 sm:px-6 lg:pt-20 lg:pb-16">
+      <main className="relative z-10 mx-auto w-full max-w-4xl flex-1 px-4 pb-12 sm:px-6 lg:pb-16">
         {/* Page Hero Header */}
         <div className="mb-10 text-center sm:mb-14">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#76a7ad]/30 bg-[#144147]/60 px-3.5 py-1.5 text-xs font-semibold tracking-wider uppercase text-[#76a7ad] backdrop-blur-sm">

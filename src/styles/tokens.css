@@ -1,6 +1,10 @@
 /* Approved palette — docs/design.md. All presentation colors derive from here. */
 :root {
   color-scheme: light;
+  --z-sections: 10;
+  --z-overlay: 40;
+  --z-navbar: 50;
+  --z-mobile-menu: 60;
   --color-teal-100: #d0dfe1;
   --color-teal-300: #76a7ad;
   --color-teal-500: #3b737a;
