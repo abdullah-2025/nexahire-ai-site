@@ -24,6 +24,28 @@ body {
   overflow-x: hidden;
 }
 
+body:has(.legal-layout) {
+  background: #061f24;
+}
+
+.legal-layout > .legal-page {
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 640px) {
+  .legal-layout > .legal-page {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .legal-layout > .legal-page {
+    padding-top: 3rem;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
