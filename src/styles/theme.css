@@ -273,7 +273,7 @@ a {
   border-color: var(--accent);
 }
 
-@media (min-width: 1040px) {
+@media (min-width: 1024px) {
   .nav__burger {
     display: none;
   }

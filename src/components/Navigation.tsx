@@ -66,7 +66,7 @@ function NavigationContent({ pathname }: { pathname: string }) {
       <nav className="nav">
         <div className="nav__inner">
           <a
-            href="#top"
+            href={sectionHref('top')}
             className="nav__logo"
             aria-label="NexaHire home"
             onClick={closeMenu}
