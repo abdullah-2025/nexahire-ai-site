@@ -1,5 +1,4 @@
 import InterviewGlobe from './InterviewGlobe'
-import Navigation from './Navigation'
 import { Icon } from './HeroIcon'
 import { authLinks } from '@/data/auth-links'
 import { icons } from '@/data/hero-icons'
@@ -7,8 +6,6 @@ import { icons } from '@/data/hero-icons'
 export default function Hero() {
   return (
     <section id="top" className="hero hero24">
-      <Navigation />
-
       <div className="hero24__backdrop" aria-hidden="true">
         <span className="hero24__glow hero24__glow--left" />
         <span className="hero24__glow hero24__glow--right" />
