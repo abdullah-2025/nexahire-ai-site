@@ -9,11 +9,11 @@ export default function Readiness() {
       <div className="container-x grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div className="reveal relative" id="rd-wrap">
           <div
-            className="rd-orb h-64 w-64 bg-accent/25 -left-10 -top-10"
+            className="rd-orb h-64 w-64 bg-primary/10 -left-10 -top-10"
             data-speed="-40"
           ></div>
           <div
-            className="rd-orb h-60 w-60 bg-accent/20 -right-8 -bottom-10"
+            className="rd-orb h-60 w-60 bg-secondary/80 -right-8 -bottom-10"
             data-speed="50"
           ></div>
           <div className="rd-card">

@@ -10,16 +10,16 @@ export default function HowItWorks() {
       style={
         {
           background:
-            'radial-gradient(ellipse at 50% 20%, rgba(var(--accent-rgb),0.08) 0%, transparent 70%)',
+            'radial-gradient(ellipse at 50% 20%, rgb(var(--primary-channels) / 0.05) 0%, transparent 70%)',
         } as CSSProperties
       }
     >
       <div
-        className="pointer-events-none absolute -top-32 left-1/4 h-80 w-80 rounded-full bg-accent/10 blur-[100px]"
+        className="pointer-events-none absolute -top-32 left-1/4 h-80 w-80 rounded-full bg-secondary/60 blur-[100px]"
         aria-hidden="true"
       ></div>
       <div
-        className="pointer-events-none absolute -bottom-32 right-1/4 h-80 w-80 rounded-full bg-accent/10 blur-[100px]"
+        className="pointer-events-none absolute -bottom-32 right-1/4 h-80 w-80 rounded-full bg-secondary/60 blur-[100px]"
         aria-hidden="true"
       ></div>
       <div className="container-x relative z-10">
@@ -79,15 +79,15 @@ export default function HowItWorks() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           <article
             className="reveal"
-            style={{ '--glow': 'rgba(var(--accent-rgb),.45)' } as CSSProperties}
+            style={{ '--glow': 'rgba(var(--shadow-rgb),.45)' } as CSSProperties}
           >
             <div
               className="step-card spot"
               style={
                 {
-                  '--c': 'var(--primary)',
-                  '--tint': 'rgba(var(--accent-rgb),.12)',
-                  '--spot': 'rgba(var(--accent-rgb),.22)',
+                  '--c': 'var(--panel-link)',
+                  '--tint': 'rgb(var(--primary-channels) / .12)',
+                  '--spot': 'rgba(var(--panel-text-rgb),.08)',
                 } as CSSProperties
               }
             >
@@ -130,7 +130,7 @@ export default function HowItWorks() {
             style={
               {
                 '--d': '.1s',
-                '--glow': 'rgba(var(--accent-rgb),.45)',
+                '--glow': 'rgba(var(--shadow-rgb),.45)',
               } as CSSProperties
             }
           >
@@ -138,9 +138,9 @@ export default function HowItWorks() {
               className="step-card spot"
               style={
                 {
-                  '--c': 'var(--primary)',
-                  '--tint': 'rgba(var(--accent-rgb),.12)',
-                  '--spot': 'rgba(var(--accent-rgb),.22)',
+                  '--c': 'var(--panel-link)',
+                  '--tint': 'rgb(var(--primary-channels) / .12)',
+                  '--spot': 'rgba(var(--panel-text-rgb),.08)',
                 } as CSSProperties
               }
             >
@@ -183,7 +183,7 @@ export default function HowItWorks() {
             style={
               {
                 '--d': '.2s',
-                '--glow': 'rgba(var(--accent-rgb),.45)',
+                '--glow': 'rgba(var(--shadow-rgb),.45)',
               } as CSSProperties
             }
           >
@@ -192,8 +192,8 @@ export default function HowItWorks() {
               style={
                 {
                   '--c': 'var(--accent)',
-                  '--tint': 'rgba(var(--accent-rgb),.12)',
-                  '--spot': 'rgba(var(--accent-rgb),.22)',
+                  '--tint': 'rgb(var(--primary-channels) / .12)',
+                  '--spot': 'rgba(var(--panel-text-rgb),.08)',
                 } as CSSProperties
               }
             >
@@ -236,7 +236,7 @@ export default function HowItWorks() {
             style={
               {
                 '--d': '.3s',
-                '--glow': 'rgba(var(--accent-rgb),.45)',
+                '--glow': 'rgba(var(--shadow-rgb),.45)',
               } as CSSProperties
             }
           >
@@ -245,8 +245,8 @@ export default function HowItWorks() {
               style={
                 {
                   '--c': 'var(--accent)',
-                  '--tint': 'rgba(var(--accent-rgb),.12)',
-                  '--spot': 'rgba(var(--accent-rgb),.22)',
+                  '--tint': 'rgb(var(--primary-channels) / .12)',
+                  '--spot': 'rgba(var(--panel-text-rgb),.08)',
                 } as CSSProperties
               }
             >

@@ -37,7 +37,7 @@ export default function CareerJourney() {
       style={
         {
           background:
-            'radial-gradient(ellipse at 50% 50%, rgba(var(--accent-rgb),0.06) 0%, transparent 70%)',
+            'radial-gradient(ellipse at 50% 50%, rgb(var(--primary-channels) / 0.05) 0%, transparent 70%)',
         } as CSSProperties
       }
     >
@@ -60,7 +60,7 @@ export default function CareerJourney() {
             className="jr-step reveal"
             style={
               {
-                '--c': 'var(--accent)',
+                '--c': 'var(--accent-text)',
                 '--g': 'var(--secondary)',
               } as CSSProperties
             }
@@ -104,14 +104,14 @@ export default function CareerJourney() {
             </div>
             <div
               className="jr-line"
-              style={{ '--n': 'var(--accent)' } as CSSProperties}
+              style={{ '--n': 'var(--accent-text)' } as CSSProperties}
             ></div>
           </div>
           <div
             className="jr-step reveal"
             style={
               {
-                '--c': 'var(--accent)',
+                '--c': 'var(--accent-text)',
                 '--g': 'var(--secondary)',
               } as CSSProperties
             }
@@ -206,14 +206,14 @@ export default function CareerJourney() {
             </div>
             <div
               className="jr-line"
-              style={{ '--n': 'var(--accent)' } as CSSProperties}
+              style={{ '--n': 'var(--accent-text)' } as CSSProperties}
             ></div>
           </div>
           <div
             className="jr-step reveal"
             style={
               {
-                '--c': 'var(--accent)',
+                '--c': 'var(--accent-text)',
                 '--g': 'var(--secondary)',
               } as CSSProperties
             }
@@ -266,7 +266,7 @@ export default function CareerJourney() {
               <h3 className="text-[clamp(26px,4vw,42px)] font-bold leading-tight tracking-tight text-white">
                 Ready to Start Your Journey?
               </h3>
-              <p className="mx-auto mb-8 mt-4 max-w-xl text-[16px] leading-relaxed text-secondary">
+              <p className="mx-auto mb-8 mt-4 max-w-xl text-[16px] leading-relaxed text-panel-text">
                 Join thousands of Pakistani youth already discovering
                 opportunities. It&apos;s completely free and takes less than a
                 minute to get started.
