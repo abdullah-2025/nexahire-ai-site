@@ -52,61 +52,75 @@ Footer
 
 ## 3. Approved Color System
 
-Use the following palette as the source of truth for the landing page.
+Use the Indigo palette as the source of truth for the landing page. The values are identical to the app ([design-tokens.css](../../AI-Powered-Job-and-Interview-Platform/frontend/app/design-tokens.css)) and live in `src/styles/tokens.css`, with Tailwind utilities in `tailwind.config.ts`.
 
 ```css
 :root {
-  --color-teal-100: #D0DFE1;
-  --color-teal-300: #76A7AD;
-  --color-teal-500: #3B737A;
-  --color-teal-800: #144147;
-  --color-teal-950: #042E33;
+  --background: #F8FAFC;       /* page background */
+  --card: #FFFFFF;             /* surface */
+  --surface-tint: #F0F3F7;     /* surface subtle */
+  --foreground: #101828;       /* headings */
+  --body: #3B4658;             /* body text */
+  --muted-foreground: #646E83; /* muted text and placeholders */
 
-  --background: #FFFFFF;
-  --foreground: #042E33;
-
-  --primary: #3B737A;
-  --primary-hover: #144147;
+  --primary: #4338CA;
+  --primary-hover: #3730A3;
   --primary-foreground: #FFFFFF;
+  --secondary: #EEF0FF;        /* primary tint */
+  --secondary-foreground: #3B4658;
 
-  --secondary: #D0DFE1;
-  --secondary-foreground: #144147;
+  --accent: #0D9D98;           /* graphics only */
+  --accent-text: #0B7C78;
+  --accent-tint: #E3F6F5;
+  --accent-foreground: #101828;
 
-  --accent: #76A7AD;
-  --accent-foreground: #042E33;
+  --border: #E3E8EF;
+  --control-border: #838DA0;
+  --focus: #7C74F0;
 
-  --muted: #F4F8F8;
-  --muted-foreground: #3B737A;
+  --panel: #17153B;            /* footer, hero, CTA bands, legal pages */
+  --panel-2: #2A2670;
+  --panel-text: #D5DBE8;
+  --panel-muted: #9AA6BC;
+  --panel-link: #B4B0FF;
+  --footer-background: #17153B;
+  --footer-foreground: #D5DBE8;
 
-  --border: #D0DFE1;
-  --card: #FFFFFF;
-  --card-foreground: #042E33;
-
-  --footer-background: #042E33;
-  --footer-foreground: #FFFFFF;
+  --success: #16794C;  --success-surface: #E8F6EE;  --success-line: #9AD3B4;
+  --warning: #8F4A00;  --warning-surface: #FFF4E2;  --warning-line: #EBC77E;
+  --danger:  #C0291F;  --danger-surface:  #FDECEA;  --danger-line:  #F3A9A2;
+  --info:    #0B6FA8;  --info-surface:    #E6F3FA;  --info-line:    #9CCBE6;
 }
 ```
 
+Three approved values were adjusted minimally to meet WCAG AA: muted `#667085` to `#646E83`, control border `#8A94A6` to `#838DA0`, and accent `#0EA5A0` to `#0D9D98`.
+
 ### Palette Reference
 
-| Color | Hex | RGB | Recommended Use |
-|---|---|---|---|
-| Light Teal | `#D0DFE1` | 208, 223, 225 | Borders, light backgrounds, muted sections |
-| Soft Teal | `#76A7AD` | 118, 167, 173 | Accents, icons, secondary UI |
-| Primary Teal | `#3B737A` | 59, 115, 122 | Main buttons, highlights, active states |
-| Dark Teal | `#144147` | 20, 65, 71 | Headings, hover states, dark sections |
-| Deep Teal | `#042E33` | 4, 46, 51 | Primary text, footer, strong contrast areas |
+| Role | Hex | Recommended Use |
+|---|---|---|
+| Primary | `#4338CA` | Main buttons, links, active tabs, progress fills |
+| Primary hover | `#3730A3` | Hover and pressed states |
+| Primary tint | `#EEF0FF` | Secondary buttons, selected states, icon tiles, "live" chips |
+| Accent | `#0D9D98` | Graphics only: scores, rating markers, check icons, brand-mark dot |
+| Accent text / tint | `#0B7C78` / `#E3F6F5` | Accent used as text, accent chips |
+| Heading / body / muted | `#101828` / `#3B4658` / `#646E83` | Text hierarchy on light surfaces |
+| Page background / surface / subtle | `#F8FAFC` / `#FFFFFF` / `#F0F3F7` | Sections, cards, inset areas |
+| Border / control border | `#E3E8EF` / `#838DA0` | Decorative lines / inputs and outlined buttons |
+| Focus ring | `#7C74F0` | Every keyboard focus outline |
+| Dark panel | `#17153B` to `#2A2670` | Footer, hero, CTA bands, step cards, legal pages |
+| Panel text / muted / links | `#D5DBE8` / `#9AA6BC` / `#B4B0FF` | Text and highlights on dark panels |
 
 ### Color Usage Rules
 
-- Use `#FFFFFF` or very light neutral backgrounds for most page sections.
-- Use `#3B737A` as the main CTA and brand color.
-- Use `#144147` for hover states, strong headings, and secondary dark UI.
-- Use `#042E33` for the strongest contrast, footer, and primary text where appropriate.
-- Use `#76A7AD` for icons, highlights, decorative accents, charts, and secondary actions.
-- Use `#D0DFE1` for borders, soft cards, badges, and subtle section backgrounds.
-- Avoid introducing unrelated accent colors unless needed for semantic states such as success, warning, or error.
-- Avoid heavy gradients. If a gradient is used, only blend colors from this palette.
+- Use `#F8FAFC` and white for most page sections; white for cards and the navbar.
+- Use `#4338CA` as the main CTA and brand color, with `#3730A3` for hover.
+- Use `#101828` for headings, `#3B4658` for body copy, and `#646E83` for supporting text.
+- Use the accent sparingly and only for graphics. When it must be text, use `#0B7C78`. Text on accent fills is `#101828`, never white.
+- Never use the accent for status, state badges, or alerts: it is close in hue to success green. Use the success, warning, danger, and info sets only for semantic feedback.
+- Dark sections use `#17153B`, optionally blending to `#2A2670`. That two-stop blend is the only approved gradient.
+- Inputs, outlined buttons, and selected indicators use the control border (3:1). `#E3E8EF` borders are decorative only.
+- Shadows are neutral, `rgb(16 24 40 / 5–20%)`. No colored glows, neon colors, or heavy gradients.
 
 ---
 
