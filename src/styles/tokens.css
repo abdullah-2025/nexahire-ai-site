@@ -1,44 +1,84 @@
-/* Approved palette — docs/design.md. All presentation colors derive from here. */
+/* Approved Indigo palette — docs/design.md. All presentation colors derive from here.
+   Values are identical to the app (AI-Powered-Job-and-Interview-Platform/frontend/app/design-tokens.css). */
 :root {
   color-scheme: light;
   --z-sections: 10;
   --z-overlay: 40;
   --z-navbar: 50;
   --z-mobile-menu: 60;
-  --color-teal-100: #d0dfe1;
-  --color-teal-300: #76a7ad;
-  --color-teal-500: #3b737a;
-  --color-teal-800: #144147;
-  --color-teal-950: #042e33;
+
+  /* Channel forms for rgba() and Tailwind alpha modifiers */
   --white: #ffffff;
   --white-rgb: 255, 255, 255;
-  --bg-rgb: var(--white-rgb);
+  --white-channels: 255 255 255;
+  --bg-rgb: 248, 250, 252;
   --surface-rgb: var(--white-rgb);
-  --accent-rgb: 118, 167, 173;
-  --accent-channels: 118 167 173;
-  --secondary-channels: 208 223 225;
-  --foreground-channels: 4 46 51;
-  --shadow-rgb: 4, 46, 51;
+  --accent-rgb: 13, 157, 152;
+  --accent-channels: 13 157 152;
+  --primary-channels: 67 56 202;
+  --secondary-channels: 238 240 255;
+  --foreground-channels: 16 24 40;
+  --shadow-rgb: 16, 24, 40;
+  --panel-channels: 23 21 59;
+  --panel-2-channels: 42 38 112;
+  --panel-text-rgb: 213, 219, 232;
+  --panel-text-channels: 213 219 232;
+  --panel-muted-channels: 154 166 188;
+  --panel-link-channels: 180 176 255;
 
-  --background: var(--white);
-  --foreground: var(--color-teal-950);
-  --primary: var(--color-teal-500);
-  --primary-hover: var(--color-teal-800);
+  /* Brand and text */
+  --primary: #4338ca;
+  --primary-hover: #3730a3;
   --primary-foreground: var(--white);
-  --secondary: var(--color-teal-100);
-  --secondary-foreground: var(--color-teal-800);
-  --accent: var(--color-teal-300);
-  --accent-foreground: var(--color-teal-950);
-  --surface-tint: color-mix(in srgb, var(--secondary) 22%, var(--white));
-  --muted: var(--surface-tint);
-  --muted-foreground: var(--color-teal-500);
-  --border: var(--color-teal-100);
+  --secondary: #eef0ff; /* primary tint */
+  --secondary-foreground: #3b4658; /* body text on tints and secondary buttons */
+  --accent: #0d9d98; /* graphics only; approved #0EA5A0 darkened for 3:1 on the page background */
+  --accent-text: #0b7c78;
+  --accent-tint: #e3f6f5;
+  --accent-foreground: #101828; /* text on accent fills, never white */
+  --foreground: #101828; /* headings */
+  --body: #3b4658;
+  --muted-foreground: #646e83; /* approved #667085 darkened for 4.5:1 on tinted surfaces */
+
+  /* Surfaces and lines */
+  --background: #f8fafc;
   --card: var(--white);
-  --card-foreground: var(--color-teal-950);
-  --footer-background: var(--color-teal-950);
-  --footer-foreground: var(--white);
+  --card-foreground: var(--foreground);
+  --surface-tint: #f0f3f7; /* surface subtle */
+  --muted: var(--surface-tint);
+  --border: #e3e8ef;
+  --line: var(--border);
+  --control-border: #838da0; /* approved #8A94A6 darkened for 3:1 on the page background */
+  --focus: #7c74f0;
+  --focus-ring: 0 0 0 3px rgba(124, 116, 240, 0.28);
+
+  /* Dark panels: footer, hero, CTA bands, legal pages */
+  --panel: #17153b;
+  --panel-2: #2a2670;
+  --panel-gradient: linear-gradient(135deg, var(--panel), var(--panel-2));
+  --panel-text: #d5dbe8;
+  --panel-muted: #9aa6bc;
+  --panel-link: #b4b0ff;
+  --panel-line: rgba(var(--panel-text-rgb), 0.16);
+  --footer-background: var(--panel);
+  --footer-foreground: var(--panel-text);
+
+  /* Status (never the accent) */
+  --success: #16794c;
+  --success-surface: #e8f6ee;
+  --success-line: #9ad3b4;
+  --warning: #8f4a00;
+  --warning-surface: #fff4e2;
+  --warning-line: #ebc77e;
+  --danger: #c0291f;
+  --danger-surface: #fdecea;
+  --danger-line: #f3a9a2;
+  --info: #0b6fa8;
+  --info-surface: #e6f3fa;
+  --info-line: #9ccbe6;
+
+  /* Neutral shadows only */
   --shadow-soft: 0 8px 28px -12px rgba(var(--shadow-rgb), 0.12);
   --shadow-card: 0 18px 44px -24px rgba(var(--shadow-rgb), 0.18);
-  --line: var(--border);
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
