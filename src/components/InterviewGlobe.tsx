@@ -106,9 +106,9 @@ export default function InterviewGlobe() {
         centerY,
         radius * 1.08,
       )
-      glow.addColorStop(0, 'rgba(118, 167, 173, 0.12)')
-      glow.addColorStop(0.72, 'rgba(20, 65, 71, 0.11)')
-      glow.addColorStop(1, 'rgba(4, 46, 51, 0)')
+      glow.addColorStop(0, 'rgba(180, 176, 255, 0.12)')
+      glow.addColorStop(0.72, 'rgba(42, 38, 112, 0.11)')
+      glow.addColorStop(1, 'rgba(23, 21, 59, 0)')
       context.fillStyle = glow
       context.beginPath()
       context.arc(centerX, centerY, radius * 1.08, 0, TAU)
@@ -119,7 +119,7 @@ export default function InterviewGlobe() {
       context.arc(centerX, centerY, radius, 0, TAU)
       context.clip()
 
-      context.strokeStyle = 'rgba(118, 167, 173, 0.42)'
+      context.strokeStyle = 'rgba(180, 176, 255, 0.42)'
       context.lineWidth = 0.9
 
       for (let latitude = -60; latitude <= 60; latitude += 30) {
@@ -172,7 +172,7 @@ export default function InterviewGlobe() {
       for (const point of projected) {
         const alpha = 0.62 + Math.max(0, point.depth) * 0.38
         const size = (1.35 + Math.max(0, point.depth) * 1.55) * point.weight
-        context.fillStyle = `rgba(208, 223, 225, ${alpha})`
+        context.fillStyle = `rgba(213, 219, 232, ${alpha})`
         context.beginPath()
         context.arc(point.x, point.y, size, 0, TAU)
         context.fill()
@@ -180,7 +180,7 @@ export default function InterviewGlobe() {
 
       context.restore()
 
-      context.strokeStyle = 'rgba(118, 167, 173, 0.48)'
+      context.strokeStyle = 'rgba(180, 176, 255, 0.48)'
       context.lineWidth = 1
       context.beginPath()
       context.arc(centerX, centerY, radius, 0, TAU)

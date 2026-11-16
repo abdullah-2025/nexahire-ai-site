@@ -21,9 +21,9 @@ const MAX_POINTS = 65536
 const TAU = Math.PI * 2
 const MAX_COLORS = 5
 const DEFAULT_COLORS = [
-  'var(--color-teal-100)',
-  'var(--color-teal-300)',
-  'var(--color-teal-100)',
+  'var(--secondary)',
+  'var(--panel-link)',
+  'var(--secondary)',
 ]
 
 const RING_EDGE = 4
