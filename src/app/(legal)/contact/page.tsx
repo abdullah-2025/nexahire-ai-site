@@ -9,20 +9,20 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="legal-page min-h-dvh bg-[#061f24] text-[#d0dfe1] selection:bg-[#3b737a]/40 selection:text-white relative overflow-hidden flex flex-col font-sans">
+    <div className="legal-page min-h-dvh bg-panel text-panel-text selection:bg-primary/40 selection:text-white relative overflow-hidden flex flex-col font-sans">
       {/* Background Glows & Architectural Grid */}
       <div
         className="pointer-events-none absolute inset-0 overflow-hidden"
         aria-hidden="true"
       >
-        <div className="absolute left-1/2 top-0 h-[600px] w-[1100px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,_rgba(59,115,122,0.25),_transparent_70%)]" />
-        <div className="absolute -left-24 top-64 h-96 w-96 rounded-full bg-[#76a7ad]/10 blur-[110px]" />
-        <div className="absolute -right-24 top-[750px] h-96 w-96 rounded-full bg-[#3b737a]/15 blur-[120px]" />
+        <div className="absolute left-1/2 top-0 h-[600px] w-[1100px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,_rgb(var(--panel-2-channels)_/_0.6),_transparent_70%)]" />
+        <div className="absolute -left-24 top-64 h-96 w-96 rounded-full bg-panel-link/10 blur-[110px]" />
+        <div className="absolute -right-24 top-[750px] h-96 w-96 rounded-full bg-primary/15 blur-[120px]" />
         <div
           className="absolute inset-0 opacity-[0.14]"
           style={{
             backgroundImage:
-              'linear-gradient(rgba(118, 167, 173, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(118, 167, 173, 0.15) 1px, transparent 1px)',
+              'linear-gradient(rgba(var(--panel-text-rgb), 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--panel-text-rgb), 0.15) 1px, transparent 1px)',
             backgroundSize: '56px 56px',
             maskImage:
               'linear-gradient(to bottom, black 25%, transparent 95%)',
@@ -34,7 +34,7 @@ export default function ContactPage() {
       <main className="relative z-10 mx-auto w-full max-w-4xl flex-1 px-4 pb-12 sm:px-6 lg:pb-16">
         {/* Page Hero Header */}
         <div className="mb-10 text-center sm:mb-14">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#76a7ad]/30 bg-[#144147]/60 px-3.5 py-1.5 text-xs font-semibold tracking-wider uppercase text-[#76a7ad] backdrop-blur-sm">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-panel-muted/30 bg-panel-2/60 px-3.5 py-1.5 text-xs font-semibold tracking-wider uppercase text-panel-link backdrop-blur-sm">
             <svg
               width="14"
               height="14"
@@ -53,7 +53,7 @@ export default function ContactPage() {
           <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
             Contact Us
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-[#d0dfe1]/85 sm:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-panel-text/85 sm:text-lg">
             Get in touch with the NexaHire team. Whether you need technical
             assistance, platform guidance, or have institutional partnership
             inquiries, we are here to assist you.
@@ -61,9 +61,9 @@ export default function ContactPage() {
         </div>
 
         {/* Prominent Primary Contact Card */}
-        <div className="mb-10 overflow-hidden rounded-3xl border border-[#76a7ad]/30 bg-gradient-to-br from-[#042e33]/90 via-[#061f24]/90 to-[#144147]/80 p-8 shadow-2xl backdrop-blur-xl sm:p-12">
+        <div className="mb-10 overflow-hidden rounded-3xl border border-panel-muted/30 bg-gradient-to-br from-panel/90 via-panel/90 to-panel-2/80 p-8 shadow-2xl backdrop-blur-xl sm:p-12">
           <div className="flex flex-col items-center text-center">
-            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#3b737a]/30 text-[#76a7ad] shadow-inner border border-[#76a7ad]/25">
+            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/30 text-panel-link shadow-inner border border-panel-muted/25">
               <svg
                 width="30"
                 height="30"
@@ -83,7 +83,7 @@ export default function ContactPage() {
             <h2 className="text-xl font-bold tracking-tight text-white sm:text-3xl">
               Get in Touch with NexaHire Support
             </h2>
-            <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-[#d0dfe1]/85">
+            <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-panel-text/85">
               Have questions about your Readiness Score, CV analysis, or mock
               interview sessions? Write to us directly:
             </p>
@@ -92,10 +92,10 @@ export default function ContactPage() {
             <div className="mt-8 w-full max-w-md">
               <a
                 href="mailto:support@nexahire.site"
-                className="group flex items-center justify-between gap-4 rounded-2xl border border-[#76a7ad]/35 bg-[#042e33]/90 px-6 py-4 shadow-lg transition-all duration-300 hover:border-[#76a7ad] hover:bg-[#144147]/80 hover:shadow-xl hover:shadow-[#3b737a]/15"
+                className="group flex items-center justify-between gap-4 rounded-2xl border border-panel-muted/35 bg-panel/90 px-6 py-4 shadow-lg transition-all duration-300 hover:border-panel-muted hover:bg-panel-2/80 hover:shadow-xl hover:shadow-foreground/15"
               >
                 <div className="flex items-center gap-3.5 text-left">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#3b737a]/30 text-[#76a7ad] group-hover:scale-105 transition-transform">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/30 text-panel-link group-hover:scale-105 transition-transform">
                     <svg
                       width="18"
                       height="18"
@@ -112,15 +112,15 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <span className="block text-xs uppercase tracking-wider text-[#76a7ad] font-semibold">
+                    <span className="block text-xs uppercase tracking-wider text-panel-link font-semibold">
                       Official Email
                     </span>
-                    <span className="text-base sm:text-lg font-bold text-white group-hover:text-[#76a7ad] transition-colors">
+                    <span className="text-base sm:text-lg font-bold text-white group-hover:text-panel-link transition-colors">
                       support@nexahire.site
                     </span>
                   </div>
                 </div>
-                <div className="text-[#76a7ad] group-hover:translate-x-1 transition-transform">
+                <div className="text-panel-link group-hover:translate-x-1 transition-transform">
                   <svg
                     width="20"
                     height="20"
@@ -139,8 +139,8 @@ export default function ContactPage() {
             </div>
 
             {/* Response Time Notice Badge */}
-            <div className="mt-6 inline-flex items-center gap-2.5 rounded-full border border-[#76a7ad]/25 bg-[#144147]/50 px-4 py-2 text-xs sm:text-sm font-medium text-[#d0dfe1]/90 backdrop-blur-sm">
-              <span className="h-2 w-2 rounded-full bg-[#76a7ad] animate-pulse" />
+            <div className="mt-6 inline-flex items-center gap-2.5 rounded-full border border-panel-muted/25 bg-panel-2/50 px-4 py-2 text-xs sm:text-sm font-medium text-panel-text/90 backdrop-blur-sm">
+              <span className="h-2 w-2 rounded-full bg-panel-link animate-pulse" />
               <span>
                 <strong>Response Time:</strong> Our support team responds
                 within <strong>24 to 48 hours</strong>.
@@ -151,8 +151,8 @@ export default function ContactPage() {
 
         {/* Support Categories Grid */}
         <div className="grid gap-6 sm:grid-cols-3">
-          <div className="rounded-2xl border border-[#76a7ad]/20 bg-[#042e33]/50 p-6 backdrop-blur-md">
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#3b737a]/25 text-[#76a7ad]">
+          <div className="rounded-2xl border border-panel-muted/20 bg-panel/50 p-6 backdrop-blur-md">
+            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/25 text-panel-link">
               <svg
                 width="18"
                 height="18"
@@ -172,15 +172,15 @@ export default function ContactPage() {
             <h3 className="text-base font-semibold text-white">
               Platform &amp; Technical Help
             </h3>
-            <p className="mt-2 text-xs leading-relaxed text-[#d0dfe1]/75">
+            <p className="mt-2 text-xs leading-relaxed text-panel-text/75">
               Facing issues with CV uploading, microphone access during mock
               interviews, or score calculation? Email us with your account details
               for rapid resolution.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-[#76a7ad]/20 bg-[#042e33]/50 p-6 backdrop-blur-md">
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#3b737a]/25 text-[#76a7ad]">
+          <div className="rounded-2xl border border-panel-muted/20 bg-panel/50 p-6 backdrop-blur-md">
+            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/25 text-panel-link">
               <svg
                 width="18"
                 height="18"
@@ -201,15 +201,15 @@ export default function ContactPage() {
             <h3 className="text-base font-semibold text-white">
               University &amp; Faculty
             </h3>
-            <p className="mt-2 text-xs leading-relaxed text-[#d0dfe1]/75">
+            <p className="mt-2 text-xs leading-relaxed text-panel-text/75">
               University placement officers and computer science departments
               seeking campus-wide integration or student cohorts can reach out
               for dedicated onboarding.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-[#76a7ad]/20 bg-[#042e33]/50 p-6 backdrop-blur-md">
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#3b737a]/25 text-[#76a7ad]">
+          <div className="rounded-2xl border border-panel-muted/20 bg-panel/50 p-6 backdrop-blur-md">
+            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/25 text-panel-link">
               <svg
                 width="18"
                 height="18"
@@ -228,7 +228,7 @@ export default function ContactPage() {
             <h3 className="text-base font-semibold text-white">
               Hiring Partners &amp; Employers
             </h3>
-            <p className="mt-2 text-xs leading-relaxed text-[#d0dfe1]/75">
+            <p className="mt-2 text-xs leading-relaxed text-panel-text/75">
               Companies looking to interview pre-assessed, job-ready Pakistani
               graduates or post open software engineering roles can connect with
               our talent relations team.
@@ -237,7 +237,7 @@ export default function ContactPage() {
         </div>
 
         {/* Academic Affiliation Note */}
-        <div className="mt-10 rounded-2xl border border-[#76a7ad]/20 bg-[#061f24]/70 p-6 text-center text-xs text-[#d0dfe1]/75 sm:p-8">
+        <div className="mt-10 rounded-2xl border border-panel-muted/20 bg-panel/70 p-6 text-center text-xs text-panel-text/75 sm:p-8">
           <p className="font-medium text-white">
             NexaHire — Career Readiness Platform
           </p>
@@ -245,7 +245,7 @@ export default function ContactPage() {
             Built at SZABIST Islamabad Campus • Department of Computer Science
             &amp; Software Engineering
           </p>
-          <p className="mt-2 text-[#76a7ad]">
+          <p className="mt-2 text-panel-link">
             All inquiries: <a href="mailto:support@nexahire.site" className="underline hover:text-white transition-colors">support@nexahire.site</a>
           </p>
         </div>
