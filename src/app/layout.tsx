@@ -6,7 +6,10 @@ export const metadata: Metadata = {
   title: 'NexaHire — AI-Powered Career Readiness Platform',
   description:
     "NexaHire connects CV building, AI skill-gap analysis, career roadmaps, mock interviews, and job discovery into one unified platform — built for Pakistan's fresh graduates.",
-  icons: { icon: '/favicon.svg' },
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/apple-touch-icon.png',
+  },
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
