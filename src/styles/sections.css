@@ -1333,11 +1333,11 @@
   align-items: center;
 }
 .site-sections .brand-logo--footer {
+  --logo-tile: var(--footer-foreground);
+  --logo-n: var(--footer-background);
+  --logo-node: var(--primary);
+  --logo-hire: var(--accent);
   color: var(--footer-foreground);
-}
-.site-sections .brand-logo--footer .brand-logo__mark {
-  background: var(--footer-foreground);
-  color: var(--footer-background);
 }
 .site-sections .brand-logo--footer .brand-logo__name {
   font-size: 16px;

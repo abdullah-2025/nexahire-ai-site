@@ -89,52 +89,63 @@ a {
 }
 
 .brand-logo {
+  --logo-tile: var(--foreground);
+  --logo-n: var(--white);
+  --logo-node: var(--accent);
+  --logo-hire: var(--primary);
   display: inline-flex;
   align-items: center;
-  gap: 11px;
+  gap: 10px;
   color: var(--foreground);
 }
 
 .brand-logo__mark {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 37px;
-  height: 39px;
+  display: block;
+  width: 38px;
+  height: 38px;
   flex-shrink: 0;
-  padding-right: 4px;
-  border-radius: 10px;
-  background: var(--foreground);
-  color: var(--white);
-  font-size: 25px;
-  font-weight: 600;
-  letter-spacing: -3px;
+  overflow: visible;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.brand-logo__mark>span {
-  color: var(--accent);
+.brand-logo__tile {
+  fill: var(--logo-tile);
 }
 
-.brand-logo__mark i {
-  position: absolute;
-  right: 5px;
-  bottom: 5px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
+.brand-logo__n {
+  stroke: var(--logo-n);
+}
+
+.brand-logo__node {
+  fill: var(--logo-node);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav__logo:hover .brand-logo__mark {
   transform: scale(1.06);
 }
 
+.nav__logo:hover .brand-logo__node {
+  transform: translateY(-1.5px);
+}
+
 .brand-logo__name {
   font-weight: 700;
   font-size: 18px;
   letter-spacing: -0.025em;
+}
+
+.brand-logo__name > span {
+  color: var(--logo-hire);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-logo__mark,
+  .brand-logo__node {
+    transition: none;
+  }
 }
 
 /* Center Links Capsule */
