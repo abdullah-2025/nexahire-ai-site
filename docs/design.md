@@ -1,626 +1,157 @@
-# Landing Page Design System
-
-## 1. Design Goal
-
-Create a modern, clean, professional, and conversion-focused landing page using the approved teal color palette.
-
-The UI should feel:
-
-- Premium
-- Modern
-- Minimal
-- Trustworthy
-- Responsive
-- Easy to scan
-- Consistent across all sections
-
-Avoid unnecessary visual clutter, excessive gradients, or overly complex animations.
-
----
-
-## 2. Design Style
-
-### Visual Direction
-
-- Clean SaaS-style interface
-- Light theme by default
-- Large whitespace between sections
-- Rounded cards and buttons
-- Soft borders and subtle shadows
-- Strong typography hierarchy
-- Consistent spacing
-- Subtle animations and hover effects
-- Use the approved teal palette consistently throughout the landing page
-
-### Overall Layout
-
-```text
-Navbar
-Hero Section + Product Dashboard Preview
-Trusted By / Social Proof (Universities + Platform Stats)
-Features / Interactive Product Showcase
-How It Works
-Career Readiness / Benefits
-Testimonials
-Pricing
-FAQ
-Final CTA
-Footer
-```
-
----
-
-## 3. Approved Color System
-
-Use the following palette as the source of truth for the landing page.
-
-```css
-:root {
-  --color-teal-100: #D0DFE1;
-  --color-teal-300: #76A7AD;
-  --color-teal-500: #3B737A;
-  --color-teal-800: #144147;
-  --color-teal-950: #042E33;
-
-  --background: #FFFFFF;
-  --foreground: #042E33;
-
-  --primary: #3B737A;
-  --primary-hover: #144147;
-  --primary-foreground: #FFFFFF;
-
-  --secondary: #D0DFE1;
-  --secondary-foreground: #144147;
-
-  --accent: #76A7AD;
-  --accent-foreground: #042E33;
-
-  --muted: #F4F8F8;
-  --muted-foreground: #3B737A;
-
-  --border: #D0DFE1;
-  --card: #FFFFFF;
-  --card-foreground: #042E33;
-
-  --footer-background: #042E33;
-  --footer-foreground: #FFFFFF;
-}
-```
-
-### Palette Reference
-
-| Color | Hex | RGB | Recommended Use |
-|---|---|---|---|
-| Light Teal | `#D0DFE1` | 208, 223, 225 | Borders, light backgrounds, muted sections |
-| Soft Teal | `#76A7AD` | 118, 167, 173 | Accents, icons, secondary UI |
-| Primary Teal | `#3B737A` | 59, 115, 122 | Main buttons, highlights, active states |
-| Dark Teal | `#144147` | 20, 65, 71 | Headings, hover states, dark sections |
-| Deep Teal | `#042E33` | 4, 46, 51 | Primary text, footer, strong contrast areas |
-
-### Color Usage Rules
-
-- Use `#FFFFFF` or very light neutral backgrounds for most page sections.
-- Use `#3B737A` as the main CTA and brand color.
-- Use `#144147` for hover states, strong headings, and secondary dark UI.
-- Use `#042E33` for the strongest contrast, footer, and primary text where appropriate.
-- Use `#76A7AD` for icons, highlights, decorative accents, charts, and secondary actions.
-- Use `#D0DFE1` for borders, soft cards, badges, and subtle section backgrounds.
-- Avoid introducing unrelated accent colors unless needed for semantic states such as success, warning, or error.
-- Avoid heavy gradients. If a gradient is used, only blend colors from this palette.
-
----
-
-## 4. Typography
-
-Use one modern sans-serif font across the website.
-
-Recommended:
-
-- Inter
-- Geist
-- Manrope
-
-### Typography Hierarchy
-
-```text
-Hero Heading:
-48–72px desktop
-36–44px tablet
-30–38px mobile
-
-Section Heading:
-36–48px desktop
-28–36px mobile
-
-Card Heading:
-18–24px
-
-Body:
-16–18px
-
-Small Text:
-13–14px
-```
-
-Typography guidance:
-
-- Use `#042E33` for major headings.
-- Use `#144147` for secondary headings.
-- Use softer teal/neutral tones for supporting text.
-- Maintain clear contrast and readability.
-
----
-
-## 5. Spacing
-
-Use consistent spacing throughout the page.
-
-Recommended spacing scale:
-
-```text
-4px
-8px
-12px
-16px
-24px
-32px
-48px
-64px
-80px
-120px
-```
-
-Section spacing:
-
-```text
-Desktop: 96–120px
-Tablet: 72–96px
-Mobile: 56–72px
-```
-
-Maximum content width:
-
-```text
-1200px–1280px
-```
-
----
-
-## 6. Navigation
-
-Navbar should contain:
-
-```text
-Logo
-Features
-How It Works
-Readiness Score
-Stories
-Pricing
-FAQ
-Login
-Primary CTA
-```
-
-### Behavior
-
-- Sticky or fixed navbar
-- Light background with subtle transparency
-- Add soft `#D0DFE1` border when scrolling
-- Mobile hamburger navigation
-- Primary CTA uses `#3B737A`
-- CTA hover uses `#144147`
-
----
-
-## 7. Hero Section
-
-Hero structure:
-
-```text
-Optional Badge
-Main Headline
-Short Supporting Description
-Primary CTA
-Secondary CTA
-Trust / No-credit-card message
-Career Dashboard Mockup
-```
-
-### Hero Styling
-
-- Background: white or very subtle `#D0DFE1` tint
-- Main heading: `#042E33`
-- Highlighted heading text: `#3B737A`
-- Primary CTA: `#3B737A`
-- Secondary CTA: white background with `#3B737A` or `#144147` border
-- Decorative elements: `#76A7AD` and `#D0DFE1`
-
----
-
-## 8. Social Proof
-
-Include trust indicators such as:
-
-```text
-University names
-Students onboarded
-Reviews
-Ratings
-Usage statistics
-```
-
-Place this section directly after the hero, before the detailed product
-features. Keep it visually lightweight and use muted teal tones.
-
----
-
-## 9. Features Section
-
-Use interactive feature tabs paired with a supporting visual. Each feature
-entry should contain:
-
-```text
-Icon
-Feature title
-Short description
-Relevant visual and outcome caption
-```
-
-Recommended styling:
-
-- White card background
-- Border: `#D0DFE1`
-- Icon background: light tint of `#D0DFE1`
-- Icon color: `#3B737A`
-- Hover border/accent: `#76A7AD`
-- Headings: `#144147`
-
----
-
-## 10. How It Works
-
-Explain the complete NexaHire career-readiness flow once, in four steps. Do not
-add a second journey or opportunity-browsing workflow later on the page.
-
-Example:
-
-```text
-01 — Create Account
-02 — Configure Profile
-03 — Use the Platform
-04 — Track Results
-```
-
-Use `#3B737A` or `#76A7AD` for step numbers and timeline accents.
-
----
-
-## 11. Product Preview
-
-Product UI is integrated in two places rather than repeated as a standalone
-section:
-
-- The hero contains a career dashboard preview with readiness, role-match,
-  practice, progress, and next-action information.
-- The Features section contains interactive tabs with feature-specific
-  previews.
-
-Use real product UI wherever possible. Use soft teal borders and subtle shadows
-around dashboard and feature previews.
-
----
-
-## 12. Career Readiness / Benefits
-
-The Readiness section is the page's benefits section. It should connect CV
-quality, skills, interview preparation, and roadmap progress to one clear user
-outcome.
-
-Example:
-
-```text
-Save Time
-Improve Productivity
-Make Better Decisions
-Track Progress
-```
-
-Use `#76A7AD` for supporting icons and `#042E33` for benefit titles.
-
----
-
-## 13. Testimonials
-
-Testimonial cards should contain:
-
-```text
-User quote
-Profile image/avatar
-Name
-Role / Company
-```
-
-Card style:
-
-- White background
-- Soft `#D0DFE1` border
-- Quote text in `#144147`
-- Small teal accent element where useful
-
----
-
-## 14. Pricing
-
-Pricing currently uses two clear plans:
-
-```text
-Starter / Free
-Pro
-```
-
-Only add an Enterprise plan when the product has a distinct enterprise offer.
-
-Recommended plan:
-
-- Use `#3B737A` border or top accent
-- Use a subtle `#D0DFE1` background tint
-- Use `#3B737A` for primary CTA
-
-Do not make non-featured plans difficult to read.
-
----
-
-## 15. FAQ
-
-Use an accordion component.
-
-Styling:
-
-- White background
-- `#D0DFE1` separators
-- Question text: `#144147`
-- Active/open state accent: `#3B737A`
-
----
-
-## 16. Final CTA
-
-Use a visually distinct teal section near the end.
-
-Recommended:
-
-```text
-Background: #144147 or #042E33
-Heading: #FFFFFF
-Supporting text: #D0DFE1
-Primary CTA: #FFFFFF with dark teal text
-Secondary CTA: transparent with light border
-```
-
----
-
-## 17. Footer
-
-Footer structure:
-
-```text
-Logo + short description
-Platform
-Resources
-Legal
-Social links
-Privacy Policy
-Terms of Service
-Copyright
-```
-
-Recommended footer:
-
-```text
-Background: #042E33
-Primary text: #FFFFFF
-Secondary text: #D0DFE1
-Links hover: #76A7AD
-Borders: #144147
-```
-
----
-
-## 18. Buttons
-
-### Primary Button
-
-```text
-Background: #3B737A
-Text: #FFFFFF
-Hover: #144147
-Border: transparent
-```
-
-### Secondary Button
-
-```text
-Background: transparent or #FFFFFF
-Text: #144147
-Border: #76A7AD
-Hover background: #D0DFE1
-```
-
-### Button Rules
-
-- Use medium/large rounded corners.
-- Maintain consistent heights and padding.
-- Use subtle hover transitions.
-- Avoid overly pill-shaped buttons unless intentionally part of the brand style.
-
----
-
-## 19. Cards
-
-Cards should use:
-
-```text
-Background: #FFFFFF
-Border: #D0DFE1
-Text: #042E33 / #144147
-Border radius: 12–20px
-Padding: 24–32px
-```
-
-Optional hover:
-
-```text
-Border: #76A7AD
-Very subtle shadow
-Small translateY effect
-```
-
----
-
-## 20. Icons
-
-Use one consistent icon library.
-
-Recommended:
-
-```text
-Lucide Icons
-```
-
-Icon colors:
-
-- Primary icons: `#3B737A`
-- Secondary icons: `#76A7AD`
-- Icons on dark backgrounds: `#D0DFE1` or white
-
----
-
-## 21. Animations
-
-Animations should be subtle.
-
-Allowed:
-
-```text
-Fade-in
-Slide-up
-Scale on hover
-Card hover
-Button hover
-Smooth scrolling
-```
-
-Recommended duration:
-
-```text
-150ms–400ms
-```
-
-Avoid excessive animation and unnecessary motion.
-
----
-
-## 22. Responsive Design
-
-Support:
-
-```text
-Desktop
-Laptop
-Tablet
-Mobile
-```
-
-Suggested breakpoints:
-
-```text
-Mobile: < 640px
-Tablet: 640px–1024px
-Desktop: > 1024px
-```
-
-### Mobile Rules
-
-- Stack multi-column layouts.
-- Reduce heading sizes.
-- Reduce section padding.
-- Keep CTA buttons easy to tap.
-- Avoid horizontal scrolling.
-- Make screenshots responsive.
-- Collapse navbar into a mobile menu.
-
----
-
-## 23. Accessibility
-
-Ensure:
-
-- Strong contrast between text and backgrounds
-- Semantic HTML
-- Keyboard-accessible navigation
-- Visible focus states
-- Alt text for meaningful images
-- Proper heading hierarchy
-- Descriptive button labels
-
-Use the darker teal colors for text whenever lighter shades do not provide sufficient contrast.
-
----
-
-## 24. Component Structure
-
-```text
-src/components/
-├── Navigation
-├── Hero (includes ProductPreview)
-├── SiteSections
-└── sections/
-    ├── UniversityMarquee
-    ├── Stats
-    ├── Features
-    ├── HowItWorks
-    ├── Readiness
-    ├── Testimonials
-    ├── Pricing
-    ├── Faq
-    ├── CallToAction
-    └── Footer
-```
-
----
-
-## 25. Development Rules
-
-- Treat this `design.md` as the visual source of truth.
-- Use the approved teal palette only for branding and visual hierarchy.
-- Reuse components instead of duplicating UI.
-- Keep spacing and typography consistent.
-- Do not introduce unnecessary dependencies.
-- Do not break existing functionality.
-- Avoid hardcoded colors outside the defined design tokens.
-- Make all sections responsive.
-- Keep components modular and maintainable.
-- Preserve existing routing and business logic.
-- Optimize images and assets.
-- Maintain consistent hover, focus, and active states.
-
----
-
-## 26. Final Design Standard
-
-The completed landing page should feel:
-
-```text
-Modern
-Clean
-Premium
-Minimal
-Professional
-Responsive
-Consistent
-Conversion-focused
-Production-ready
-```
-
-Every new landing-page component must follow this file before introducing a new visual pattern.
+# NexaHire Landing Page — Design System
+
+The landing page markets NexaHire as an **AI-Powered Job & Interview Platform**: students rehearse with an AI voice interviewer, get a scored report after every session, and apply to roles matched to their profile. The CV builder, AI CV analysis and career roadmap are supporting tools.
+
+It shares one brand with the app (`AI-Powered-Job-and-Interview-Platform/frontend`): the same tokens, logo and hierarchy. The app's `design.md` §9 is the companion specification.
+
+## 1. Principles
+
+- **Light mode only.** No dark theme and no blue or teal anywhere.
+- **Editorial and calm.** A warm stone canvas, white cards with hairline borders, generous whitespace, and a serif italic accent in headlines.
+- **Honest.** The page describes only what the app does today. Do not add invented metrics, testimonials, ratings or endorsements. Product UI shown on the page is labelled as a sample or example.
+- **One source of truth for color.** Every color comes from `src/styles/tokens.css`.
+
+## 2. Color
+
+### 2.1 Tokens (`src/styles/tokens.css`)
+
+Tier 1 primitives mirror the app exactly:
+
+| Primitive | Value | Role |
+| --- | --- | --- |
+| `--stone-50` | `#F7F6F3` | Raised bands, inset panels |
+| `--stone-100` | `#F0EFEC` | Page canvas |
+| `--stone-200` | `#E6E4DE` | Subtle fills, bar tracks |
+| `--stone-300` | `#DFDDD7` | Hairline borders |
+| `--ink-900` / `--ink-800` | `#1C1A17` / `#2E2A25` | Primary actions, headings, body text / hover |
+| `--ink-700` | `#3A332C` | Hero-gradient midpoint |
+| `--taupe-500` / `--taupe-600` | `#6B635A` / `#57504A` | Secondary text, pills, kickers / hover |
+| `--taupe-300` | `#C9BFB2` | Text on dark, score-ring track, decorative numerals |
+| `--taupe-100` / `--taupe-200` | taupe at 9% / 20% | Tint fill / tint border |
+| `--bronze-600` / `--bronze-700` | `#8A5A2B` / `#6F4720` | Accent / accent hover |
+| `--bronze-100` | bronze at 10% | Accent tint |
+| `--sand-500`, `--plum-600` | `#C2A57A`, `#6D4C6B` | Data and decoration only; sand is never text |
+
+Tier 2 semantic roles (what components use): `--surface-canvas`, `--surface-raised`, `--surface-card` (#FFF), `--surface-subtle`, `--border-hairline`, `--border-control`, `--text-primary`, `--text-secondary`, `--text-on-primary`, `--brand-primary` / `-hover`, `--brand-accent` / `-hover` / `-tint`, `--brand-taupe` / `-hover` / `-tint` / `-line`, the on-dark set (`--on-dark`, `--on-dark-muted`, `--on-dark-line`, `--on-dark-fill`), `--hero-gradient` and `--viz-1…5`.
+
+The channel triplets (`--ink-ch`, `--bronze-ch`, `--taupe-ch`, `--stone-50-ch`, `--stone-100-ch`, `--white-ch`) exist for `rgb(var(--x-ch) / a)` and Tailwind opacity modifiers.
+
+### 2.2 Tailwind
+
+`tailwind.config.ts` sets `theme.colors` (not `extend`), so only brand colors exist. Tailwind's stock palettes, including blue, teal, sky and slate, generate nothing. Available names include `ink`, `canvas`, `raised`, `subtle`, `line`, `muted`, `taupe`, `taupe-tint`, `taupe-line`, `bronze`, `bronze-tint`, `on-dark`, `sand` and `plum`, plus `white`, `black`, `transparent` and `current`. Do not use arbitrary color classes such as `bg-[#…]`.
+
+### 2.3 Hierarchy
+
+| Role | Treatment |
+| --- | --- |
+| Primary action | Ink button with stone text (`.btn--primary`). On dark surfaces, a stone button with ink text (`.btn--light`). |
+| Secondary action | White button with a taupe-line border (`.btn--secondary`). On dark surfaces, a ghost button (`.btn--ghost-dark`). |
+| Text | Headings and body in ink; supporting copy, kickers and metadata in taupe-500. |
+| Bronze (sparingly) | Links (`.link`), selected toolkit tab icon, interview scores, match %, the "Most popular" plan badge, the logo's "Hire". Never the dominant color of a section. |
+| Cards | White, 1px hairline border, 20px radius, soft shadow, on the stone canvas. |
+| Hero gradient | Only on the hero, the closing CTA card and the legal page header bands. |
+
+## 3. Typography
+
+- **Inter** (self-hosted) is used for all UI and body text.
+- **Instrument Serif italic** (self-hosted, `.serif`) is the headline accent only. Use it for one phrase per headline ("*Land the job.*", "*listens.*"), for the large step numerals, and for the interview question in the hero scene.
+- **Sizes:**
+  - Hero headline: `clamp(46px, 6.6vw, 88px)`.
+  - Section headline (`.h-section`): `clamp(34px, 4.6vw, 56px)`.
+  - Lead (`.lead`): 16–18px.
+  - Body: 14–17px.
+  - Kicker: 12px, uppercase, 0.14em tracking.
+
+## 4. Layout and spacing
+
+- Content width: `.container-x`, `min(1200px, 100% − 40px)`.
+- Section padding: `clamp(64px, 8vw, 104px)`. `.section--raised` adds a stone-50 band with hairlines.
+- Breakpoints: **640px** and **1024px**. Below 1024px the nav collapses to a drawer and split sections stack.
+
+## 5. Page structure (`src/app/page.tsx`)
+
+| # | Section | Component | Purpose |
+| --- | --- | --- | --- |
+| 1 | Navigation | `Navigation.tsx` | Floating pill: translucent ink over the hero, white once scrolled. Links: Interviews, Jobs, Toolkit, How it works, Pricing, FAQ; Sign in; Start free. On mobile, a drawer (Escape closes it, page scroll locks while it is open). |
+| 2 | Hero | `Hero.tsx`, `hero.css` | Eyebrow "AI-Powered Job & Interview Platform". H1 "Practice the interview. *Land the job.*". Primary and secondary CTAs, three plain facts, and a product scene: live AI interview card, interview report (score ring and competencies), matched-role card. |
+| 3 | Proof strip | `ProofStrip.tsx` | Four factual product tiles. |
+| 4 | Interviews | `Interviews.tsx` | Three setup steps and a sample interview report mirroring the app's report. |
+| 5 | Jobs | `Jobs.tsx` | Browse, filter, save, apply; three example role cards with match %. |
+| 6 | Toolkit | `Toolkit.tsx`, `data/features.ts` | Tabs for CV Builder, AI CV Analysis and Career Roadmap, with photos given a light warm grade. |
+| 7 | How it works | `HowItWorks.tsx` | Four interview-first steps. |
+| 8 | Pricing | `Pricing.tsx`, `data/plans.ts` | Student Free / Pro / Premium with a monthly/yearly toggle. |
+| 9 | FAQ | `Faq.tsx`, `data/faqs.ts` | Accordion and a contact link. |
+| 10 | Closing CTA | `CallToAction.tsx` | Hero-gradient card. |
+| 11 | Footer | `Footer.tsx` | Ink background, product/account/legal links, giant wordmark. Shared with the legal pages, so its links are absolute (`/#…`). |
+
+Legal pages (`/privacy`, `/terms`, `/contact`) use `LegalShell.tsx`: a hero-gradient header band with a badge, title and intro, then a white reading card on the stone canvas, then the shared footer.
+
+## 6. Content rules
+
+- **Pricing** must match the app's `billing-plans.ts` and the backend Stripe catalog:
+  - Student Free: $0.
+  - Pro: $10/month, or $96/year shown as $8/month.
+  - Premium: $20/month, or $192/year shown as $16/month.
+  - Features: free plan 2 mock interviews/week; Pro 5/day; Premium unlimited.
+  - Update `src/data/plans.ts` whenever the app changes.
+- **Interview facts:**
+  - Setup: technical / behavioral / mixed; junior / mid / senior; 10–30 minutes.
+  - A saved CV is required.
+  - Report: score /100, competencies /10, strengths, improvements, question-by-question review, transcript.
+- Example roles use generic employers and are labelled "Example roles".
+- Do not promise live interviews with employers, a readiness score, or recruiter matching.
+
+## 7. Components and states
+
+- **Buttons:** `.btn` plus a variant, 48px tall, 12px radius. Arrow icons nudge on hover.
+- **Pills:** `.pill` (taupe tint) and `.pill--accent` (bronze tint, used for match % only).
+- **Icon tiles:** `.icon-tile`, a 40px stone-50 square with a hairline border and an ink Lucide icon via `SiteIcon`.
+- **Score ring:** `ScoreRing.tsx` draws a bronze value on a taupe-300 track.
+- **Focus:**
+  - A 2px ink outline with a 3px offset on every interactive element.
+  - Stone on `.on-dark` surfaces.
+  - A skip link is the first tab stop on every page.
+
+## 8. Motion
+
+- Entrance reveals (`.reveal`): 0.5s fade and rise, staggered with `--d`.
+- Hero scene: cards rise in, the score ring draws, competency bars grow, and the waveform and live dot animate.
+- Toolkit: images crossfade. Tabs autoplay every 7s only when motion is allowed; autoplay pauses on hover or focus and stops once a user picks a tab.
+- **Reduced motion:** all animation and transition durations collapse to near zero, `.reveal` content shows immediately, smooth scrolling is off, and Toolkit never autoplays.
+
+## 9. Accessibility
+
+- Landmarks: `nav`, `main#main`, `footer`. Footer columns are labelled `nav` elements.
+- The tabs follow the ARIA tablist pattern with arrow-key navigation. The FAQ uses `aria-expanded` / `aria-controls` with labelled regions. The billing toggle is a radiogroup.
+- Decorative product scenes are `aria-hidden` and have an `sr-only` description.
+- **Measured contrast:**
+
+| Pair | Ratio |
+| --- | --- |
+| Ink on canvas | 15.1:1 |
+| Taupe-500 on white / canvas | 5.9:1 / 5.1:1 |
+| Bronze on white / bronze tint | 5.9:1 / 5.1:1 |
+| Stone-50 on ink / bronze end of the gradient | 16.1:1 / 5.4:1 |
+| Taupe-300 on ink | 9.6:1 |
+| Hero subtext (stone-50 at 74%) | ≥ 7.1:1 |
+
+## 10. Files
+
+| File | Owns |
+| --- | --- |
+| `src/styles/tokens.css` | All color, shadow, radius and font tokens |
+| `src/styles/theme.css` | Base, type, buttons, pills, cards, reveal, brand logo, navigation, back-to-top, reduced motion |
+| `src/styles/hero.css` | Hero and product scene |
+| `src/styles/sections.css` | All other home sections, footer, legal shell |
+| `src/styles/fonts.css` | Self-hosted Inter and Instrument Serif |
+| `public/brand/*`, `public/favicon.svg`, `public/apple-touch-icon.png` | Brand assets, identical to the app's |
+
+## 11. Verification
+
+Before shipping, run `npm run typecheck`, `npm run lint` and `npm run build`. Then confirm that none of the following appear under `src/`:
+
+- the old teal hex values;
+- arbitrary hex classes (`\[#[0-9a-f]{3,6}\]`);
+- the phrases "Readiness Score" and "live interview".
+
+See `docs/verification/README.md`.

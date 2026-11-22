@@ -1,127 +1,91 @@
-import ScrubHeading from '../ScrubHeading'
-import type { CSSProperties } from 'react'
+'use client'
+
+import { useState, type CSSProperties } from 'react'
 import SiteIcon from '../SiteIcon'
 import { authLinks } from '@/data/auth-links'
+import { plans, type BillingInterval } from '@/data/plans'
+
+const usd = (amount: number) => `$${Number.isInteger(amount) ? amount : amount.toFixed(2)}`
 
 export default function Pricing() {
+  const [interval, setBillingInterval] = useState<BillingInterval>('month')
+
   return (
-    <section id="pricing" className="relative py-20 lg:py-32">
+    <section id="pricing" className="section">
       <div className="container-x">
-        <div className="mx-auto mb-14 max-w-2xl text-center lg:mb-20">
-          <div className="badge reveal">
-            <SiteIcon className="w-3.5 h-3.5 text-accent" name="credit-card" />{' '}
-            Pricing
-          </div>
-          <ScrubHeading className="h-section mt-5">
-            Start free. <span className="serif">Scale when ready.</span>
-          </ScrubHeading>
-          <p className="reveal mt-5 text-[16px] leading-relaxed text-[color:var(--muted-foreground)]">
-            Get core features at no cost. Upgrade to Pro for unlimited AI
-            analysis, interviews, and premium job access.
+        <div className="section-head section-head--center reveal">
+          <span className="kicker">Pricing</span>
+          <h2 className="h-section">
+            Start free. <span className="serif">Practice more when you need to.</span>
+          </h2>
+          <p className="lead">
+            Every plan includes the CV builder, AI CV analysis and your career
+            roadmap. Paid plans add more mock interviews.
           </p>
+
+          <div role="radiogroup" aria-label="Billing period" className="billing-toggle">
+            <button
+              type="button"
+              role="radio"
+              aria-checked={interval === 'month'}
+              onClick={() => setBillingInterval('month')}
+            >
+              Monthly
+            </button>
+            <button
+              type="button"
+              role="radio"
+              aria-checked={interval === 'year'}
+              onClick={() => setBillingInterval('year')}
+            >
+              Yearly
+              <span className="pill">Save 20%</span>
+            </button>
+          </div>
         </div>
-        <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
-          <div className="reveal">
-            <div className="plan spot">
-              <div className="text-[13px] font-semibold text-[color:var(--muted-foreground)]">
-                Starter
-              </div>
-              <div className="mt-2 text-[56px] font-semibold leading-none tracking-tight text-foreground">
-                Free
-              </div>
-              <p className="mb-7 mt-2 text-[13.5px] text-[color:var(--muted-foreground)]">
-                Perfect for getting started
-              </p>
-              <ul className="mb-8 flex-1">
-                <li>
-                  <SiteIcon className="h-4 w-4 text-accent" name="check" />1 CV
-                  template + PDF export
-                </li>
-                <li>
-                  <SiteIcon className="h-4 w-4 text-accent" name="check" />3 AI
-                  CV analyses / month
-                </li>
-                <li>
-                  <SiteIcon className="h-4 w-4 text-accent" name="check" />
-                  Basic career roadmap
-                </li>
-                <li>
-                  <SiteIcon className="h-4 w-4 text-accent" name="check" />2
-                  mock interview sessions
-                </li>
-                <li>
-                  <SiteIcon className="h-4 w-4 text-accent" name="check" />
-                  Job search &amp; bookmarks
-                </li>
-                <li>
-                  <SiteIcon className="h-4 w-4 text-accent" name="check" />
-                  Readiness score dashboard
-                </li>
-              </ul>
-              <a
-                href={authLinks.signup}
-                className="btn-ghost justify-center text-center"
+
+        <div className="plans">
+          {plans.map((plan, index) => {
+            const monthly = plan.prices ? (interval === 'year' ? plan.prices.year / 12 : plan.prices.month) : 0
+            return (
+              <article
+                key={plan.id}
+                className={`card plan reveal${plan.featured ? ' plan--featured' : ''}`}
+                style={{ '--d': `${index * 0.08}s` } as CSSProperties}
               >
-                Get Started
-              </a>
-            </div>
-          </div>
-          <div className="reveal" style={{ '--d': '.12s' } as CSSProperties}>
-            <div className="plan plan--featured spot">
-              <span className="pop">MOST POPULAR</span>
-              <div className="text-[13px] font-semibold text-muted-foreground">
-                Pro
-              </div>
-              <div className="mt-2 flex items-end gap-1">
-                <span className="text-[56px] font-semibold leading-none tracking-tight text-foreground">
-                  ₨1,499
-                </span>
-                <span className="mb-1.5 text-[14px] text-muted-foreground">
-                  /month
-                </span>
-              </div>
-              <p className="mb-7 mt-2 text-[13.5px] text-muted-foreground">
-                For serious career preparation
-              </p>
-              <ul className="mb-8 flex-1">
-                <li>
-                  <SiteIcon className="h-4 w-4 text-accent" name="check" />
-                  All CV templates + custom branding
-                </li>
-                <li>
-                  <SiteIcon className="h-4 w-4 text-accent" name="check" />
-                  Unlimited AI CV analyses
-                </li>
-                <li>
-                  <SiteIcon className="h-4 w-4 text-accent" name="check" />
-                  Full career roadmaps with tracking
-                </li>
-                <li>
-                  <SiteIcon className="h-4 w-4 text-accent" name="check" />
-                  Unlimited mock interviews + feedback
-                </li>
-                <li>
-                  <SiteIcon className="h-4 w-4 text-accent" name="check" />
-                  Premium job listings + alerts
-                </li>
-                <li>
-                  <SiteIcon className="h-4 w-4 text-accent" name="check" />
-                  Live interview scheduling
-                </li>
-                <li>
-                  <SiteIcon className="h-4 w-4 text-accent" name="check" />
-                  Priority recruiter visibility
-                </li>
-              </ul>
-              <a href={authLinks.login} className="btn justify-between">
-                Upgrade to Pro{' '}
-                <span className="arr">
-                  <SiteIcon className="h-4 w-4" name="arrow-up-right" />
-                </span>
-              </a>
-            </div>
-          </div>
+                {plan.featured && <span className="plan__badge">Most popular</span>}
+                <h3 className="plan__name">{plan.name}</h3>
+                <p className="plan__tagline">{plan.tagline}</p>
+                <div className="plan__price">
+                  <strong>{usd(monthly)}</strong>
+                  <span>/ month</span>
+                </div>
+                <p className="plan__billed">
+                  {plan.prices
+                    ? interval === 'year'
+                      ? `Billed ${usd(plan.prices.year)} yearly`
+                      : 'Billed monthly'
+                    : 'Free forever'}
+                </p>
+                <ul className="plan__features">
+                  {plan.features.map((feature, featureIndex) => (
+                    <li key={feature} className={featureIndex === plan.highlight ? 'is-highlight' : undefined}>
+                      <SiteIcon name="check" size={16} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={authLinks.signup}
+                  className={`btn btn--block ${plan.featured ? 'btn--primary' : 'btn--secondary'}`}
+                >
+                  {plan.cta}
+                </a>
+              </article>
+            )
+          })}
         </div>
+        <p className="plans__note">Prices in USD. Cancel anytime and keep access until the end of your billing period.</p>
       </div>
     </section>
   )

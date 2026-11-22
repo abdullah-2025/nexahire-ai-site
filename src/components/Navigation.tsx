@@ -1,136 +1,106 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Icon } from './HeroIcon'
 import BrandLogo from './BrandLogo'
-import { icons } from '@/data/hero-icons'
+import SiteIcon from './SiteIcon'
 import { authLinks } from '@/data/auth-links'
+
+const links = [
+  { href: '#interviews', label: 'Interviews' },
+  { href: '#jobs', label: 'Jobs' },
+  { href: '#toolkit', label: 'Toolkit' },
+  { href: '#how-it-works', label: 'How it works' },
+  { href: '#pricing', label: 'Pricing' },
+  { href: '#faq', label: 'FAQ' },
+]
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
+    const onScroll = () => setScrolled(window.scrollY > 24)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Complete Page Scroll Lock while mobile/tablet menu is open
+  // Lock page scroll and close on Escape while the mobile drawer is open.
   useEffect(() => {
-    if (menuOpen) {
-      document.documentElement.style.overflow = 'hidden'
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.documentElement.style.overflow = 'unset'
-      document.body.style.overflow = 'unset'
+    if (!menuOpen) return
+    const root = document.documentElement
+    const previous = root.style.overflow
+    root.style.overflow = 'hidden'
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false)
     }
-
-    // Cleanup when component unmounts
+    window.addEventListener('keydown', onKey)
     return () => {
-      document.documentElement.style.overflow = 'unset'
-      document.body.style.overflow = 'unset'
+      root.style.overflow = previous
+      window.removeEventListener('keydown', onKey)
     }
   }, [menuOpen])
 
+  const close = () => setMenuOpen(false)
+
   return (
     <>
-      {/* Background Blur Overlay for Mobile/Tablet Navigation Drawer */}
-      {menuOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-black/30 backdrop-blur-md touch-none select-none"
-          onClick={() => setMenuOpen(false)}
-          onTouchMove={(e) => e.preventDefault()}
-          onWheel={(e) => e.preventDefault()}
-          aria-hidden="true"
-        />
-      )}
+      {menuOpen && <div className="nav__overlay" onClick={close} aria-hidden="true" />}
 
-      <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
+      <nav
+        className={`nav${scrolled ? ' nav--scrolled' : ''}${menuOpen ? ' nav--open' : ''}`}
+        aria-label="Main"
+      >
         <div className="nav__inner">
-          <a href="#" className="nav__logo" aria-label="NexaHire home">
+          <a href="#top" className="nav__logo" aria-label="NexaHire home">
             <BrandLogo />
           </a>
 
-          {/* Center Pill Capsule for Links */}
-          <div className="nav__links-capsule">
-            <a href="#features">Features</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#readiness">Readiness Score</a>
-            <a href="#testimonials">Stories</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#faq">FAQ</a>
+          <div className="nav__links">
+            {links.map((link) => (
+              <a key={link.href} href={link.href}>
+                {link.label}
+              </a>
+            ))}
           </div>
 
-          {/* Right Actions */}
           <div className="nav__actions">
             <a href={authLinks.login} className="nav__signin">
-              Sign In
+              Sign in
             </a>
-            <a href={authLinks.signup} className="nav__cta">
-              <span className="nav__cta-text">Get Started Free</span>
-              <span className="nav__cta-arrow">
-                <Icon d={icons.arrowUpRight} size={13} />
-              </span>
+            <a href={authLinks.signup} className="btn nav__cta">
+              Start free
+              <SiteIcon name="arrow-up-right" size={16} />
             </a>
           </div>
 
           <button
+            type="button"
             className="nav__burger"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
           >
-            <Icon d={menuOpen ? icons.x : icons.menu} size={20} />
+            <SiteIcon name={menuOpen ? 'x' : 'menu'} size={20} />
           </button>
         </div>
 
-        {/* Mobile menu dropdown */}
         {menuOpen && (
-          <div className="nav__mobile-wrapper">
-            <div
-              id="mobile-navigation"
-              className="nav__mobile nav__mobile--open"
-            >
-              <a href="#features" onClick={() => setMenuOpen(false)}>
-                Features
+          <div id="mobile-navigation" className="nav__drawer">
+            {links.map((link) => (
+              <a key={link.href} href={link.href} onClick={close}>
+                {link.label}
               </a>
-              <a href="#how-it-works" onClick={() => setMenuOpen(false)}>
-                How It Works
+            ))}
+            <div className="nav__drawer-actions">
+              <a href={authLinks.login} className="btn btn--secondary btn--block" onClick={close}>
+                Sign in
               </a>
-              <a href="#readiness" onClick={() => setMenuOpen(false)}>
-                Readiness Score
+              <a href={authLinks.signup} className="btn btn--primary btn--block" onClick={close}>
+                Start free
+                <SiteIcon name="arrow-up-right" size={16} />
               </a>
-              <a href="#testimonials" onClick={() => setMenuOpen(false)}>
-                Stories
-              </a>
-              <a href="#pricing" onClick={() => setMenuOpen(false)}>
-                Pricing
-              </a>
-              <a href="#faq" onClick={() => setMenuOpen(false)}>
-                FAQ
-              </a>
-              <div className="nav__mobile-actions">
-                <a
-                  href={authLinks.login}
-                  className="nav__signin"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Sign In
-                </a>
-                <a
-                  href={authLinks.signup}
-                  className="nav__cta nav__cta--full"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <span className="nav__cta-text">Get Started Free</span>
-                  <span className="nav__cta-arrow">
-                    <Icon d={icons.arrowUpRight} size={13} />
-                  </span>
-                </a>
-              </div>
             </div>
           </div>
         )}

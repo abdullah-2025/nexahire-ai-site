@@ -1,40 +1,89 @@
-/* Approved palette — docs/design.md. All presentation colors derive from here. */
+/* NexaHire brand contract, shared with the app (frontend/app/design-tokens.css).
+   Light mode only. No blue or teal anywhere.
+   Tier 1 primitives hold raw values; tier 2 semantic roles say what a color is for.
+   Components read tier 2. The *-ch channel triplets let Tailwind apply /opacity. */
 :root {
   color-scheme: light;
-  --color-teal-100: #d0dfe1;
-  --color-teal-300: #76a7ad;
-  --color-teal-500: #3b737a;
-  --color-teal-800: #144147;
-  --color-teal-950: #042e33;
-  --white: #ffffff;
-  --white-rgb: 255, 255, 255;
-  --bg-rgb: var(--white-rgb);
-  --surface-rgb: var(--white-rgb);
-  --accent-rgb: 118, 167, 173;
-  --accent-channels: 118 167 173;
-  --secondary-channels: 208 223 225;
-  --foreground-channels: 4 46 51;
-  --shadow-rgb: 4, 46, 51;
 
-  --background: var(--white);
-  --foreground: var(--color-teal-950);
-  --primary: var(--color-teal-500);
-  --primary-hover: var(--color-teal-800);
-  --primary-foreground: var(--white);
-  --secondary: var(--color-teal-100);
-  --secondary-foreground: var(--color-teal-800);
-  --accent: var(--color-teal-300);
-  --accent-foreground: var(--color-teal-950);
-  --surface-tint: color-mix(in srgb, var(--secondary) 22%, var(--white));
-  --muted: var(--surface-tint);
-  --muted-foreground: var(--color-teal-500);
-  --border: var(--color-teal-100);
-  --card: var(--white);
-  --card-foreground: var(--color-teal-950);
-  --footer-background: var(--color-teal-950);
-  --footer-foreground: var(--white);
-  --shadow-soft: 0 8px 28px -12px rgba(var(--shadow-rgb), 0.12);
-  --shadow-card: 0 18px 44px -24px rgba(var(--shadow-rgb), 0.18);
-  --line: var(--border);
+  /* ── Tier 1 · Primitives ─────────────────────────────────────────────── */
+  --stone-50: #f7f6f3;
+  --stone-100: #f0efec;
+  --stone-200: #e6e4de;
+  --stone-300: #dfddd7;
+
+  --ink-900: #1c1a17;
+  --ink-800: #2e2a25;
+  --ink-700: #3a332c; /* hero gradient midpoint */
+
+  --taupe-100: rgba(107, 99, 90, 0.09);
+  --taupe-200: rgba(107, 99, 90, 0.2);
+  --taupe-300: #c9bfb2;
+  --taupe-500: #6b635a;
+  --taupe-600: #57504a;
+
+  --bronze-100: rgba(138, 90, 43, 0.1);
+  --bronze-600: #8a5a2b;
+  --bronze-700: #6f4720;
+
+  --sand-500: #c2a57a; /* data and decoration only, never text */
+  --plum-600: #6d4c6b;
+
+  /* Channel triplets for rgb(var(--x-ch) / a) */
+  --ink-ch: 28 26 23;
+  --taupe-ch: 107 99 90;
+  --bronze-ch: 138 90 43;
+  --stone-50-ch: 247 246 243;
+  --stone-100-ch: 240 239 236;
+  --white-ch: 255 255 255;
+
+  /* ── Tier 2 · Semantic roles ─────────────────────────────────────────── */
+  --surface-canvas: var(--stone-100);
+  --surface-raised: var(--stone-50);
+  --surface-card: #ffffff;
+  --surface-subtle: var(--stone-200);
+
+  --border-hairline: var(--stone-300);
+  --border-control: var(--taupe-500);
+
+  --text-primary: var(--ink-900);
+  --text-secondary: var(--taupe-500);
+  --text-on-primary: var(--stone-50);
+
+  --brand-primary: var(--ink-900);
+  --brand-hover: var(--ink-800);
+  --brand-accent: var(--bronze-600);
+  --brand-accent-hover: var(--bronze-700);
+  --brand-accent-tint: var(--bronze-100);
+  --brand-taupe: var(--taupe-500);
+  --brand-taupe-hover: var(--taupe-600);
+  --brand-taupe-tint: var(--taupe-100);
+  --brand-taupe-line: var(--taupe-200);
+
+  /* Content on ink and hero-gradient surfaces */
+  --on-dark: var(--stone-50);
+  --on-dark-muted: var(--taupe-300);
+  --on-dark-line: rgb(var(--stone-100-ch) / 16%);
+  --on-dark-fill: rgb(var(--stone-100-ch) / 7%);
+
+  /* Reserved for the hero, the closing CTA card and legal page header bands. */
+  --hero-gradient: linear-gradient(135deg, var(--ink-900) 0%, var(--ink-700) 60%, var(--bronze-600) 100%);
+
+  /* Multi-series accents, in priority order */
+  --viz-1: var(--ink-900);
+  --viz-2: var(--bronze-600);
+  --viz-3: var(--taupe-500);
+  --viz-4: var(--sand-500);
+  --viz-5: var(--plum-600);
+
+  --shadow-soft: 0 8px 28px -12px rgb(var(--ink-ch) / 12%);
+  --shadow-card: 0 18px 44px -24px rgb(var(--ink-ch) / 22%);
+  --shadow-lift: 0 30px 60px -30px rgb(var(--ink-ch) / 35%);
+  --focus-ring: 0 0 0 3px rgb(var(--ink-ch) / 14%);
+
+  --radius-card: 20px;
+  --radius-control: 12px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
 }

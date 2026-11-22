@@ -1,15 +1,18 @@
 type BrandLogoProps = {
-  variant?: 'default' | 'footer'
+  /** `light` is for ink and hero-gradient surfaces. */
+  variant?: 'default' | 'light'
 }
 
 /*
  * NexaHire mark: a geometric N whose path climbs into a figure. The right
  * stem and the node above it read as a person (the hire); the node is the
- * AI match. Standalone files live in /public/brand.
+ * AI match. Ink tile, stone mark, bronze node; "Nexa" ink, "Hire" bronze.
+ * Colors come from .brand-logo in src/styles/theme.css. Standalone files live in
+ * /public/brand (shared with the app).
  */
 export default function BrandLogo({ variant = 'default' }: BrandLogoProps) {
   return (
-    <span className={`brand-logo brand-logo--${variant}`}>
+    <span className={`brand-logo${variant === 'light' ? ' brand-logo--light' : ''}`}>
       <svg
         className="brand-logo__mark"
         viewBox="0 0 64 64"
