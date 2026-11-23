@@ -438,41 +438,9 @@
 
 @media (min-width: 1024px) {
   .hero__inner {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr);
-    gap: 48px;
     min-height: 100svh;
     max-height: 980px;
     padding-block: 120px 72px;
-  }
-
-  .scene {
-    display: block;
-    height: 580px;
-  }
-
-  .scene__card {
-    position: absolute;
-  }
-
-  /* Cards overlap only each other's empty corners. */
-  .scene-call {
-    top: 128px;
-    left: 0;
-    width: 66%;
-  }
-
-  .scene-job {
-    top: 0;
-    right: 0;
-    z-index: 1;
-    width: 46%;
-  }
-
-  .scene-report {
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    width: 58%;
   }
 }
 
