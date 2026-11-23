@@ -1,108 +1,102 @@
-import InterviewGlobe from './InterviewGlobe'
+import FoldText from './FoldText'
 import Navigation from './Navigation'
-import { Icon } from './HeroIcon'
+import HeroStage from './hero/HeroStage'
+import SiteIcon from './SiteIcon'
 import { authLinks } from '@/data/auth-links'
-import { icons } from '@/data/hero-icons'
 
 export default function Hero() {
   return (
-    <section id="top" className="hero hero24">
+    <section id="top" className="hero on-dark">
       <Navigation />
 
-      <div className="hero24__backdrop" aria-hidden="true">
-        <span className="hero24__glow hero24__glow--left" />
-        <span className="hero24__glow hero24__glow--right" />
-        <span className="hero24__grid" />
+      <div className="hero__backdrop" aria-hidden="true">
+        <span className="hero__grid" />
+        <span className="hero__glow" />
       </div>
 
-      <div className="hero24__inner">
-        <div className="hero24__copy">
-          <div className="hero24__eyebrow">
-            <span className="hero24__status-dot" />
-            AI practice + live employer interviews
-          </div>
-
-          <h1 className="hero24__headline">
-            Practice with AI.
-            <span>Interview live. Get hired.</span>
-          </h1>
-
-          <p className="hero24__subheading">
-            Build confidence with role-specific AI mock interviews, then move
-            seamlessly into live interviews with real employers—all in one
-            intelligent hiring platform.
+      <div className="hero__inner container-x">
+        <div className="hero__copy">
+          <p className="hero__eyebrow">
+            <span className="hero__eyebrow-dot" aria-hidden="true" />
+            AI-Powered Job &amp; Interview Platform
           </p>
 
-          <div className="hero24__actions">
-            <a
-              href={authLinks.signup}
-              className="hero24__button hero24__button--primary"
-            >
-              Start interviewing free
-              <span>
-                <Icon d={icons.arrowUpRight} size={15} />
-              </span>
+          <h1 className="hero__title">
+            <FoldText
+              text="Practice the interview."
+              foldStyle="paper"
+              splitBy="char"
+              hinge="top"
+              foldAngle={92}
+              duration={0.7}
+              stagger={0.035}
+              ease="power3.out"
+              creaseShading={0.55}
+              fontSize="inherit"
+              fontWeight="inherit"
+            />
+            <span className="serif">
+              <FoldText
+                text="Land the job."
+                foldStyle="flip"
+                splitBy="char"
+                hinge="left"
+                duration={0.8}
+                stagger={0.05}
+                delay={0.65}
+                ease="power3.out"
+                creaseShading={0.4}
+                fontSize="inherit"
+                fontWeight="inherit"
+              />
+            </span>
+          </h1>
+
+          <p className="hero__sub">
+            <FoldText
+              text="Rehearse out loud with an AI interviewer built around your target role, get a scored report after every session, then find matching roles and apply in one click."
+              foldStyle="paper"
+              splitBy="word"
+              hinge="bottom"
+              foldAngle={70}
+              duration={0.6}
+              stagger={0.018}
+              delay={1.15}
+              ease="power2.out"
+              creaseShading={0.3}
+              perspective={900}
+              fontSize="inherit"
+              fontWeight="inherit"
+            />
+          </p>
+
+          <div className="hero__actions">
+            <a href={authLinks.signup} className="btn btn--light">
+              Start practicing free
+              <SiteIcon name="arrow-up-right" size={17} />
             </a>
-            <a
-              href="#how-it-works"
-              className="hero24__button hero24__button--secondary"
-            >
+            <a href="#how-it-works" className="btn btn--ghost-dark">
               See how it works
             </a>
           </div>
+
+          <ul className="hero__facts">
+            <li>
+              <SiteIcon name="check" size={16} />
+              Free plan, no card needed
+            </li>
+            <li>
+              <SiteIcon name="check" size={16} />
+              Voice interviews in your browser
+            </li>
+            <li>
+              <SiteIcon name="check" size={16} />
+              Report after every session
+            </li>
+          </ul>
         </div>
 
-        <div className="hero24__visual" aria-label="NexaHire interview network">
-          <div className="hero24__globe-wrap">
-            <InterviewGlobe />
-          </div>
-
-          <div className="hero24__reach hero24__reach--left" aria-hidden="true">
-            <span />
-            <i />
-          </div>
-          <div className="hero24__reach hero24__reach--right" aria-hidden="true">
-            <span />
-            <i />
-          </div>
-
-          <div className="hero24__card hero24__card--coach">
-            <div className="hero24__card-icon">
-              <Icon d={icons.sparkles} size={15} />
-            </div>
-            <div>
-              <span>AI interview coach</span>
-              <strong>Response clarity 94%</strong>
-            </div>
-          </div>
-
-          <div className="hero24__card hero24__card--live">
-            <div className="hero24__live-topline">
-              <span>
-                <i /> Live interview
-              </span>
-              <small>18:42</small>
-            </div>
-            <div className="hero24__employer">
-              <span>HM</span>
-              <div>
-                <strong>Hiring manager joined</strong>
-                <small>Frontend Engineer interview</small>
-              </div>
-            </div>
-          </div>
-
-          <div className="hero24__proof">
-            <div className="hero24__avatars" aria-hidden="true">
-              <span>SA</span>
-              <span>MK</span>
-              <span>ZA</span>
-            </div>
-            <p>
-              Trusted by <strong>2,400+</strong> graduates
-            </p>
-          </div>
-        </div>
+        <HeroStage />
       </div>
     </section>
   )

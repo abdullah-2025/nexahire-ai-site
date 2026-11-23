@@ -1,75 +1,56 @@
 import type { IconName } from '@/components/SiteIcon'
 
-type Feature = {
+/*
+ * Supporting tools shown in the Toolkit tabs. Images live in /public/images.
+ * Photos are from Unsplash, free under the Unsplash License (no attribution required):
+ *   toolkit-cv-document.jpg      https://unsplash.com/photos/white-printer-paper-on-macbook-pro-4YzrcDNcRVg (rotated 90°)
+ *   toolkit-cv-analysis.jpg     https://unsplash.com/photos/a-woman-is-reading-a-resume-at-a-table-9si2noVCVH8 (Resume Genius)
+ *   toolkit-career-roadmap.jpg  https://unsplash.com/photos/hand-checking-off-items-on-a-to-do-list-fXlL5I0IvK0 (Jakub Żerdzicki)
+ */
+export type Tool = {
   title: string
   icon: IconName
   image: string
+  alt: string
+  /** CSS object-position that keeps the subject in the 5:4 stage crop. */
+  focus: string
   description: string
-  tags: [IconName, string][]
   caption: string
-  subtitle: string
-  chipIcon: IconName
+  detail: string
 }
 
-export const features: Feature[] = [
+export const tools: Tool[] = [
   {
-    title: 'AI CV Builder',
+    title: 'CV Builder',
     icon: 'file-text',
-    image: '/images/cv-builder.jpg',
+    image: '/images/toolkit-cv-document.jpg',
+    alt: 'A printed CV beside an open laptop',
+    focus: '50% 78%',
     description:
-      'Turn your experience into a polished, role-specific CV with smart suggestions that bring your strengths forward.',
-    tags: [
-      ['sparkles', 'Suggestions'],
-      ['file-check', 'ATS Ready'],
-      ['target', 'Role Match'],
-    ],
-    caption: 'CV quality · 92%',
-    subtitle: 'Tailor for a role',
-    chipIcon: 'check',
+      'Create a CV from your profile, start blank, or import the one you have. Pick a template and export a clean PDF.',
+    caption: 'Your CV, ready to send',
+    detail: 'Templates · PDF export · Import',
   },
   {
-    title: 'Skill Gap Analysis',
+    title: 'AI CV Analysis',
     icon: 'radar',
-    image: '/images/skill-gap.jpg',
+    image: '/images/toolkit-cv-analysis.jpg',
+    alt: 'A reviewer reading a printed CV at a desk',
+    focus: '62% 50%',
     description:
-      'See how your skills match real roles and get practical next steps to close the gaps that matter.',
-    tags: [
-      ['layers', 'Skills'],
-      ['bar-chart-3', 'Gaps'],
-      ['briefcase', 'Roles'],
-    ],
-    caption: 'Role match · 94%',
-    subtitle: '3 skills to strengthen',
-    chipIcon: 'gauge',
+      'Get an AI-estimated quality score for your CV against your target role, with specific, prioritized fixes.',
+    caption: 'Know what to fix first',
+    detail: 'Quality score · Recommendations',
   },
   {
-    title: 'Career Roadmaps',
+    title: 'Career Roadmap',
     icon: 'route',
-    image: '/images/career-roadmap.jpg',
+    image: '/images/toolkit-career-roadmap.jpg',
+    alt: 'A hand ticking off steps on a checklist in a notebook',
+    focus: '58% 50%',
     description:
-      'Follow a personalized, milestone-based path that makes your target role feel achievable and measurable.',
-    tags: [
-      ['flag', 'Milestones'],
-      ['calendar', 'Weekly Plan'],
-      ['trending-up', 'Progress'],
-    ],
-    caption: '4 milestones mapped',
-    subtitle: 'Up next: Portfolio project',
-    chipIcon: 'map',
-  },
-  {
-    title: 'AI Mock Interviews',
-    icon: 'mic',
-    image: '/images/mock-interview.jpg',
-    description:
-      'Practice realistic, role-specific conversations and get clear feedback before the real interview.',
-    tags: [
-      ['message-square', 'Questions'],
-      ['audio-lines', 'Delivery'],
-      ['award', 'Feedback'],
-    ],
-    caption: 'Practice session ready',
-    subtitle: 'Role-specific interview',
-    chipIcon: 'mic',
+      'Follow a stage-by-stage plan of skills, projects, tools and certifications for your target role, and track progress as you go.',
+    caption: 'One stage at a time',
+    detail: 'Skills · Projects · Certifications',
   },
 ]

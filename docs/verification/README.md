@@ -1,4 +1,37 @@
-# Migration verification
+# Verification
+
+## Job & interview redesign — November 22, 2026
+
+The page was redesigned around the AI-Powered Job & Interview Platform positioning and the app's Stone / Ink / Taupe / Bronze palette (see `docs/design.md`).
+
+**Build and code checks**
+
+- `npm run typecheck` passed.
+- `npm run lint` passed with no warnings.
+- `npm run build` succeeded: `/`, `/privacy`, `/terms` and `/contact` are statically prerendered.
+
+**Color and copy gates.** None of the following remain under `src/` or in the brand assets:
+
+- the old teal hex or rgb values;
+- `--color-teal`;
+- arbitrary hex Tailwind classes;
+- "Readiness Score", "live interview" or "Trusted by".
+
+**Browser checks** (Playwright against the dev server):
+
+- All four routes at 1440, 768 and 390 px: no horizontal overflow.
+- Mobile drawer: opens, locks page scroll, and closes on Escape.
+- The skip link is the first tab stop and moves focus to `main`.
+- Toolkit tabs: arrow-key selection, and focus follows the selected tab.
+- Pricing toggle: $10 / $20 monthly; $8 / $16 per month yearly, with "Billed $96 yearly".
+- The only external link target is `https://app.nexahire.site/login`, and every in-page anchor resolves.
+- With reduced motion emulated, no animations run and Toolkit does not autoplay.
+
+**Historical.** The section below, `verify.mjs`, `functional-report.json`, `visual-comparison.json` and `screenshots/` describe the previous design (the Vite→Next migration on October 5, 2026). They are kept for reference and do not apply to the current page.
+
+---
+
+## Vite→Next migration — October 5, 2026
 
 Verified locally on October 5, 2026, using Chrome and the Next.js production server.
 

@@ -1,8 +1,10 @@
 @import '../styles/fonts.css';
 @import '../styles/tokens.css';
 @import '../styles/theme.css';
-@import '../styles/hero24.css';
+@import '../styles/fold-text.css';
+@import '../styles/hero.css';
 @import '../styles/sections.css';
+@import '../styles/motion.css';
 
 @tailwind base;
 @tailwind components;
