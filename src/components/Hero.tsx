@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react'
+import FoldText from './FoldText'
 import Navigation from './Navigation'
 import ScoreRing from './ScoreRing'
 import SiteIcon from './SiteIcon'
@@ -31,14 +32,52 @@ export default function Hero() {
           </p>
 
           <h1 className="hero__title">
-            Practice the interview.
-            <span className="serif">Land the job.</span>
+            <FoldText
+              text="Practice the interview."
+              foldStyle="paper"
+              splitBy="char"
+              hinge="top"
+              foldAngle={92}
+              duration={0.7}
+              stagger={0.035}
+              ease="power3.out"
+              creaseShading={0.55}
+              fontSize="inherit"
+              fontWeight="inherit"
+            />
+            <span className="serif">
+              <FoldText
+                text="Land the job."
+                foldStyle="flip"
+                splitBy="char"
+                hinge="left"
+                duration={0.8}
+                stagger={0.05}
+                delay={0.65}
+                ease="power3.out"
+                creaseShading={0.4}
+                fontSize="inherit"
+                fontWeight="inherit"
+              />
+            </span>
           </h1>
 
           <p className="hero__sub">
-            Rehearse out loud with an AI interviewer built around your target role,
-            get a scored report after every session, then find matching roles and
-            apply in one click.
+            <FoldText
+              text="Rehearse out loud with an AI interviewer built around your target role, get a scored report after every session, then find matching roles and apply in one click."
+              foldStyle="paper"
+              splitBy="word"
+              hinge="bottom"
+              foldAngle={70}
+              duration={0.6}
+              stagger={0.018}
+              delay={1.15}
+              ease="power2.out"
+              creaseShading={0.3}
+              perspective={900}
+              fontSize="inherit"
+              fontWeight="inherit"
+            />
           </p>
 
           <div className="hero__actions">

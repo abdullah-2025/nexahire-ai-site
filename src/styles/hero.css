@@ -88,6 +88,13 @@
   letter-spacing: -0.02em;
 }
 
+/* FoldText ships its own tight display metrics; keep the hero's type scale instead. */
+.hero__title .fold-text,
+.hero__sub .fold-text {
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
 .hero__sub {
   margin: 26px 0 0;
   max-width: 50ch;
