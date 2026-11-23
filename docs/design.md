@@ -73,7 +73,7 @@ The channel triplets (`--ink-ch`, `--bronze-ch`, `--taupe-ch`, `--stone-50-ch`, 
 | # | Section | Component | Purpose |
 | --- | --- | --- | --- |
 | 1 | Navigation | `Navigation.tsx` | Floating pill: translucent ink over the hero, white once scrolled. Links: Interviews, Jobs, Toolkit, How it works, Pricing, FAQ; Sign in; Start free. On mobile, a drawer (Escape closes it, page scroll locks while it is open). |
-| 2 | Hero | `Hero.tsx`, `hero.css` | Eyebrow "AI-Powered Job & Interview Platform". H1 "Practice the interview. *Land the job.*". Primary and secondary CTAs, three plain facts, and a product scene: live AI interview card, interview report (score ring and competencies), matched-role card. |
+| 2 | Hero | `Hero.tsx`, `hero.css` | Eyebrow "AI-Powered Job & Interview Platform". H1 "Practice the interview. *Land the job.*". Primary and secondary CTAs, three plain facts, and a 3D brand-mark sculpture (`hero/HeroStage.tsx`, `hero/HeroScene.tsx`): the logo's N in stone ceramic and its node in bronze. |
 | 3 | Proof strip | `ProofStrip.tsx` | Four factual product tiles. |
 | 4 | Interviews | `Interviews.tsx` | Three setup steps and a sample interview report mirroring the app's report. |
 | 5 | Jobs | `Jobs.tsx` | Browse, filter, save, apply; three example role cards with match %. |
@@ -114,10 +114,24 @@ Legal pages (`/privacy`, `/terms`, `/contact`) use `LegalShell.tsx`: a hero-grad
 
 ## 8. Motion
 
-- Entrance reveals (`.reveal`): 0.5s fade and rise, staggered with `--d`.
-- Hero scene: cards rise in, the score ring draws, competency bars grow, and the waveform and live dot animate.
-- Toolkit: images crossfade. Tabs autoplay every 7s only when motion is allowed; autoplay pauses on hover or focus and stops once a user picks a tab.
-- **Reduced motion:** all animation and transition durations collapse to near zero, `.reveal` content shows immediately, smooth scrolling is off, and Toolkit never autoplays.
+Motion is layered on fully rendered, server-side markup: without JavaScript every element rests in its final state. GSAP (ScrollTrigger, SplitText) drives scroll and pointer motion from `MotionDirector.tsx`; Three.js through React Three Fiber renders the hero mark. Native scrolling is kept on purpose (no scroll smoothing library).
+
+- **Hero (the one authored moment):** FoldText unfolds the headline. About 1.1s later the 3D scene mounts: the N draws itself with a rounded tip leading the stroke, then the bronze node settles onto the right stem ("Land the job.") and sends out a voice-pulse ring every 3.4s. The mark floats, leans toward the pointer, and a sand light follows the cursor. While scrolling out, the mark turns away and the copy lifts and fades. The scene stops rendering when the hero is off screen. Supporting lines (eyebrow, CTAs, facts) rise in with CSS.
+- **Headings:** every `.h-section` and the closing CTA heading reveal line by line through masks (SplitText). Kicker rules draw, and leads come into focus from a 6px blur.
+- **Per section:**
+  - Proof: icon tiles flip up and the dividers draw.
+  - Interviews: the sample report builds itself: the card tilts up, the ring draws, the score counts to 82, the bars grow and the transcript lines arrive. Once built, it leans slightly toward the pointer.
+  - Jobs: the role cards deal out of a stack as you scroll (scrubbed), the match % counts up, and the flow cards wipe in.
+  - Toolkit: the stage opens like an aperture and the photo drifts in parallax. Changing tabs wipes the new photo in over the old one.
+  - How it works (desktop): a rail above the steps fills with scroll and lights each step's node, numeral and icon in bronze. On mobile, each step lights as it reaches the reading line.
+  - Pricing: the featured plan rises first and the others swing in beside it. The billing thumb slides between options, and prices roll when the period changes.
+  - FAQ: the rules draw, the aside stays sticky on desktop, and answers settle in as they open.
+  - Closing CTA: the card opens with scroll, and its grid brightens under the pointer.
+  - Footer: the giant wordmark rises letter by letter as the page ends.
+- **Interaction:** a nav pill slides to the hovered link and rests on the current section. Primary CTAs pull gently toward the pointer. The up-right arrow exits and re-enters on hover. Card hover lifts use the CSS `translate` property so they compose with GSAP transforms.
+- **Toolkit autoplay:** tabs autoplay every 7s only when motion is allowed. Autoplay pauses on hover or focus and stops once a user picks a tab.
+- **Reduced motion:** MotionDirector does nothing, the hero mark renders once in its final pose (no float, pulse or pointer tracking), CSS durations collapse to near zero, smooth anchor scrolling is off, and Toolkit never autoplays.
+- **Stacking:** `.hero` has `z-index: 2` so the fixed nav (inside the hero) stays above content that carries motion transforms. Local z-indexes are contained with `isolation: isolate`.
 
 ## 9. Accessibility
 
@@ -140,8 +154,11 @@ Legal pages (`/privacy`, `/terms`, `/contact`) use `LegalShell.tsx`: a hero-grad
 | File | Owns |
 | --- | --- |
 | `src/styles/tokens.css` | All color, shadow, radius and font tokens |
-| `src/styles/theme.css` | Base, type, buttons, pills, cards, reveal, brand logo, navigation, back-to-top, reduced motion |
-| `src/styles/hero.css` | Hero and product scene |
+| `src/styles/theme.css` | Base, type, buttons, pills, cards, brand logo, navigation, back-to-top, reduced motion |
+| `src/styles/hero.css` | Hero, score ring and competency bars |
+| `src/styles/motion.css` | Hero stage, motion hooks (rules, rail, thumb, masks), hover and state transitions |
+| `src/components/motion/MotionDirector.tsx` | All GSAP scroll and pointer choreography |
+| `src/components/hero/*` | 3D mark: geometry, scene, lazy WebGL stage |
 | `src/styles/sections.css` | All other home sections, footer, legal shell |
 | `src/styles/fonts.css` | Self-hosted Inter and Instrument Serif |
 | `public/brand/*`, `public/favicon.svg`, `public/apple-touch-icon.png` | Brand assets, identical to the app's |

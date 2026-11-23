@@ -9,6 +9,7 @@ import Pricing from '@/components/sections/Pricing'
 import Faq from '@/components/sections/Faq'
 import CallToAction from '@/components/sections/CallToAction'
 import Footer from '@/components/sections/Footer'
+import MotionDirector from '@/components/motion/MotionDirector'
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
         </main>
         <Footer />
       </SiteSections>
+      <MotionDirector />
     </>
   )
 }

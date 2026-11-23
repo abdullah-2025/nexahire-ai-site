@@ -1,5 +1,6 @@
 import FoldText from './FoldText'
 import Navigation from './Navigation'
+import HeroStage from './hero/HeroStage'
 import SiteIcon from './SiteIcon'
 import { authLinks } from '@/data/auth-links'
 
@@ -95,6 +96,7 @@ export default function Hero() {
           </ul>
         </div>
 
+        <HeroStage />
       </div>
     </section>
   )

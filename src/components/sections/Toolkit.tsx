@@ -62,7 +62,7 @@ export default function Toolkit() {
   return (
     <section id="toolkit" className="section">
       <div className="container-x">
-        <div className="section-head reveal">
+        <div className="section-head">
           <span className="kicker">Supporting tools</span>
           <h2 className="h-section">
             Everything around the interview, <span className="serif">in one place.</span>
@@ -80,7 +80,7 @@ export default function Toolkit() {
           onFocus={() => setPaused(true)}
           onBlur={() => setPaused(false)}
         >
-          <div ref={tabs} role="tablist" aria-label="Supporting tools" className="toolkit__tabs reveal">
+          <div ref={tabs} role="tablist" aria-label="Supporting tools" className="toolkit__tabs">
             {tools.map((item, index) => (
               <button
                 key={item.title}
@@ -115,23 +115,24 @@ export default function Toolkit() {
             id="tool-panel"
             role="tabpanel"
             aria-labelledby={`tool-tab-${selected}`}
-            className="toolkit__stage reveal"
-            style={{ '--d': '.1s' } as CSSProperties}
+            className="toolkit__stage"
           >
-            {tools.map((item, index) => (
-              <Image
-                key={item.image}
-                src={item.image}
-                alt={index === selected ? item.alt : ''}
-                aria-hidden={index !== selected}
-                className={`toolkit__image${index === selected ? ' is-active' : ''}`}
-                fill
-                sizes="(min-width: 1024px) 640px, 100vw"
-                priority={index === 0}
-              />
-            ))}
+            <div className="toolkit__media">
+              {tools.map((item, index) => (
+                <Image
+                  key={item.image}
+                  src={item.image}
+                  alt={index === selected ? item.alt : ''}
+                  aria-hidden={index !== selected}
+                  className={`toolkit__image${index === selected ? ' is-active' : ''}`}
+                  fill
+                  sizes="(min-width: 1024px) 640px, 100vw"
+                  priority={index === 0}
+                />
+              ))}
+            </div>
             <div className="toolkit__caption">
-              <div>
+              <div key={selected} className="toolkit__caption-text">
                 <strong>{tool.caption}</strong>
                 <span>{tool.detail}</span>
               </div>

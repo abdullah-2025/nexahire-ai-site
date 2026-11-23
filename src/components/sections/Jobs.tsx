@@ -1,4 +1,3 @@
-import type { CSSProperties } from 'react'
 import SiteIcon, { type IconName } from '../SiteIcon'
 import { authLinks } from '@/data/auth-links'
 
@@ -36,7 +35,7 @@ export default function Jobs() {
   return (
     <section id="jobs" className="section section--raised">
       <div className="container-x split split--flip">
-        <div className="reveal">
+        <div>
           <span className="kicker">Job discovery</span>
           <h2 className="h-section">
             Find roles that fit. <span className="serif">Apply in one click.</span>
@@ -69,7 +68,7 @@ export default function Jobs() {
           </div>
         </div>
 
-        <div className="reveal" style={{ '--d': '.1s' } as CSSProperties}>
+        <div>
           <div className="job-stack">
             {roles.map((role) => (
               <article key={role.title} className={`card job-card${role.featured ? ' job-card--featured' : ''}`}>

@@ -51,8 +51,19 @@
     gap: 0;
   }
 
-  .proof__item + .proof__item {
-    border-left: 1px solid var(--border-hairline);
+  .proof__item {
+    position: relative;
+    --rule: 1;
+  }
+
+  .proof__item + .proof__item::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 1px;
+    background: var(--border-hairline);
+    transform: scaleY(var(--rule));
+    transform-origin: top;
   }
 }
 
@@ -85,12 +96,23 @@
 }
 
 .steps li {
+  --rule: 1;
+  position: relative;
   display: grid;
   grid-template-columns: 56px 1fr;
   gap: 4px 12px;
   padding: 18px 0;
-  border-top: 1px solid var(--border-hairline);
   counter-increment: step;
+}
+
+.steps li::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: var(--border-hairline);
+  transform: scaleX(var(--rule));
+  transform-origin: left;
 }
 
 .steps li::before {
@@ -244,22 +266,24 @@
 
 /* ── Jobs ────────────────────────────────────────────────────────────── */
 .job-stack {
+  position: relative;
   display: grid;
   gap: 12px;
 }
 
+/* Hover lifts use `translate`, which composes with GSAP's scroll transforms. */
 .job-card {
   padding: 18px 20px;
   transition:
     border-color 0.2s,
-    transform 0.2s var(--ease-out),
-    box-shadow 0.2s;
+    translate 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out);
 }
 
 .job-card:hover {
   border-color: var(--taupe-300);
   box-shadow: var(--shadow-card);
-  transform: translateY(-2px);
+  translate: 0 -3px;
 }
 
 .job-card__top {
@@ -443,21 +467,36 @@
   box-shadow: var(--shadow-card);
 }
 
+/* Extra height gives the scroll parallax room to travel. */
+.toolkit__media {
+  position: absolute;
+  inset: -6% 0;
+}
+
+/* Tab change: the new photo wipes in over the old one, which hides once covered. */
 .toolkit__image {
   position: absolute;
   inset: 0;
   object-fit: cover;
-  opacity: 0;
   filter: saturate(0.85) sepia(0.12);
-  transform: scale(1.03);
+  clip-path: inset(0 100% 0 0);
+  transform: scale(1.08);
   transition:
-    opacity 0.6s var(--ease-out),
-    transform 1.2s var(--ease-out);
+    clip-path 0s linear 0.95s,
+    transform 0s linear 0.95s;
 }
 
 .toolkit__image.is-active {
-  opacity: 1;
+  z-index: 1;
+  clip-path: inset(0 0 0 0);
   transform: none;
+  transition:
+    clip-path 0.95s cubic-bezier(0.77, 0, 0.18, 1),
+    transform 1.6s var(--ease-out);
+}
+
+.toolkit__stage:hover .toolkit__image.is-active {
+  transform: scale(1.035);
 }
 
 .toolkit__caption {
@@ -465,6 +504,7 @@
   left: 16px;
   right: 16px;
   bottom: 16px;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -572,6 +612,7 @@
 
 /* ── Pricing ─────────────────────────────────────────────────────────── */
 .billing-toggle {
+  position: relative;
   display: inline-flex;
   gap: 4px;
   margin-top: 28px;
@@ -627,6 +668,18 @@
   display: flex;
   flex-direction: column;
   padding: 28px;
+  transition:
+    translate 0.4s var(--ease-out),
+    box-shadow 0.4s var(--ease-out);
+}
+
+.plan:hover {
+  translate: 0 -4px;
+  box-shadow: var(--shadow-card);
+}
+
+.plan--featured:hover {
+  box-shadow: var(--shadow-lift);
 }
 
 .plan--featured {
@@ -744,7 +797,18 @@
 }
 
 .faq-item {
-  border-bottom: 1px solid var(--border-hairline);
+  --rule: 1;
+  position: relative;
+}
+
+.faq-item::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: var(--border-hairline);
+  transform: scaleX(var(--rule));
+  transform-origin: left;
 }
 
 .faq-q {

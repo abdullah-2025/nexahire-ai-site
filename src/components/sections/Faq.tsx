@@ -11,7 +11,7 @@ export default function Faq() {
   return (
     <section id="faq" className="section">
       <div className="container-x faq">
-        <div className="faq__aside reveal">
+        <div className="faq__aside">
           <span className="kicker">FAQ</span>
           <h2 className="h-section">
             Questions, <span className="serif">answered.</span>
@@ -24,7 +24,7 @@ export default function Faq() {
           </Link>
         </div>
 
-        <div className="faq__list reveal">
+        <div className="faq__list">
           {faqs.map(({ question, answer }, index) => (
             <div key={question} className={`faq-item${open === index ? ' open' : ''}`}>
               <h3 style={{ margin: 0 }}>

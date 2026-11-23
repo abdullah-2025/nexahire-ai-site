@@ -68,5 +68,5 @@ export default function SiteIcon({
   ...props
 }: LucideProps & { name: IconName }) {
   const Icon = icons[name]
-  return <Icon aria-hidden="true" {...props} />
+  return <Icon aria-hidden="true" data-icon={name} {...props} />
 }

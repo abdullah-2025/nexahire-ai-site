@@ -4,6 +4,7 @@
 @import '../styles/fold-text.css';
 @import '../styles/hero.css';
 @import '../styles/sections.css';
+@import '../styles/motion.css';
 
 @tailwind base;
 @tailwind components;

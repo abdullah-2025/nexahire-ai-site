@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, type CSSProperties } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import SiteIcon from '../SiteIcon'
 import { authLinks } from '@/data/auth-links'
 import { plans, type BillingInterval } from '@/data/plans'
@@ -9,11 +9,34 @@ const usd = (amount: number) => `$${Number.isInteger(amount) ? amount : amount.t
 
 export default function Pricing() {
   const [interval, setBillingInterval] = useState<BillingInterval>('month')
+  const [switched, setSwitched] = useState(false)
+  const [thumb, setThumb] = useState<{ x: number; width: number } | null>(null)
+  const toggle = useRef<HTMLDivElement>(null)
+
+  const choose = (next: BillingInterval) => {
+    if (next === interval) return
+    setBillingInterval(next)
+    setSwitched(true)
+  }
+
+  // One ink thumb slides between the two options.
+  useLayoutEffect(() => {
+    const group = toggle.current
+    if (!group) return
+    const measure = () => {
+      const checked = group.querySelector<HTMLElement>('[aria-checked="true"]')
+      if (checked) setThumb({ x: checked.offsetLeft, width: checked.offsetWidth })
+    }
+    measure()
+    const observer = new ResizeObserver(measure)
+    observer.observe(group)
+    return () => observer.disconnect()
+  }, [interval])
 
   return (
     <section id="pricing" className="section">
       <div className="container-x">
-        <div className="section-head section-head--center reveal">
+        <div className="section-head section-head--center">
           <span className="kicker">Pricing</span>
           <h2 className="h-section">
             Start free. <span className="serif">Practice more when you need to.</span>
@@ -23,12 +46,22 @@ export default function Pricing() {
             roadmap. Paid plans add more mock interviews.
           </p>
 
-          <div role="radiogroup" aria-label="Billing period" className="billing-toggle">
+          <div
+            ref={toggle}
+            role="radiogroup"
+            aria-label="Billing period"
+            className={`billing-toggle${thumb ? ' has-thumb' : ''}`}
+          >
+            <span
+              className="billing-toggle__thumb"
+              aria-hidden="true"
+              style={thumb ? { transform: `translateX(${thumb.x}px)`, width: thumb.width } : undefined}
+            />
             <button
               type="button"
               role="radio"
               aria-checked={interval === 'month'}
-              onClick={() => setBillingInterval('month')}
+              onClick={() => choose('month')}
             >
               Monthly
             </button>
@@ -36,7 +69,7 @@ export default function Pricing() {
               type="button"
               role="radio"
               aria-checked={interval === 'year'}
-              onClick={() => setBillingInterval('year')}
+              onClick={() => choose('year')}
             >
               Yearly
               <span className="pill">Save 20%</span>
@@ -44,23 +77,24 @@ export default function Pricing() {
           </div>
         </div>
 
-        <div className="plans">
-          {plans.map((plan, index) => {
+        <div className="plans" data-switched={switched || undefined}>
+          {plans.map((plan) => {
             const monthly = plan.prices ? (interval === 'year' ? plan.prices.year / 12 : plan.prices.month) : 0
             return (
               <article
                 key={plan.id}
-                className={`card plan reveal${plan.featured ? ' plan--featured' : ''}`}
-                style={{ '--d': `${index * 0.08}s` } as CSSProperties}
+                className={`card plan${plan.featured ? ' plan--featured' : ''}`}
               >
                 {plan.featured && <span className="plan__badge">Most popular</span>}
                 <h3 className="plan__name">{plan.name}</h3>
                 <p className="plan__tagline">{plan.tagline}</p>
                 <div className="plan__price">
-                  <strong>{usd(monthly)}</strong>
+                  <strong key={plan.prices ? interval : 'free'} className="plan__amount">
+                    {usd(monthly)}
+                  </strong>
                   <span>/ month</span>
                 </div>
-                <p className="plan__billed">
+                <p key={plan.prices ? interval : 'free'} className="plan__billed">
                   {plan.prices
                     ? interval === 'year'
                       ? `Billed ${usd(plan.prices.year)} yearly`

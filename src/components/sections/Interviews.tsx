@@ -14,7 +14,7 @@ export default function Interviews() {
   return (
     <section id="interviews" className="section">
       <div className="container-x split">
-        <div className="reveal">
+        <div>
           <span className="kicker">AI mock interviews</span>
           <h2 className="h-section">
             Rehearse with an interviewer that <span className="serif">listens.</span>
@@ -48,7 +48,7 @@ export default function Interviews() {
           </div>
         </div>
 
-        <article className="card report reveal" style={{ '--d': '.1s' } as CSSProperties} aria-label="Sample interview report">
+        <article className="card report" aria-label="Sample interview report">
           <div className="report__head">
             <div>
               <span className="report__meta">Sample report · Technical · 20 min</span>

@@ -1,4 +1,3 @@
-import type { CSSProperties } from 'react'
 import SiteIcon, { type IconName } from '../SiteIcon'
 
 const steps: { icon: IconName; title: string; body: string; tag: string }[] = [
@@ -32,7 +31,7 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="section section--raised">
       <div className="container-x">
-        <div className="section-head section-head--center reveal">
+        <div className="section-head section-head--center">
           <span className="kicker">How it works</span>
           <h2 className="h-section">
             From first practice to <span className="serif">your application.</span>
@@ -47,8 +46,7 @@ export default function HowItWorks() {
           {steps.map((step, index) => (
             <li
               key={step.title}
-              className="card journey__step reveal"
-              style={{ '--d': `${index * 0.08}s` } as CSSProperties}
+              className="card journey__step"
             >
               <span className="journey__num" aria-hidden="true">
                 0{index + 1}

@@ -102,11 +102,17 @@ html {
   text-transform: uppercase;
 }
 
+.kicker {
+  --kick: 1;
+}
+
 .kicker::before {
   content: '';
   width: 22px;
   height: 1px;
   background: currentColor;
+  transform: scaleX(var(--kick));
+  transform-origin: left;
 }
 
 .h-section {
@@ -164,19 +170,19 @@ html {
   white-space: nowrap;
   text-decoration: none;
   cursor: pointer;
+  /* No transform transition: GSAP drives the magnetic pull on primary calls to action. */
   transition:
     background-color 0.18s,
     border-color 0.18s,
-    color 0.18s,
-    transform 0.18s var(--ease-out);
+    color 0.18s;
 }
 
 .btn svg {
   transition: transform 0.18s var(--ease-out);
 }
 
-.btn:hover svg {
-  transform: translate(2px, -2px);
+.btn:hover svg:not([data-icon='arrow-up-right']) {
+  transform: translateX(3px);
 }
 
 .btn--primary {
@@ -275,21 +281,6 @@ html {
   border-radius: 12px;
   background: var(--surface-raised);
   color: var(--text-primary);
-}
-
-/* ── Reveal on scroll (SiteSections adds .visible) ───────────────────── */
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity 0.5s var(--ease-out),
-    transform 0.5s var(--ease-out);
-  transition-delay: var(--d, 0s);
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: none;
 }
 
 /* ── Brand logo ──────────────────────────────────────────────────────── */
@@ -577,10 +568,5 @@ html {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
   }
 }

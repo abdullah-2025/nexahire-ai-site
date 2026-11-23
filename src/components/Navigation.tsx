@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import BrandLogo from './BrandLogo'
 import SiteIcon from './SiteIcon'
 import { authLinks } from '@/data/auth-links'
@@ -17,6 +17,42 @@ const links = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [active, setActive] = useState<string | null>(null)
+  const [hovered, setHovered] = useState<string | null>(null)
+  const [indicator, setIndicator] = useState<{ x: number; y: number; width: number; height: number } | null>(null)
+  const linkRow = useRef<HTMLDivElement>(null)
+
+  // The section crossing the middle of the viewport is the current one.
+  useEffect(() => {
+    const ids = links.map((link) => link.href.slice(1))
+    const sections = ids.map((id) => document.getElementById(id)).filter((el): el is HTMLElement => el !== null)
+    const inView = new Map<string, boolean>()
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => inView.set(entry.target.id, entry.isIntersecting))
+        const current = ids.find((id) => inView.get(id))
+        setActive(current ? `#${current}` : null)
+      },
+      { rootMargin: '-45% 0px -50% 0px' },
+    )
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
+  // One pill slides to the hovered link, or rests on the current section.
+  const target = hovered ?? active
+  const place = useCallback(() => {
+    const link = target ? linkRow.current?.querySelector<HTMLElement>(`a[href="${target}"]`) : null
+    setIndicator(
+      link ? { x: link.offsetLeft, y: link.offsetTop, width: link.offsetWidth, height: link.offsetHeight } : null,
+    )
+  }, [target])
+
+  useLayoutEffect(() => {
+    place()
+    window.addEventListener('resize', place)
+    return () => window.removeEventListener('resize', place)
+  }, [place])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -56,9 +92,29 @@ export default function Navigation() {
             <BrandLogo />
           </a>
 
-          <div className="nav__links">
+          <div ref={linkRow} className="nav__links" onMouseLeave={() => setHovered(null)}>
+            <span
+              className={`nav__indicator${indicator ? ' is-on' : ''}`}
+              aria-hidden="true"
+              style={
+                indicator
+                  ? {
+                      transform: `translate(${indicator.x}px, ${indicator.y}px)`,
+                      width: indicator.width,
+                      height: indicator.height,
+                    }
+                  : undefined
+              }
+            />
             {links.map((link) => (
-              <a key={link.href} href={link.href}>
+              <a
+                key={link.href}
+                href={link.href}
+                data-current={active === link.href ? '' : undefined}
+                onMouseEnter={() => setHovered(link.href)}
+                onFocus={() => setHovered(link.href)}
+                onBlur={() => setHovered(null)}
+              >
                 {link.label}
               </a>
             ))}

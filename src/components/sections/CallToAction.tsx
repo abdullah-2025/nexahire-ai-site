@@ -4,7 +4,7 @@ import { authLinks } from '@/data/auth-links'
 export default function CallToAction() {
   return (
     <section className="container-x" aria-labelledby="cta-title">
-      <div className="cta-card on-dark reveal">
+      <div className="cta-card on-dark">
         <h2 id="cta-title">
           Your next interview starts with <span className="serif">practice.</span>
         </h2>
