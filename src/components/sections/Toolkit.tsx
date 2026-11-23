@@ -125,6 +125,7 @@ export default function Toolkit() {
                   alt={index === selected ? item.alt : ''}
                   aria-hidden={index !== selected}
                   className={`toolkit__image${index === selected ? ' is-active' : ''}`}
+                  style={{ objectPosition: item.focus }}
                   fill
                   sizes="(min-width: 1024px) 640px, 100vw"
                   priority={index === 0}
